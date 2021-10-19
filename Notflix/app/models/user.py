@@ -23,10 +23,16 @@ class User(db.Model, UserMixin):
     def check_password(self, password):
         return check_password_hash(self.password, password)
 
+    profiles = db.relationship(
+        "Profile",
+        backref="user"
+    )
+
     def to_dict(self):
         return {
             'id': self.id,
             'email': self.email,
             'first_name': self.first_name,
-            'last_name': self.last_name
+            'last_name': self.last_name,
+            'profiles': [profile.to_dict() for profile in self.profiles]
         }
