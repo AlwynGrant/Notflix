@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import './homepage.css'
 
 function HomePage() {
 
@@ -14,7 +14,7 @@ function HomePage() {
                         <div className='landing-bottom-text'>
                             Watch anywhere. Cancel anytime.
                         </div>
-                   </div >
+                   </div>
                     <div className='landing-text-container-bottom'>
                         <div className='under-landing-top-text'>
                             Ready to watch? Enter your email to create or restart your membership.

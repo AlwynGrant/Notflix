@@ -1,0 +1,137 @@
+.home-container {
+    background-color: grey;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* SUB CONTAINER 1 */
+.home-sub-container-1 {
+    background-color: firebrick;
+    width: 100%;
+    height: 750px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form-container {
+    width: 950px;
+    height: 510px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-text-container-top {
+    width: 800px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.landing-top-text {
+    width: 800px;
+    height: 140px;
+
+
+    font-size: 64px;
+    font-family: system-ui;
+    font-weight: bold;
+    color: white;
+
+    text-align: center;
+}
+
+.landing-bottom-text {
+    width: 800px;
+    height: 35px;
+
+    font-size: 24px;
+    font-family: system-ui;
+    font-weight: 500;
+    color: white;
+
+    padding: 16px 0px;
+
+    text-align: center;
+}
+
+.landing-text-container-bottom {
+    width: 700px;
+    height: 120px;
+
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.under-landing-top-text {
+    width: 700px;
+    height: 50px;
+
+    font-size: 20px;
+    font-family: system-ui;
+    font-weight: 500;
+    color: white;
+
+    text-align: center;
+}
+
+.under-landing-bottom-text {
+    width: 700px;
+    height: 70px;
+
+    font-family: system-ui;
+    font-weight: 500;
+    color: white;
+}
+
+.landing-signup-input {
+    width: 500px;
+    height: 70px;
+}
+
+.landing-signup-button {
+    width: 200px;
+    height: 70px;
+}
+
+
+/* SUB CONTAINER 2 */
+.home-sub-container-2 {
+
+}
+
+/* SUB CONTAINER 3 */
+
+.home-sub-container-3 {
+
+}
+
+/* SUB CONTAINER 4 */
+.home-sub-container-4 {
+
+}
+
+/* SUB CONTAINER 5 */
+.home-sub-container-5 {
+
+}
+
+/* SUB CONTAINER 6 */
+.home-sub-container-6 {
+
+}
