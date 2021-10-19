@@ -11,13 +11,13 @@ class Movie(db.Model):
     movie_thumbnail  = db.Column(db.String(2000), nullable=False)
     name  = db.Column(db.String(50), nullable=False)
     description  = db.Column(db.String(500), nullable=False)
-    year_released  = db.Column(db.Int, nullable=False)
+    year_released  = db.Column(db.Integer, nullable=False)
     production  = db.Column(db.String(100), nullable=False)
     maturity_rating  = db.Column(db.String(20), nullable=False)
     director  = db.Column(db.String(100), nullable=False)
     cast  = db.Column(db.String(500), nullable=False)
     run_time  = db.Column(db.String(20), nullable=False)
-    rating = db.Column(db.Int, nullable=False)
+    rating = db.Column(db.Integer, nullable=False)
     kids = db.Column(db.Boolean, default=False)
 
     genres = db.relationship(
