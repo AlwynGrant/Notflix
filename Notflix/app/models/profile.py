@@ -29,5 +29,7 @@ class Profile(db.Model):
             'user_id': self.user_id,
             'username': self.username,
             'profile_img': self.profile_img,
-            'kids': self.kids
+            'kids': self.kids,
+            'my_list': [movie.to_dict() for movie in self.my_list],
+            'movie_likes': [(movie.id) for movie in self.movie_likes]
         }

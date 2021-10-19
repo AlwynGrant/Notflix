@@ -17,5 +17,6 @@ class Genre(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'genre': self.genre
+            'genre': self.genre,
+            'movies': [movie.to_dict() for movie in self.movies]
         }

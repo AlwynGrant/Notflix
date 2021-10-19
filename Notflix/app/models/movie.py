@@ -52,5 +52,7 @@ class Movie(db.Model):
             'cast': self.cast,
             'run_time': self.run_time,
             'rating': self.rating,
-            'kids': self.kids
+            'kids': self.kids,
+            'movie_likes': [(profile.id) for profile in self.movie_likes],
+            'genres': [(genre.genre) for genre in self.genres]
         }
