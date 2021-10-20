@@ -15,6 +15,7 @@ import MyListKidsPage from './components/browse-kids/MyListKidsPage';
 import MyListPage from './components/browse/MyListPage';
 import SignUpConfForm from './components/auth/SignUpConfForm';
 import SignUpValForm from './components/auth/SignUpValForm';
+import NavBarAuth from './components/navbar/NavBarAuth';
 import LoginForm from './components/auth/LoginForm';
 import HomePage from './components/home/HomePage';
 import NavBar from './components/navbar/NavBar';
@@ -46,17 +47,17 @@ function App() {
         </Route>
 
         <Route path='/login' exact={true}>
-          {/* SHARED NAVBAR FOR LOGIN/SIGNUP */}
+          <NavBarAuth />
           <LoginForm />
         </Route>
 
         <Route path='/sign-up-info' exact={true}>
-          {/* SHARED NAVBAR FOR LOGIN/SIGNUP */}
+          <NavBarAuth />
           <SignUpConfForm />
         </Route>
 
         <Route path='/sign-up-validate' exact={true}>
-          {/* SHARED NAVBAR FOR LOGIN/SIGNUP */}
+          <NavBarAuth />
           <SignUpValForm />
         </Route>
 

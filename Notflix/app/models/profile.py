@@ -11,7 +11,7 @@ class Profile(db.Model):
     profile_img = db.Column(db.String(1000))
     kids = db.Column(db.Boolean, default=False)
 
-    movie_likes = db.relationship(
+    user_likes = db.relationship(
         "Movie",
         back_populates="movie_likes",
         secondary=likes

@@ -9,7 +9,7 @@ const NavBar = () => {
     <nav className='navbar-home'>
       <div className='navbar-home-container'>
           <div className='home-logo'>
-            NOTFLIX
+            NOTFLIX_LOGO
           </div>
 
           <NavLink className='home-login-link' to='/login' exact={true} activeClassName='active'>
