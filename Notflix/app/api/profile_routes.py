@@ -9,9 +9,11 @@ profile_routes = Blueprint('profiles', __name__)
 @profile_routes.route('')
 @login_required
 def profile():
-    profiles = Profile.query.filter(Profile.user_id == int(current_user.get_id()))
-    return {'profiles': [profile.to_dict() for profile in profiles]}
+    profiles = Profile.query.filter(
+        Profile.user_id == int(current_user.get_id())
+    )
 
+    return {'profiles': [profile.to_dict() for profile in profiles]}
 
 # PLACEHOLDER
 @profile_routes.route('/PLACEHOLDER')
