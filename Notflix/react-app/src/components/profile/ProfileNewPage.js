@@ -13,15 +13,29 @@ function ProfileNewPage() {
     const [icon, setIcon] = useState(undefined)
     const [username, setUsername] = useState('')
     const [isForKids, setIsForKids] = useState(false)
-    console.log(icon)
 
     const accountHolder = useSelector(state => state.session.user);
+
+    const iconArr = [
+        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746460342.png',
+        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746455038.jpg',
+        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746449917.png',
+        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746445926.png',
+        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746441814.png',
+        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746437849.png',
+        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746431496.png',
+        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746427415.png',
+        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746421357.png',
+        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746854870.jpg'
+    ]
+    console.log(iconArr)
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         const newProfile = {
             username: username,
+            profile_img: icon,
             kids: isForKids
         };
 
@@ -29,8 +43,15 @@ function ProfileNewPage() {
             setUsername("");
             setIsForKids(false);
         });
+
         history.push('/profiles');
     };
+
+    const handleCancel = (e) => {
+        e.preventDefault();
+
+        history.push('/profiles')
+    }
 
     return (
         <div className='profile-new-container'>
@@ -41,7 +62,7 @@ function ProfileNewPage() {
                 <div className='profile-new-sub-text'>
                     Add a profile for another person watching Notflix.
                 </div>
-                <form className='profile-new-form-inputs'>
+                <form className='profile-new-form-inputs' onSubmit={(e) => handleSubmit(e)}>
                     <div className='profile-new-img-div'>
                         <select
                             className='profile-new-select'
@@ -50,12 +71,11 @@ function ProfileNewPage() {
                             onChange={(e) => setIcon(e.target.value)}
                         >
                             {
-                                profile_icons.map((p_icon, index) => {
+                                iconArr.map((p_icon, index) => {
                                     return <option
                                                 className='profile-new-option'
                                                 key={index}
-                                                value={p_icon}
-                                                style={{ backgroundImage: `url(${p_icon})` }}
+                                                style={{ backgroundImage: `url(${icon})` }}
                                             >{p_icon}</option>
                                 })
                             }
@@ -72,15 +92,21 @@ function ProfileNewPage() {
                                 type='checkbox'
                                 className='profile-new-name-checkbox'
                                 defaultChecked={false}
-                                value={isForKids}
-                                onChange={(e) => setIsForKids(e.target.value)}
+                                checked={isForKids}
+                                onChange={(e) => setIsForKids(e.target.checked)}
                             />
                             <p className='profile-new-checkbox-name'>Kid?</p>
                         </div>
                     </div>
                     <div className='profile-new-btn-div'>
-                        <button className='profile-new-continue'>Continue</button>
-                        <button className='profile-new-cancel'>Cancel</button>
+                        <button
+                            className='profile-new-continue'
+                            type='Submit'
+                        >Continue</button>
+                        <button
+                            className='profile-new-cancel'
+                            onClick={(e) => handleCancel(e)}
+                        >Cancel</button>
                     </div>
                 </form>
             </div>

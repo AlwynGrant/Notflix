@@ -3,6 +3,6 @@ from wtforms import StringField, BooleanField, IntegerField
 from wtforms.validators import DataRequired
 
 class NewProfileForm(FlaskForm):
-    user_id = IntegerField('user_id', validators=[DataRequired()])
     username = StringField('username', validators=[DataRequired()])
+    profile_img = StringField('profile_img')
     kids = BooleanField('kids', validators=[DataRequired()])
