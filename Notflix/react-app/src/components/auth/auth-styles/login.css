@@ -1,0 +1,80 @@
+.login-container {
+    background-color: brown;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    background-color: cadetblue;
+    width: 450px;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-text {
+    width: 315px;
+    height: 35px;
+
+    margin: 30px 0px;
+
+    font-size: 32px;
+    font-family: system-ui;
+    font-weight: bold;
+    color: white;
+}
+
+.login-email-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-email-input {
+    width: 315px;
+    height: 50px;
+}
+
+.login-password-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 15px;
+}
+
+.login-password-input {
+    width: 315px;
+    height: 50px;
+}
+
+
+.login-btn-div {
+    margin-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-btn {
+    background-color: rgb(187, 16, 16);
+    width: 315px;
+    height: 50px;
+
+    margin: 30px 0px;
+
+    font-size: 15px;
+    font-family: system-ui;
+    font-weight: bold;
+    color: white;
+}
