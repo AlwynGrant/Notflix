@@ -1,18 +1,18 @@
-// constants
+// --------------------------- Defined Action Types as Constants ---------------------
+
 const SET_USER = 'session/SET_USER';
 const REMOVE_USER = 'session/REMOVE_USER';
 
-const setUser = (user) => ({
-  type: SET_USER,
-  payload: user
-});
+// --------------------------- Defined Action Creator(s) --------------------------
 
-const removeUser = () => ({
-  type: REMOVE_USER,
-})
 
-const initialState = { user: null };
+const setUser = (user) => ({ type: SET_USER, payload: user });
 
+const removeUser = () => ({ type: REMOVE_USER })
+// ---------------------------  Defined Thunk(s) --------------------------------
+
+
+// auth
 export const authenticate = () => async (dispatch) => {
   const response = await fetch('/api/auth/', {
     headers: {
@@ -24,11 +24,12 @@ export const authenticate = () => async (dispatch) => {
     if (data.errors) {
       return;
     }
-  
+
     dispatch(setUser(data));
   }
 }
 
+// login
 export const login = (email, password) => async (dispatch) => {
   const response = await fetch('/api/auth/login', {
     method: 'POST',
@@ -40,8 +41,8 @@ export const login = (email, password) => async (dispatch) => {
       password
     })
   });
-  
-  
+
+
   if (response.ok) {
     const data = await response.json();
     dispatch(setUser(data))
@@ -57,6 +58,7 @@ export const login = (email, password) => async (dispatch) => {
 
 }
 
+// logout
 export const logout = () => async (dispatch) => {
   const response = await fetch('/api/auth/logout', {
     headers: {
@@ -69,7 +71,7 @@ export const logout = () => async (dispatch) => {
   }
 };
 
-
+// signup
 export const signUp = (username, email, password) => async (dispatch) => {
   const response = await fetch('/api/auth/signup', {
     method: 'POST',
@@ -82,7 +84,7 @@ export const signUp = (username, email, password) => async (dispatch) => {
       password,
     }),
   });
-  
+
   if (response.ok) {
     const data = await response.json();
     dispatch(setUser(data))
@@ -97,7 +99,12 @@ export const signUp = (username, email, password) => async (dispatch) => {
   }
 }
 
+// ---------------------------  State & Reducer --------------------------------
+
+const initialState = { user: null };
+
 export default function reducer(state = initialState, action) {
+  
   switch (action.type) {
     case SET_USER:
       return { user: action.payload }
@@ -105,5 +112,5 @@ export default function reducer(state = initialState, action) {
       return { user: null }
     default:
       return state;
-  }
-}
+        }
+      }
