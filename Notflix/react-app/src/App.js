@@ -15,9 +15,10 @@ import MyListKidsPage from './components/browse-kids/MyListKidsPage';
 import MyListPage from './components/browse/MyListPage';
 import SignUpConfForm from './components/auth/SignUpConfForm';
 import SignUpValForm from './components/auth/SignUpValForm';
-import NavBarAuth from './components/navbar/NavBarAuth';
 import LoginForm from './components/auth/LoginForm';
 import HomePage from './components/home/HomePage';
+import NavBarProfile from './components/navbar/NavBarProfile';
+import NavBarAuth from './components/navbar/NavBarAuth';
 import NavBar from './components/navbar/NavBar';
 
 import './index.css'
@@ -62,6 +63,7 @@ function App() {
         </Route>
 
         <ProtectedRoute path='/profiles' exact={true}>
+          <NavBarProfile />
           <ProfilePage />
         </ProtectedRoute>
 
