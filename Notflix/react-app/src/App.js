@@ -8,6 +8,7 @@ import KidsVideoPlayerPage from './components/video-player/KidsVideoPlayerPage';
 import VideoPlayerPage from './components/video-player/VideoPlayerPage';
 import ProfileManagePage from './components/profile/ProfileManagePage.js';
 import ProfileEditPage from './components/profile/ProfileEditPage';
+import ProfileNewPage from './components/profile/ProfileNewPage';
 import ProfilePage from './components/profile/ProfilePage';
 import BrowseKidsPage from './components/browse-kids/BrowseKidsPage';
 import BrowsePage from './components/browse/BrowsePage';
@@ -65,6 +66,11 @@ function App() {
         <ProtectedRoute path='/profiles' exact={true}>
           <NavBarProfile />
           <ProfilePage />
+        </ProtectedRoute>
+
+        <ProtectedRoute path='/profiles/new' exact={true}>
+          <NavBarProfile />
+          <ProfileNewPage />
         </ProtectedRoute>
 
         <ProtectedRoute path='/profiles/manage' exact={true}>

@@ -19,7 +19,21 @@ const deleteProfile = (profile) => ({ type: DELETE_PROFILE, profile });
 
 // create profile
 export const createProfile = (newProfile) => async (dispatch) => {
+    const { username, kids } = newProfile;
 
+    const formData = new FormData();
+    formData.append("username", username);
+    formData.append("kids", kids);
+
+    const response = await fetch('/api/profiles/new', {
+        method: "POST",
+        body: formData
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(addProfile(data));
+    };
 };
 
 // get one profile

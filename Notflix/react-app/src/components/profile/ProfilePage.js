@@ -44,8 +44,8 @@ useEffect(() => {
                     {
                         profiles.length < 5
                         && (
-                            <div>
-                                <div className='profile-img-container'>
+                            <a href='/profiles/new'>
+                                <div className='profile-img-container' >
                                     <img
                                         className='profile-main-img-add'
                                         src={white_cross}
@@ -55,7 +55,7 @@ useEffect(() => {
                                 <div className='profile-name'>
                                     Add Profile
                                 </div>
-                            </div>
+                            </a>
                         )
                     }
                 </div>

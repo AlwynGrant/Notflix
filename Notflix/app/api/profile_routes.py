@@ -1,6 +1,7 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from app.models import User, Profile, Movie
+from app.models import db, User, Profile, Movie
+from app.forms import NewProfileForm
 
 profile_routes = Blueprint('profiles', __name__)
 
@@ -15,8 +16,32 @@ def profile():
 
     return {'profiles': [profile.to_dict() for profile in profiles]}
 
-# PLACEHOLDER
-@profile_routes.route('/PLACEHOLDER')
+# browse page
+# get session users selected profiles
+@profile_routes.route('/<int:profile_id>')
 @login_required
-def pick_profile():
-    pass
+def pick_profile(profile_id):
+    profile = Profile.query.get(profile_id)
+
+    if int(current_user.get_id()) == profile.user_id:
+        return profile.to_dict()
+
+
+# browse page
+# get session users selected profiles
+@profile_routes.route('/new')
+@login_required
+def new_profile():
+    form = NewProfileForm()
+    form["csrf_token"].data = request.cookies["csrf_token"]
+
+    if form.validate_on_submit():
+        new_profile = Profile(
+            user_id=int(current_user.get_id()),
+            username=form.data.username,
+            kids=form.data.kids
+        )
+
+        db.session.add(new_profile)
+        db.session.commit()
+        return new_profile.to_dict()
