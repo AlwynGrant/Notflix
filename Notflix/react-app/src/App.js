@@ -17,7 +17,7 @@ import SignUpConfForm from './components/auth/SignUpConfForm';
 import SignUpValForm from './components/auth/SignUpValForm';
 import LoginForm from './components/auth/LoginForm';
 import HomePage from './components/home/HomePage';
-import NavBar from './components/NavBar';
+import NavBar from './components/navbar/NavBar';
 
 import './index.css'
 
