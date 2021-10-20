@@ -38,8 +38,8 @@ function HomePage() {
                         </div>
                     </div>
                 </div>
-                <div className='sub-container-3-img'>
-                    <img src={null} alt='container-3-img'/>
+                <div className='sub-container-2-img'>
+                    <img src={null} alt='container-2-img'/>
                 </div>
            </div>
 
@@ -69,10 +69,10 @@ function HomePage() {
                             Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.
                         </div>
                     </div>
+                </div>
                     <div className='sub-container-4-img'>
                         <img src={null} alt='container-4-img' />
                     </div>
-                </div>
            </div>
 
             <div className='home-sub-container-5'>
@@ -92,24 +92,26 @@ function HomePage() {
             </div>
 
             <div className='home-sub-container-6'>
-                <div className='sub-container-6-FAQ'>
-                    Frequently Asked Questions
-                </div>
-                <div className='sub-container-6-questions'>
-                    <div><div>What is Notflix?</div></div>
-                    <div><div>Where can I watch?</div></div>
-                    <div><div>What can I watch on Notflix?</div></div>
-                    <div><div>Is Notflix good for kids?</div></div>
-                    <div><div>Who developed Notflix?</div></div>
-                    <div><div>How can I contact the developer?</div></div>
-                </div>
-                <div className='landing-text-container-bottom'>
-                    <div className='under-landing-top-text'>
-                        Ready to watch? Enter your email to create or restart your membership.
+                <div className='sub-inner-container-6'>
+                    <div className='sub-container-6-FAQ'>
+                        Frequently Asked Questions
                     </div>
-                    <div className='under-landing-bottom-text'>
-                        <input className='landing-signup-input' placeholder='Email address'></input>
-                        <button className='landing-signup-button'>Get Started</button>
+                    <div className='sub-container-6-questions'>
+                        <div className='q-1'><div>What is Notflix?</div></div>
+                        <div className='q-2'><div>Where can I watch?</div></div>
+                        <div className='q-3'><div>What can I watch on Notflix?</div></div>
+                        <div className='q-4'><div>Is Notflix good for kids?</div></div>
+                        <div className='q-5'><div>Who developed Notflix?</div></div>
+                        <div className='q-6'><div>How can I contact the developer?</div></div>
+                    </div>
+                    <div className='landing-text-container-bottom'>
+                        <div className='under-landing-top-text'>
+                            Ready to watch? Enter your email to create or restart your membership.
+                        </div>
+                        <div className='under-landing-bottom-text'>
+                            <input className='landing-signup-input' placeholder='Email address'></input>
+                            <button className='landing-signup-button'>Get Started</button>
+                        </div>
                     </div>
                 </div>
             </div>
