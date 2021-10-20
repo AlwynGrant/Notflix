@@ -29,7 +29,16 @@ export const listOneProfile = (profileId) => async (dispatch) => {
 
 // get all sessionUsers profiles
 export const listAllProfiles = () => async (dispatch) => {
+    const response = await fetch(`/api/profiles`, {
+        method: 'GET'
+    });
 
+    if (response.ok) {
+        const data = await response.json();
+        const profiles = data.profiles
+        dispatch(getProfiles(profiles));
+        return response;
+    }
 }
 
 
@@ -53,15 +62,15 @@ const initialState = [];
 
 // profile reducer
 const profileReducer = (state = initialState, action) => {
-    let newState = [...state]
+    let newState = [ ...state ]
 
     switch (action.type) {
         case ADD_PROFILE:
-            return [...newState, action.profile ]
+            return [ ...newState, action.profile ]
         case GET_PROFILE:
-            return [action.profile ]
-        case GET_PROFILE:
-            return [...action.profiles ]
+            return [ action.profile ]
+        case GET_PROFILES:
+            return [ ...action.profiles ]
         case EDIT_PROFILE:
             return newState
         case DELETE_PROFILE:

@@ -31,5 +31,5 @@ class Profile(db.Model):
             'profile_img': self.profile_img,
             'kids': self.kids,
             'my_list': [movie.to_dict() for movie in self.my_list],
-            'movie_likes': [(movie.id) for movie in self.movie_likes]
+            'movie_likes': [(movie.id) for movie in self.user_likes]
         }
