@@ -6,7 +6,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 
 import KidsVideoPlayerPage from './components/video-player/KidsVideoPlayerPage';
 import VideoPlayerPage from './components/video-player/VideoPlayerPage';
-import ProfileManagePage from './components/profile/ProfileManagePage.Js';
+import ProfileManagePage from './components/profile/ProfileManagePage.js';
 import ProfileEditPage from './components/profile/ProfileEditPage';
 import ProfilePage from './components/profile/ProfilePage';
 import BrowseKidsPage from './components/browse-kids/BrowseKidsPage';

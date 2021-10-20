@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { listAllProfiles  } from '../../store/profile'
 
 import './profile-styles/profile.css'
+import white_cross from './profile-assets/white_cross.png'
 
 function ProfilePage() {
     const history = useHistory();
@@ -44,8 +45,12 @@ useEffect(() => {
                         profiles.length < 5
                         && (
                             <div>
-                                <div className='profile-main-new'>
-                                    ADD_PLUS_SIGN
+                                <div className='profile-img-container'>
+                                    <img
+                                        className='profile-main-img-add'
+                                        src={white_cross}
+                                        alt='profile-new-img'
+                                    />
                                 </div>
                                 <div className='profile-name'>
                                     Add Profile
@@ -56,7 +61,7 @@ useEffect(() => {
                 </div>
             </div>
                 <div className='profile-manage-btn-div'>
-                    <a className='profile-manage-btn' href='/profile/manage'>
+                    <a className='profile-manage-btn' href='/profiles/manage'>
                         Manage Profiles
                     </a>
                 </div>
