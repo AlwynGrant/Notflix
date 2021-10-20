@@ -1,7 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom'
+import SignUpConfForm from '../auth/SignUpConfForm';
 import './homepage.css'
 
 function HomePage() {
+    const history = useHistory()
+
+    const [email, setEmail] = useState('')
+
+    const handleSignup = (e) => {
+        // history.push('/sign-up-info')
+        return <SignUpConfForm />
+    }
+
+    const Test = () => {
+
+        return (
+            <SignUpConfForm />
+        )
+    }
 
     return (
        <div className='home-container'>
@@ -20,8 +37,14 @@ function HomePage() {
                             Ready to watch? Enter your email to create or restart your membership.
                         </div>
                         <div className='under-landing-bottom-text'>
-                            <input className='landing-signup-input' placeholder='Email address'></input>
-                            <button className='landing-signup-button'>Get Started</button>
+                            <input
+                                className='landing-signup-input'
+                                placeholder='Email address'
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            >
+                            </input>
+                            <button  className='landing-signup-button'>Get Started</button>
                         </div>
                    </div>
                </div>
@@ -115,6 +138,10 @@ function HomePage() {
                     </div>
                 </div>
             </div>
+
+            {
+                email && <Test />
+            }
        </div>
     );
 }
