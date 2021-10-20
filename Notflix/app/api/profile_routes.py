@@ -16,5 +16,5 @@ def profile():
 # PLACEHOLDER
 @profile_routes.route('/PLACEHOLDER')
 @login_required
-def profile():
+def pick_profile():
     pass
