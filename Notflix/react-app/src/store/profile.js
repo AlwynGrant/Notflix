@@ -39,7 +39,15 @@ export const createProfile = (newProfile) => async (dispatch) => {
 
 // get one profile
 export const listOneProfile = (profileId) => async (dispatch) => {
+    const response = await fetch(`/api/profiles/${profileId}`, {
+        method: 'GET'
+    });
 
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(getProfile(data));
+        return response;
+    }
 }
 
 // get all sessionUsers profiles
@@ -59,12 +67,34 @@ export const listAllProfiles = () => async (dispatch) => {
 
 // edit profile
 export const changeProfile = (profile, profileId) => async (dispatch) => {
+    const { username, profile_img, kids } = profile;
 
+    const formData = new FormData();
+    formData.append("username", username);
+    formData.append("profile_img", profile_img);
+    formData.append("kids", kids);
+
+    const response = await fetch(`/api/profiles/${profileId}/edit`, {
+        method: "PATCH",
+        body: formData
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(editProfile(data));
+    };
 };
 
 // delete profile
 export const removeProfile = (profileId) => async (dispatch) => {
+    const response = await fetch(`/api/inks/${profileId}/delete`, {
+        method: 'DELETE'
+    });
 
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(deleteProfile(data));
+    }
 }
 
 
