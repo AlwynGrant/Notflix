@@ -8,7 +8,8 @@ function BrowsePage() {
     const history = useHistory();
     const dispatch = useDispatch();
 
-
+    const movies = useSelector(state => state.movies)
+    console.log(movies)
     useEffect(() => {
         dispatch(listAllMovies())
     }, [dispatch])
@@ -26,7 +27,24 @@ function BrowsePage() {
             </div>
             <h1>FIRST_FEATURED_PREVIEW_CONTAINER</h1>
         </div>
-        <div>TEST</div>
+            <div className="browse-car-featured">
+                {
+                    movies?.map((movie) => {
+                        return (
+                            <img className='browse-img' src={movie.movie_thumbnail} alt='movie'/>
+                        )
+                    })
+                }
+            </div>
+            <div className="browse-car-action">
+                {
+                    movies?.map((movie) => {
+                        return (
+                            <img className='browse-img' src={movie.movie_thumbnail} alt='movie'/>
+                        )
+                    })
+                }
+            </div>
         </>
     );
 }

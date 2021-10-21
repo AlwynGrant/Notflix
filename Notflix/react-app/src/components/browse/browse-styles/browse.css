@@ -1,10 +1,7 @@
 .browse-preview-container {
     background-color:rgb(13, 13, 98);
     width: 100%;
-    position: absolute;
-    z-index: -2;
-    bottom: 0;
-    top: 0;
+    min-height: 100vh;
 
     display: flex;
     flex-direction: row;
@@ -57,4 +54,45 @@
 .browse-preview-more-info-btn {
     width: 155px;
     height: 60px;
+}
+
+
+.browse-car-featured {
+    background-color: burlywood;
+    width: 100%;
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    padding: 0 55px;
+    transform: translateY(-100px);
+}
+
+.browse-car-action {
+    background-color: cadetblue;
+    width: 100%;
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    padding: 0 55px;
+    transform: translateY(-100px);
+}
+
+
+.browse-img {
+    background: green;
+    width: 300px;
+    height: 160px;
+
+    object-fit: cover;
+    text-align: center;
+    margin: 0 2px;
+    transition: transform 300ms ease 100ms;
+}
+
+.browse-img:hover {
+  transition-delay: 0.5s;
+  /* transform not behaving as I would like it to - important to keep it in check, remove after carousel fully complete possibly */
+  transform: scale(1.5) !important;
 }
