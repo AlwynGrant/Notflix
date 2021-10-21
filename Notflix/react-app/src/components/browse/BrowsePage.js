@@ -9,7 +9,17 @@ function BrowsePage() {
     const dispatch = useDispatch();
 
     const movies = useSelector(state => state.movies)
-    console.log(movies)
+
+    const actionMovies = movies?.filter(movie => movie.genres[0] === 'Action/Adventure')
+    const animeMovies = movies?.filter(movie => movie.genres[0] === 'Anime')
+    const comedyMovies = movies?.filter(movie => movie.genres[0] === 'Comedy')
+    const docuMovies = movies?.filter(movie => movie.genres[0] === 'Documentary')
+    const horrorMovies = movies?.filter(movie => movie.genres[0] === 'Horror')
+    const romanceMovies = movies?.filter(movie => movie.genres[0] === 'Romance')
+    const thrillerMovies = movies?.filter(movie => movie.genres[0] === 'Thrillers')
+
+    console.log(horrorMovies)
+    
     useEffect(() => {
         dispatch(listAllMovies())
     }, [dispatch])
