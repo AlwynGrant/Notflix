@@ -1,5 +1,5 @@
 from re import M
-from app.models import db, User, Movie
+from app.models import db, User, Movie, Genre
 
 
 # Adds a demo user, you can add other users here if you want
@@ -151,6 +151,17 @@ def seed_movies():
         kids = False
     )
 
+    deep_blue_sea_2.genres.append(Genre.query.get(5))
+    grave_encounters.genres.append(Genre.query.get(5))
+    insidious_2.genres.append(Genre.query.get(5))
+    it_comes_at_night.genres.append(Genre.query.get(5))
+    hush.genres.append(Genre.query.get(5))
+    paranormal_activity_2.genres.append(Genre.query.get(5))
+    quarantine.genres.append(Genre.query.get(5))
+    rings.genres.append(Genre.query.get(5))
+    the_conjuring_2.genres.append(Genre.query.get(5))
+    unfriended.genres.append(Genre.query.get(5))
+
     db.session.add(deep_blue_sea_2)
     db.session.add(grave_encounters)
     db.session.add(insidious_2)
@@ -161,6 +172,8 @@ def seed_movies():
     db.session.add(rings)
     db.session.add(the_conjuring_2)
     db.session.add(unfriended)
+
+
 
 
 # HORROR ====================================================================================================================
