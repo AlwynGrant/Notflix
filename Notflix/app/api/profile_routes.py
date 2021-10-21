@@ -58,11 +58,11 @@ def edit_profile(profile_id):
     form = EditProfileForm()
     form["csrf_token"].data = request.cookies["csrf_token"]
 
-    if current_user and form.validate_on_submit():
+    if form.validate_on_submit():
         profile.username = form.username.data
         profile.profile_img = form.profile_img.data
         profile.kids = form.kids.data
-        
+
         db.session.commit()
 
         updated_profile = Profile.query.get(profile_id)
@@ -74,9 +74,11 @@ def edit_profile(profile_id):
 @login_required
 def delete_profile(profile_id):
     profile = Profile.query.get(profile_id)
+
     user_id = current_user.get_id()
 
     if int(user_id) == int(profile.user_id):
+
         db.session.delete(profile)
         db.session.commit()
 

@@ -87,7 +87,7 @@ export const changeProfile = (profile, profileId) => async (dispatch) => {
 
 // delete profile
 export const removeProfile = (profileId) => async (dispatch) => {
-    const response = await fetch(`/api/inks/${profileId}/delete`, {
+    const response = await fetch(`/api/profiles/${profileId}/delete`, {
         method: 'DELETE'
     });
 

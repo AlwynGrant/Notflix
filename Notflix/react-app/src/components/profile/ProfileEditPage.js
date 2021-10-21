@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-// import { createProfile } from '../../store/profile'
+import { changeProfile, removeProfile, listOneProfile } from '../../store/profile'
 
 import './profile-styles/profile_edit.css'
 
 function ProfileEditPage() {
     const history = useHistory();
     const dispatch = useDispatch();
+    const { profile_id } = useParams();
 
     const [icon, setIcon] = useState(undefined)
     const [username, setUsername] = useState('')
@@ -28,22 +29,28 @@ function ProfileEditPage() {
         'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746854870.jpg'
     ]
 
-    const handleSubmit = (e) => {
+    const handleSubmitEdit = (e) => {
         e.preventDefault();
 
-        const newProfile = {
+        const editThisProfile = {
             username: username,
             profile_img: icon,
             kids: isForKids
         };
 
-        // dispatch(createProfile(newProfile)).then(() => {
-        //     setUsername("");
-        //     setIsForKids(false);
-        // });
+        dispatch(changeProfile(editThisProfile, profile_id)).then(() => {
+            setUsername("");
+            setIsForKids(false);
+        });
 
         history.push('/profiles/manage');
     };
+
+    const handleSubmitDelete = (e) => {
+        e.preventDefault();
+        dispatch(removeProfile(profile_id))
+        history.push('/profiles/manage')
+    }
 
     const handleCancel = (e) => {
         e.preventDefault();
@@ -51,13 +58,17 @@ function ProfileEditPage() {
         history.push('/profiles/manage')
     }
 
+    useEffect(() => {
+        dispatch(listOneProfile(profile_id))
+    })
+
     return (
         <div className='profile-edit-container'>
             <div className='profile-edit-form'>
                 <div className='profile-edit-text'>
                     Edit Profile
                 </div>
-                <form className='profile-edit-form-inputs' onSubmit={(e) => handleSubmit(e)}>
+                <form className='profile-edit-form-inputs' onSubmit={(e) => handleSubmitEdit(e)}>
                     <div className='profile-edit-img-div'>
                             <select
                                 className='profile-edit-select'
@@ -105,7 +116,7 @@ function ProfileEditPage() {
                                 >Cancel</button>
                                 <button
                                     className='profile-edit-cancel'
-                                    onClick={(e) => handleCancel(e)}
+                                    onClick={(e) => handleSubmitDelete(e)}
                                 >Delete</button>
                             </div>
                         </div>
