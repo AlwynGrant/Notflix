@@ -19,6 +19,11 @@ const LoginForm = () => {
     }
   };
 
+  const handleSubmitDEMO = async (e) => {
+    e.preventDefault();
+    dispatch(login('demo@aa.com', 'password'));
+  }
+
   const updateEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -65,6 +70,7 @@ const LoginForm = () => {
           <div className='login-to-signup'>New to Notflix? <a href='/'>Sign up</a></div>
         </div>
       </form>
+          <button className='login-btn' type='submit' onClick={(e) => handleSubmitDEMO(e)}>Demo</button>
     </div>
   );
 };
