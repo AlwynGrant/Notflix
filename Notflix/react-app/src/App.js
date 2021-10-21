@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { authenticate } from './store/session';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 
@@ -19,6 +19,7 @@ import SignUpValForm from './components/auth/SignUpValForm';
 import LoginForm from './components/auth/LoginForm';
 import HomePage from './components/home/HomePage';
 import NavBarProfile from './components/navbar/NavBarProfile';
+import NavBarMovies from './components/navbar/NavBarMovies';
 import NavBarAuth from './components/navbar/NavBarAuth';
 import NavBar from './components/navbar/NavBar';
 
@@ -27,6 +28,8 @@ import './index.css'
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
+
+  const accountHolder = useSelector(state => state.session.user);
 
   useEffect(() => {
     (async() => {
@@ -42,7 +45,6 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-
         <Route path='/' exact={true} >
           <NavBar />
           <HomePage />
@@ -79,6 +81,7 @@ function App() {
         </ProtectedRoute>
 
         <ProtectedRoute path='/profiles/:profile_id/edit' exact={true}>
+          <NavBarProfile />
           <ProfileEditPage />
         </ProtectedRoute>
 
@@ -90,7 +93,8 @@ function App() {
           <MyListKidsPage />
         </ProtectedRoute>
 
-        <ProtectedRoute path='/movies' exact={true}>
+        <ProtectedRoute path='/profiles/:profile_id/movies' exact={true}>
+          <NavBarMovies />
           <BrowsePage />
         </ProtectedRoute>
 

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import LogoutButton from '../auth/LogoutButton';
 import { useSelector, useDispatch } from 'react-redux';
 import { listAllProfiles  } from '../../store/profile'
 
@@ -10,12 +9,11 @@ import white_cross from './profile-assets/white_cross.png'
 function ProfilePage() {
     const history = useHistory();
     const dispatch = useDispatch();
-    const accountHolder = useSelector(state => state.session.user);
     const profiles = useSelector(state => state.profile);
 
-useEffect(() => {
-    dispatch(listAllProfiles())
-}, [dispatch])
+    useEffect(() => {
+        dispatch(listAllProfiles())
+    }, [dispatch, profiles?.length])
 
     return (
         <div className='profile-page-container'>
@@ -28,7 +26,7 @@ useEffect(() => {
                     {
                         profiles?.map((profile) => {
                             return (
-                                <div>
+                                <div onClick={(e) => {history.push(`/profiles/${profile.id}/movies`)}}>
                                     <img
                                         className='profile-main-img'
                                         src={profile.profile_img}

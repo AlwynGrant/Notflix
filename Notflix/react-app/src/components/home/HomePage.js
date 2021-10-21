@@ -1,24 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 import SignUpConfForm from '../auth/SignUpConfForm';
 import './homepage.css'
 
 function HomePage() {
     const history = useHistory()
+    const accountHolder = useSelector(state => state.session.user);
 
     const [email, setEmail] = useState('')
 
-    const handleSignup = (e) => {
-        // history.push('/sign-up-info')
-        return <SignUpConfForm />
-    }
-
-    const Test = () => {
-
-        return (
-            <SignUpConfForm />
-        )
-    }
+    useEffect(() => {
+        if (accountHolder) {
+            history.push(`/profiles`)
+        }
+    })
 
     return (
        <div className='home-container'>
@@ -138,10 +134,6 @@ function HomePage() {
                     </div>
                 </div>
             </div>
-
-            {
-                email && <Test />
-            }
        </div>
     );
 }
