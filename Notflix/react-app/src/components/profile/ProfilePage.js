@@ -44,7 +44,7 @@ useEffect(() => {
                     {
                         profiles.length < 5
                         && (
-                            <a href='/profiles/new'>
+                            <a className='profile-link-mng-new' href='/profiles/new'>
                                 <div className='profile-img-container' >
                                     <img
                                         className='profile-main-img-add'

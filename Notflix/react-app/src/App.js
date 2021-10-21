@@ -74,6 +74,7 @@ function App() {
         </ProtectedRoute>
 
         <ProtectedRoute path='/profiles/manage' exact={true}>
+          <NavBarProfile />
           <ProfileManagePage />
         </ProtectedRoute>
 

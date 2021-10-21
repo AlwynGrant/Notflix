@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { createProfile } from '../../store/profile'
 
 import './profile-styles/profile_new.css'
-import profile_icons from '../../notflix_profile_imgs/notflix-profile-imgs';
 
 function ProfileNewPage() {
     const history = useHistory();

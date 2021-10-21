@@ -118,3 +118,7 @@
     color: rgb(141, 138, 138);
     text-align: center;
 }
+
+.profile-link-mng-new {
+    text-decoration: none;
+}
