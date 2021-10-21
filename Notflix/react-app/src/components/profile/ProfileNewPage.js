@@ -12,7 +12,7 @@ function ProfileNewPage() {
     const [icon, setIcon] = useState(undefined)
     const [username, setUsername] = useState('')
     const [isForKids, setIsForKids] = useState(false)
-
+    console.log(icon, username, isForKids)
     const accountHolder = useSelector(state => state.session.user);
 
     const iconArr = [
@@ -27,7 +27,6 @@ function ProfileNewPage() {
         'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746421357.png',
         'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746854870.jpg'
     ]
-    console.log(iconArr)
 
     const handleSubmit = (e) => {
         e.preventDefault();

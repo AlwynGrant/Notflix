@@ -66,11 +66,11 @@ const LoginForm = () => {
           />
         </div>
         <div className='login-btn-div'>
+          <button className='login-btn' onClick={(e) => handleSubmitDEMO(e)}>Demo</button>
           <button className='login-btn' type='submit'>Login</button>
           <div className='login-to-signup'>New to Notflix? <a href='/'>Sign up</a></div>
         </div>
       </form>
-          <button className='login-btn' type='submit' onClick={(e) => handleSubmitDEMO(e)}>Demo</button>
     </div>
   );
 };

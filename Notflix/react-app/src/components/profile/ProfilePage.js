@@ -15,7 +15,7 @@ function ProfilePage() {
 
 useEffect(() => {
     dispatch(listAllProfiles())
-}, [dispatch])
+}, [dispatch, profiles?.length])
 
     return (
         <div className='profile-page-container'>

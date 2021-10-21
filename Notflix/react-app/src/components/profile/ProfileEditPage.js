@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeProfile, removeProfile, listOneProfile } from '../../store/profile'
+import { changeProfile, removeProfile, listOneProfile, listAllProfiles } from '../../store/profile'
 
 import './profile-styles/profile_edit.css'
 
@@ -15,6 +15,7 @@ function ProfileEditPage() {
     const [isForKids, setIsForKids] = useState(false)
 
     const accountHolder = useSelector(state => state.session.user);
+    const profile = useSelector(state => state.profile[0]);
 
     const iconArr = [
         'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746460342.png',
@@ -42,13 +43,14 @@ function ProfileEditPage() {
             setUsername("");
             setIsForKids(false);
         });
-
+        dispatch(listAllProfiles())
         history.push('/profiles/manage');
     };
 
     const handleSubmitDelete = (e) => {
         e.preventDefault();
         dispatch(removeProfile(profile_id))
+        dispatch(listAllProfiles())
         history.push('/profiles/manage')
     }
 
@@ -60,7 +62,10 @@ function ProfileEditPage() {
 
     useEffect(() => {
         dispatch(listOneProfile(profile_id))
-    })
+        setIsForKids(profile?.kids)
+        setUsername(profile?.username)
+        setIcon(profile?.profile_img)
+    },[dispatch, profile?.id])
 
     return (
         <div className='profile-edit-container'>
@@ -95,14 +100,16 @@ function ProfileEditPage() {
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                             />
-                            <input
-                                type='checkbox'
-                                className='profile-edit-name-checkbox'
-                                defaultChecked={false}
-                                checked={isForKids}
-                                onChange={(e) => setIsForKids(e.target.checked)}
-                            />
-                            <p className='profile-edit-checkbox-name'>Kid?</p>
+                            <div className='profile-edit-maturity'>
+                                <input
+                                    type='checkbox'
+                                    className='profile-edit-name-checkbox'
+                                    defaultChecked={false}
+                                    checked={isForKids}
+                                    onChange={(e) => setIsForKids(e.target.checked)}
+                                />
+                                <p className='profile-edit-checkbox-name'>Kid?</p>
+                            </div>
                         </div>
                         <div className='sub-form-edit-container'>
                             <div className='profile-edit-btn-div'>
@@ -115,9 +122,9 @@ function ProfileEditPage() {
                                     onClick={(e) => handleCancel(e)}
                                 >Cancel</button>
                                 <button
-                                    className='profile-edit-cancel'
+                                    className='profile-edit-delete'
                                     onClick={(e) => handleSubmitDelete(e)}
-                                >Delete</button>
+                                >Delete Profile</button>
                             </div>
                         </div>
                 </form>
