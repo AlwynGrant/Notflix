@@ -14,7 +14,6 @@ const NavBar = () => {
           <div className='home-logo'>
             NOTFLIX_LOGO
           </div>
-          <LogoutButton />
           <NavLink className='home-login-link' to='/login' exact={true} activeClassName='active'>
             Login
           </NavLink>

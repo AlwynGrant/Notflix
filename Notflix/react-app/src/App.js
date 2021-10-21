@@ -19,6 +19,7 @@ import SignUpValForm from './components/auth/SignUpValForm';
 import LoginForm from './components/auth/LoginForm';
 import HomePage from './components/home/HomePage';
 import NavBarProfile from './components/navbar/NavBarProfile';
+import NavBarMovies from './components/navbar/NavBarMovies';
 import NavBarAuth from './components/navbar/NavBarAuth';
 import NavBar from './components/navbar/NavBar';
 
@@ -92,7 +93,8 @@ function App() {
           <MyListKidsPage />
         </ProtectedRoute>
 
-        <ProtectedRoute path='profiles/:profile_id/movies' exact={true}>
+        <ProtectedRoute path='/profiles/:profile_id/movies' exact={true}>
+          <NavBarMovies />
           <BrowsePage />
         </ProtectedRoute>
 
