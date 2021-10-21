@@ -19,28 +19,82 @@ const deleteProfile = (profile) => ({ type: DELETE_PROFILE, profile });
 
 // create profile
 export const createProfile = (newProfile) => async (dispatch) => {
+    const { username, profile_img, kids } = newProfile;
 
+    const formData = new FormData();
+    formData.append("username", username);
+    formData.append("profile_img", profile_img);
+    formData.append("kids", kids);
+
+    const response = await fetch('/api/profiles/new', {
+        method: "POST",
+        body: formData
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(addProfile(data));
+    };
 };
 
 // get one profile
 export const listOneProfile = (profileId) => async (dispatch) => {
+    const response = await fetch(`/api/profiles/${profileId}`, {
+        method: 'GET'
+    });
 
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(getProfile(data));
+        return response;
+    }
 }
 
 // get all sessionUsers profiles
 export const listAllProfiles = () => async (dispatch) => {
+    const response = await fetch(`/api/profiles`, {
+        method: 'GET'
+    });
 
+    if (response.ok) {
+        const data = await response.json();
+        const profiles = data.profiles
+        dispatch(getProfiles(profiles));
+        return response;
+    }
 }
 
 
 // edit profile
 export const changeProfile = (profile, profileId) => async (dispatch) => {
+    const { username, profile_img, kids } = profile;
 
+    const formData = new FormData();
+    formData.append("username", username);
+    formData.append("profile_img", profile_img);
+    formData.append("kids", kids);
+
+    const response = await fetch(`/api/profiles/${profileId}/edit`, {
+        method: "PATCH",
+        body: formData
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(editProfile(data));
+    };
 };
 
 // delete profile
 export const removeProfile = (profileId) => async (dispatch) => {
+    const response = await fetch(`/api/profiles/${profileId}/delete`, {
+        method: 'DELETE'
+    });
 
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(deleteProfile(data));
+    }
 }
 
 
@@ -53,15 +107,15 @@ const initialState = [];
 
 // profile reducer
 const profileReducer = (state = initialState, action) => {
-    let newState = [...state]
+    let newState = [ ...state ]
 
     switch (action.type) {
         case ADD_PROFILE:
-            return [...newState, action.profile ]
+            return [ ...newState, action.profile ]
         case GET_PROFILE:
-            return [action.profile ]
-        case GET_PROFILE:
-            return [...action.profiles ]
+            return [ action.profile ]
+        case GET_PROFILES:
+            return [ ...action.profiles ]
         case EDIT_PROFILE:
             return newState
         case DELETE_PROFILE:

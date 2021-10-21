@@ -6,8 +6,9 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 
 import KidsVideoPlayerPage from './components/video-player/KidsVideoPlayerPage';
 import VideoPlayerPage from './components/video-player/VideoPlayerPage';
-import ProfileManagePage from './components/profile/ProfileManagePage.Js';
+import ProfileManagePage from './components/profile/ProfileManagePage.js';
 import ProfileEditPage from './components/profile/ProfileEditPage';
+import ProfileNewPage from './components/profile/ProfileNewPage';
 import ProfilePage from './components/profile/ProfilePage';
 import BrowseKidsPage from './components/browse-kids/BrowseKidsPage';
 import BrowsePage from './components/browse/BrowsePage';
@@ -15,9 +16,10 @@ import MyListKidsPage from './components/browse-kids/MyListKidsPage';
 import MyListPage from './components/browse/MyListPage';
 import SignUpConfForm from './components/auth/SignUpConfForm';
 import SignUpValForm from './components/auth/SignUpValForm';
-import NavBarAuth from './components/navbar/NavBarAuth';
 import LoginForm from './components/auth/LoginForm';
 import HomePage from './components/home/HomePage';
+import NavBarProfile from './components/navbar/NavBarProfile';
+import NavBarAuth from './components/navbar/NavBarAuth';
 import NavBar from './components/navbar/NavBar';
 
 import './index.css'
@@ -62,10 +64,17 @@ function App() {
         </Route>
 
         <ProtectedRoute path='/profiles' exact={true}>
+          <NavBarProfile />
           <ProfilePage />
         </ProtectedRoute>
 
+        <ProtectedRoute path='/profiles/new' exact={true}>
+          <NavBarProfile />
+          <ProfileNewPage />
+        </ProtectedRoute>
+
         <ProtectedRoute path='/profiles/manage' exact={true}>
+          <NavBarProfile />
           <ProfileManagePage />
         </ProtectedRoute>
 
