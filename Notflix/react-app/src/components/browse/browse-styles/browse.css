@@ -1,3 +1,7 @@
+.browse-top-container {
+    background-color: #141414;
+}
+
 .browse-preview-container {
     background-color:rgb(13, 13, 98);
     width: 100%;
@@ -60,41 +64,62 @@
 
 
 .browse-car-featured {
-    background-color: burlywood;
+    background-color: #141414;
     width: 100%;
     height: 220px;
 
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 0 55px;
     transform: translateY(-100px);
 }
 
 .browse-car-action {
-    background-color: cadetblue;
+    background-color: #141414;
     width: 100%;
     height: 220px;
 
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 0 55px;
     transform: translateY(-100px);
 }
 
 
 .browse-img {
-    background: green;
-    width:200px;
-    height: 115px;
+    background: rgb(0, 0, 0);
+    width:250px;
+    height: 145px;
     object-fit: cover;
+    border-radius: 4px;
 
     text-align: center;
     margin: 0 2px;
     transition: transform 300ms ease 100ms;
 }
 
-/* .browse-img:hover {
+.slide-title {
+    width: 250px;
+    height: 40px;
+
+    font-size: 25px;
+    font-family: system-ui;
+    font-weight: bold;
+    color: white;
+}
+
+.browse-car-list {
+    width: 100%;
+    height: 145px;
+
+    display: flex;
+    align-items: center;
+}
+
+.browse-img:hover {
   transition-delay: 0.5s;
-  transform not behaving as I would like it to - important to keep it in check, remove after carousel fully complete possibly
+  /* transform not behaving as I would like it to - important to keep it in check, remove after carousel fully complete possibly */
    transform: scale(1.5) !important;
-} */
+}
