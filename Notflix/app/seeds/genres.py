@@ -11,6 +11,7 @@ def seed_genres():
     horror = Genre(genre='Horror')
     romance = Genre(genre='Romance')
     thrillers = Genre(genre='Thrillers')
+    featured = Genre(genre='Featured')
 
     db.session.add(action_adventure)
     db.session.add(anime)
@@ -19,6 +20,7 @@ def seed_genres():
     db.session.add(horror)
     db.session.add(romance)
     db.session.add(thrillers)
+    db.session.add(featured)
 
     db.session.commit()
 
