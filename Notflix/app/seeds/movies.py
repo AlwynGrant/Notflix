@@ -38,7 +38,7 @@ def seed_movies():
 
     insidious_2 = Movie(
         movie_url='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/horrors/Insidious_+Chapter+2+Official+Trailer.mp4',
-        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/horror_THUMBNAILS/HD-wallpaper-insidious-chapter-2-2013-movie-thumbnail.jpg',
+        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/horror_THUMBNAILS/insidious-chapter-2.jpg',
         name = 'Insidious II',
         description='The Lamberts believe that they have defeated the spirits that have haunted their family, but they soon discover that evil is not beaten so easily.',
         year_released = 2013,
@@ -52,7 +52,7 @@ def seed_movies():
     )
     it_comes_at_night = Movie(
         movie_url='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/horrors/It+Comes+At+Night+_+Official+Trailer+HD+_+A24-(1080p).mp4',
-        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/horror_THUMBNAILS/it_comes_at_night.jpg',
+        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/horror_THUMBNAILS/it-comes-at-night.jpg',
         name = 'It Comes at Night',
         description='Secure within a desolate home as an unnatural threat terrorizes the world, a man has established a tenuous domestic order with his wife and son. Then a desperate young family arrives seeking refuge.',
         year_released = 2017,
@@ -207,8 +207,8 @@ def seed_movies():
         kids=False
     )
     snowden = Movie(
-        movie_url='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/thrillers/yt5s.com-Shutter+Island+(2010)+Trailer+%231+_+Movieclips+Classic+Trailers-(1080p).mp4',
-        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Thrillers_THUMBNAILS/snowden_thumb.jpg',
+        movie_url='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/thrillers/yt5s.com-Snowden+_+Official+Trailer+%5BHD%5D+_+Open+Road+Films-(1080p).mp4',
+        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Thrillers_THUMBNAILS/snowden-movie.jpg',
         name='Snowden',
         description='The NSA\'s illegal surveillance techniques are leaked to the public by one of the agency\'s employees, Edward Snowden, in the form of thousands of classified documents distributed to the press.',
         year_released=2016,
@@ -236,7 +236,7 @@ def seed_movies():
     )
     shutter_island = Movie(
         movie_url='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/thrillers/yt5s.com-Shutter+Island+(2010)+Trailer+%231+_+Movieclips+Classic+Trailers-(1080p).mp4',
-        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Thrillers_THUMBNAILS/shutter-island-poster.jpg',
+        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Thrillers_THUMBNAILS/shutter-isl.jpg',
         name='Shutter Island',
         description='In 1954, a U.S. Marshal investigates the disappearance of a murderer who escaped from a hospital for the criminally insane.',
         year_released=2010,
@@ -306,7 +306,7 @@ def seed_movies():
     )
     knives_out = Movie(
         movie_url='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/thrillers/yt5s.com-Knives+Out+Trailer+%231+(2019)+_+Movieclips+Trailers-(1080p).mp4',
-        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Thrillers_THUMBNAILS/Knives-Out-Film-Poster-1.jpg',
+        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Thrillers_THUMBNAILS/knives-out.jpg',
         name='Knives Out',
         description='A detective investigates the death of a patriarch of an eccentric, combative family.',
         year_released=2019,
@@ -554,7 +554,7 @@ def seed_movies():
     )
     bee_movie = Movie(
         movie_url='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/comedy/yt5s.com-Bee+Movie+-+Official+Trailer+2007+%5BHD%5D.mp4',
-        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Comedy_THUMBNAILS/bee_movie.PNG',
+        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Comedy_THUMBNAILS/movie-bee-movie.jpg',
         name='Bee Movie',
         description='Barry B. Benson, a bee just graduated from college, is disillusioned at his lone career choice: making honey. On a special trip outside the hive, Barry\'s life is saved by Vanessa, a florist in New York City. As their relationship blossoms, he discovers humans actually eat honey, and subsequently decides to sue them.',
         year_released=2007,
@@ -692,7 +692,7 @@ def seed_movies():
     )
     john_wick = Movie(
         movie_url='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/action_adventure/yt5s.com-John+Wick+(2014)+-+Official+Trailer+-+Keanu+Reeves-(1080p).mp4',
-        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Action_THUMBNAILS/john-wick-1.jpg',
+        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Action_THUMBNAILS/john-wick.jpg',
         name='John Wick',
         description='An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him.',
         year_released=2014,
@@ -706,7 +706,7 @@ def seed_movies():
     )
     green_latern = Movie(
         movie_url='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/action_adventure/yt5s.com-Green+Lantern+-+Trailer-(1080p).mp4',
-        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Action_THUMBNAILS/green-lantern.jpg',
+        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Action_THUMBNAILS/green_lantern-17.jpg',
         name='Green Lantern',
         description='Reckless test pilot Hal Jordan is granted an alien ring that bestows him with otherworldly powers that inducts him into an intergalactic police force, the Green Lantern Corps.',
         year_released=2011,
@@ -720,7 +720,7 @@ def seed_movies():
     )
     black_panther = Movie(
         movie_url='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/action_adventure/yt5s.com-Marvel+Studios\'+Black+Panther+-+Official+Trailer.mp4',
-        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Action_THUMBNAILS/black-panther-movie-wallpaper.png',
+        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Action_THUMBNAILS/black-panther-movie-wallpaper.jpg',
         name='Black Panther',
         description='T\'Challa, heir to the hidden but advanced kingdom of Wakanda, must step forward to lead his people into a new future and must confront a challenger from his country\'s past.',
         year_released=2018,
@@ -748,7 +748,7 @@ def seed_movies():
     )
     mission_impossible = Movie(
         movie_url='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/action_adventure/yt5s.com-Mission_+Impossible+-+Fallout+(2018)+-+Official+Trailer+-+Paramount+Pictures.mp4',
-        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Action_THUMBNAILS/mission-impossible-fallout-movie-review-1.jpg',
+        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Action_THUMBNAILS/57093-missionimpossible5-missionimpossiblefacebook.1200w.tn.jpg',
         name='Mission: Impossible - Fallout',
         description='Ethan Hunt and his IMF team, along with some familiar allies, race against time after a mission gone wrong.',
         year_released=2018,
@@ -844,7 +844,7 @@ def seed_movies():
 
     naruto = Movie(
         movie_url='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/anime/yt5s.com-The+Last+-+Naruto+the+Movie+-+Official+Trailer-(1080p).mp4',
-        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Anime_THUMBNAILS/the_last_naruto_the_movie.jpg',
+        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Anime_THUMBNAILS/1024432-naruto-movie-last-headed-latin-america.jpg',
         name='The Last: Naruto the Movie',
         description='Hinata Hyuga\'s younger sister has been kidnapped, so Naruto must do what he can to save her.',
         year_released=2014,
@@ -872,7 +872,7 @@ def seed_movies():
     )
     princess_mononoke = Movie(
         movie_url='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/anime/yt5s.com-Princess+Mononoke+-+Official+Trailer.mp4',
-        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Anime_THUMBNAILS/princess-mononoke-featured.jpg',
+        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Anime_THUMBNAILS/princess+mononoke.jpg',
         name='Princess Mononoke',
         description='On a journey to find the cure for a Tatarigami\'s curse, Ashitaka finds himself in the middle of a war between the forest gods and Tatara, a mining colony. In this quest he also meets San, the Mononoke Hime.',
         year_released=1997,
@@ -942,7 +942,7 @@ def seed_movies():
     )
     gintama = Movie(
         movie_url='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/anime/yt5s.com-Gintama_+THE+FINAL+(2021)+-+Official+Trailer+2+_+English+Sub-(1080p).mp4',
-        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Anime_THUMBNAILS/The-beyond-news-Gintama-+The+Final+Movie+2021-+release+date%2C+cast%2C+story%2C+teaser%2C+trailer%2C+first+look%2C+rating%2C+reviews%2C+box+office+collection+and+preview.jpg',
+        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Anime_THUMBNAILS/Gintama-The-Final.jpg',
         name='Gintama: The Very Final',
         description='The concluding movie to the Gintama anime series.',
         year_released=2021,

@@ -56,6 +56,8 @@
     height: 60px;
 }
 
+/* ================================================= */
+
 
 .browse-car-featured {
     background-color: burlywood;
@@ -82,17 +84,17 @@
 
 .browse-img {
     background: green;
-    width: 300px;
-    height: 160px;
-
+    width:200px;
+    height: 115px;
     object-fit: cover;
+
     text-align: center;
     margin: 0 2px;
     transition: transform 300ms ease 100ms;
 }
 
-.browse-img:hover {
+/* .browse-img:hover {
   transition-delay: 0.5s;
-  /* transform not behaving as I would like it to - important to keep it in check, remove after carousel fully complete possibly */
-  transform: scale(1.5) !important;
-}
+  transform not behaving as I would like it to - important to keep it in check, remove after carousel fully complete possibly
+   transform: scale(1.5) !important;
+} */
