@@ -236,7 +236,7 @@ def seed_movies():
     )
     shutter_island = Movie(
         movie_url='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/thrillers/yt5s.com-Shutter+Island+(2010)+Trailer+%231+_+Movieclips+Classic+Trailers-(1080p).mp4',
-        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Thrillers_THUMBNAILS/Knives-Out-Film-Poster-1.jpg',
+        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Thrillers_THUMBNAILS/shutter-island-poster.jpg',
         name='Shutter Island',
         description='In 1954, a U.S. Marshal investigates the disappearance of a murderer who escaped from a hospital for the criminally insane.',
         year_released=2010,
@@ -942,7 +942,7 @@ def seed_movies():
     )
     gintama = Movie(
         movie_url='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/anime/yt5s.com-Gintama_+THE+FINAL+(2021)+-+Official+Trailer+2+_+English+Sub-(1080p).mp4',
-        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/anime/yt5s.com-Gintama_+THE+FINAL+(2021)+-+Official+Trailer+2+_+English+Sub-(1080p).mp4',
+        movie_thumbnail='https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/Anime_THUMBNAILS/The-beyond-news-Gintama-+The+Final+Movie+2021-+release+date%2C+cast%2C+story%2C+teaser%2C+trailer%2C+first+look%2C+rating%2C+reviews%2C+box+office+collection+and+preview.jpg',
         name='Gintama: The Very Final',
         description='The concluding movie to the Gintama anime series.',
         year_released=2021,

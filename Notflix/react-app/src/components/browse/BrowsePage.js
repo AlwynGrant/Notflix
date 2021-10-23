@@ -17,9 +17,10 @@ function BrowsePage() {
     const horrorMovies = movies?.filter(movie => movie.genres[0] === 'Horror')
     const romanceMovies = movies?.filter(movie => movie.genres[0] === 'Romance')
     const thrillerMovies = movies?.filter(movie => movie.genres[0] === 'Thrillers')
+    const featuredMovies = movies?.filter(movie => movie.genres[1] === 'Featured')
 
     console.log(horrorMovies)
-    
+
     useEffect(() => {
         dispatch(listAllMovies())
     }, [dispatch])
@@ -39,7 +40,7 @@ function BrowsePage() {
         </div>
             <div className="browse-car-featured">
                 {
-                    movies?.map((movie) => {
+                    featuredMovies?.map((movie) => {
                         return (
                             <img className='browse-img' src={movie.movie_thumbnail} alt='movie'/>
                         )
@@ -48,9 +49,63 @@ function BrowsePage() {
             </div>
             <div className="browse-car-action">
                 {
-                    movies?.map((movie) => {
+                    actionMovies?.map((movie) => {
                         return (
-                            <img className='browse-img' src={movie.movie_thumbnail} alt='movie'/>
+                            <img className='browse-img' src={movie.movie_thumbnail} alt='movie' />
+                        )
+                    })
+                }
+            </div>
+            <div className="browse-car-action">
+                {
+                    animeMovies?.map((movie) => {
+                        return (
+                            <img className='browse-img' src={movie.movie_thumbnail} alt='movie' />
+                        )
+                    })
+                }
+            </div>
+            <div className="browse-car-action">
+                {
+                    comedyMovies?.map((movie) => {
+                        return (
+                            <img className='browse-img' src={movie.movie_thumbnail} alt='movie' />
+                        )
+                    })
+                }
+            </div>
+            <div className="browse-car-action">
+                {
+                    docuMovies?.map((movie) => {
+                        return (
+                            <img className='browse-img' src={movie.movie_thumbnail} alt='movie' />
+                        )
+                    })
+                }
+            </div>
+            <div className="browse-car-action">
+                {
+                    horrorMovies?.map((movie) => {
+                        return (
+                            <img className='browse-img' src={movie.movie_thumbnail} alt='movie' />
+                        )
+                    })
+                }
+            </div>
+            <div className="browse-car-action">
+                {
+                    romanceMovies?.map((movie) => {
+                        return (
+                            <img className='browse-img' src={movie.movie_thumbnail} alt='movie' />
+                        )
+                    })
+                }
+            </div>
+            <div className="browse-car-action">
+                {
+                    thrillerMovies?.map((movie) => {
+                        return (
+                            <img className='browse-img' src={movie.movie_thumbnail} alt='movie' />
                         )
                     })
                 }
