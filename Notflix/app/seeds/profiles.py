@@ -1,4 +1,4 @@
-from app.models import db, User, Profile
+from app.models import db, Profile, Movie
 
 
 # Adds a demo user, you can add other users here if you want
@@ -32,6 +32,23 @@ def seed_profiles():
     db.session.add(mom)
     db.session.add(leech)
     db.session.add(kids)
+
+    democritus.my_list.append(Movie.query.get(31))
+    democritus.my_list.append(Movie.query.get(70))
+    democritus.my_list.append(Movie.query.get(11))
+    democritus.my_list.append(Movie.query.get(49))
+    democritus.my_list.append(Movie.query.get(22))
+    democritus.my_list.append(Movie.query.get(16))
+    democritus.my_list.append(Movie.query.get(63))
+    democritus.my_list.append(Movie.query.get(4))
+    democritus.my_list.append(Movie.query.get(57))
+    democritus.my_list.append(Movie.query.get(9))
+    democritus.my_list.append(Movie.query.get(1))
+    democritus.my_list.append(Movie.query.get(61))
+    democritus.my_list.append(Movie.query.get(35))
+    democritus.my_list.append(Movie.query.get(29))
+    democritus.my_list.append(Movie.query.get(50))
+    democritus.my_list.append(Movie.query.get(14))
 
     db.session.commit()
 

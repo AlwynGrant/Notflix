@@ -69,6 +69,7 @@ def edit_profile(profile_id):
 
         return updated_profile.to_dict()
 
+
 # delete profile
 @profile_routes.route('/<int:profile_id>/delete', methods=['DELETE'])
 @login_required
@@ -83,3 +84,12 @@ def delete_profile(profile_id):
         db.session.commit()
 
     return profile.to_dict()
+
+
+# get profile_users saved movie list
+
+@profile_routes.route('/<int:profile_id>/my-list')
+@login_required
+def get_mylist(profile_id):
+    profile_watchlist = Profile.query.get(profile_id).my_list
+    return {'my_list': [movie.to_dict() for movie in profile_watchlist]}
