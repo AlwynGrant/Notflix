@@ -6,7 +6,7 @@
     top: 0;
     bottom: 0;
 
-    padding: 0px 100px;
+    padding: 0px 80px;
 }
 
 .list-title {
@@ -15,12 +15,10 @@
 
     font-size: 25px;
     font-family: system-ui;
-    font-weight: bold;
     color: white;
 }
 
 .list-content {
-    background-color: #141414;
     width: 100%;
     height: auto;
 
@@ -36,15 +34,16 @@
 }
 
 .list-img {
-    background: rgb(0, 0, 0);
     width:250px;
     height: 145px;
     object-fit: cover;
     border-radius: 4px;
 
     text-align: center;
-    margin: 30px 2px;
+    margin: 20px 2px;
     transition: transform 300ms ease 100ms;
+
+    visibility: visible;
 }
 
 .list-img:hover {
