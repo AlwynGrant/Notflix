@@ -34,7 +34,7 @@ const mylistReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case GET_MYLIST:
-            return [ ...action.movie ]
+            return [ ...action.mylist ]
         default:
             return state;
     }
