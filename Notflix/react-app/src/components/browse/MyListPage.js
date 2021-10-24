@@ -5,7 +5,7 @@ function MyListPage() {
 
     return (
         <div>
-            BROWSE KIDS MOVIES
+            MY LIST PAGE - NORMAL ACCOUNT
         </div>
     );
 }
