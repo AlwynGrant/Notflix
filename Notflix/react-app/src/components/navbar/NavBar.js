@@ -1,21 +1,18 @@
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import LogoutButton from '../auth/LogoutButton';
+
 import './navbar-styles/navbar_home.css'
 
+import notflix_text_1000 from './images/notflix_text_1000.png'
+
 const NavBar = () => {
-  const accountHolder = useSelector(state => state.session.user);
 
   return (
     <nav className='navbar-home'>
       <div className='navbar-home-container'>
-          <div className='home-logo'>
-            NOTFLIX_LOGO
-          </div>
+          <img className='home-logo' src={notflix_text_1000}/>
           <NavLink className='home-login-link' to='/login' exact={true} activeClassName='active'>
-            Login
+            Log In
           </NavLink>
       </div>
     </nav>

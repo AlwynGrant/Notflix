@@ -105,11 +105,21 @@
 .landing-signup-input {
     width: 500px;
     height: 70px;
+
+    border-radius: 3px 0px 0px 3px;
+}
+
+.landing-signup-input:focus {
+    outline: none;
 }
 
 .landing-signup-button {
     width: 200px;
     height: 70px;
+
+    background-color: rgb(172, 3, 3);
+    color: white;
+    border-radius: 0px 3px 3px 0px;
 }
 
 
