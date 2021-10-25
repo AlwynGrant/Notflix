@@ -93,3 +93,24 @@ def delete_profile(profile_id):
 def get_mylist(profile_id):
     profile_watchlist = Profile.query.get(profile_id).my_list
     return {'my_list': [movie.to_dict() for movie in profile_watchlist]}
+
+# add or remove from movie list
+@profile_routes.route('/<int:profile_id>/edit-my-list', methods=['POST'])
+@login_required
+def edit_mylist(profile_id):
+    movieId = request.json['movieId']
+    profile_watchlist = Profile.query.get(profile_id)
+    selected_movie = Movie.query.get(movieId)
+
+    i = profile_watchlist.my_list.index(selected_movie)
+
+    if i:
+        profile_watchlist.my_list.pop(i)
+        db.session.commit()
+    else:
+        profile_watchlist.my_list.append(selected_movie)
+        db.session.commit()
+
+
+    # updated_watchlist = Profile.query.get(profile_id).my_list
+    return {'my_list': [movie.to_dict() for movie in profile_watchlist.my_list]}

@@ -3,7 +3,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
-import { listMyList } from '../../store/mylist'
+import { listMyList, addToMyList } from '../../store/mylist'
 import './browse-styles/mylist.css'
 
 function MyListPage() {
@@ -15,6 +15,11 @@ function MyListPage() {
         dispatch(listMyList(profile_id))
     }, [dispatch])
 
+    const handleMyListBtn = (e, movieId) => {
+        e.preventDefault()
+        dispatch(addToMyList(profile_id, movieId))
+    }
+
     return (
         <div className='list-top-container'>
             <div className="list-content">
@@ -25,7 +30,12 @@ function MyListPage() {
                             return (
                                 <div className='list-inner-container'>
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
-                                    <div className='list-description'>Buttons go here</div>
+                                    <div className='list-description'>
+                                        <button
+                                            className='list-add'
+                                            onClick={(e) => handleMyListBtn(e, movie.id)}
+                                        >Add To My List</button>
+                                    </div>
                                 </div>
                             )
                         })

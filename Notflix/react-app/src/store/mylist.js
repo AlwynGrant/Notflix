@@ -8,10 +8,26 @@ const getMylist = (mylist) => ({ type: GET_MYLIST, mylist });
 
 // ---------------------------  Defined Thunk(s) --------------------------------
 
-// get current profiles list
+// get current profiles list of saved movies
 export const listMyList= (profileId) => async (dispatch) => {
     const response = await fetch(`/api/profiles/${profileId}/my-list`, {
         method: 'GET'
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(getMylist(data.my_list));
+        return response;
+    }
+}
+
+export const addToMyList= (profileId, movieId) => async (dispatch) => {
+    const response = await fetch(`/api/profiles/${profileId}/edit-my-list`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            movieId
+        })
     });
 
     if (response.ok) {
