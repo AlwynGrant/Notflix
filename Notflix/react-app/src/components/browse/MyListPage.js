@@ -23,9 +23,10 @@ function MyListPage() {
                     {
                         myList?.map((movie) => {
                             return (
-
+                                <div className='list-inner-container'>
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
-                                    
+                                    <div className='list-description'>Buttons go here</div>
+                                </div>
                             )
                         })
                     }
