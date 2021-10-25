@@ -3,7 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { listAllMovies } from '../../store/movie'
 import { addToMyList } from '../../store/mylist'
+
 import './browse-styles/browse.css'
+
+
 
 function BrowsePage() {
     const { profile_id } = useParams();

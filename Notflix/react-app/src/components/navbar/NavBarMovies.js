@@ -11,9 +11,9 @@ const NavBarMovies = () => {
     return (
         <nav className='navbar-movies'>
             <div className='navbar-movies-container'>
-                <div className='movies-logo'>
+                <a className='movies-logo' href={`/profiles/${profile_id}/movies`}>
                     NOTFLIX_LOGO
-                </div>
+                </a>
                 <a href={`/profiles/${profile_id}/my-list`}>My list</a>
                 <LogoutButton />
             </div>

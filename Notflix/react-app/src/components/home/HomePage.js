@@ -4,6 +4,11 @@ import { useSelector } from 'react-redux';
 import SignUpConfForm from '../auth/SignUpConfForm';
 import './homepage.css'
 
+import home_kids from './images/home_kids.png'
+import mobile_0819 from './images/mobile_0819.jpg'
+import tv_pg from './images/tv_bg.png'
+import multi_device_bg from './images/multi_device_bg.png'
+
 function HomePage() {
     const history = useHistory()
     const accountHolder = useSelector(state => state.session.user);
@@ -58,13 +63,13 @@ function HomePage() {
                     </div>
                 </div>
                 <div className='sub-container-2-img'>
-                    <img src={null} alt='container-2-img'/>
+                    <img className='container-2-img' src={tv_pg} alt='container-2-img'/>
                 </div>
            </div>
 
             <div className='home-sub-container-3'>
                 <div className='sub-container-3-img'>
-                    <img src={null} alt='container-3-img' />
+                    <img className='container-3-img' src={mobile_0819} alt='container-3-img' />
                 </div>
                 <div className='container-3-text'>
                     <div className='sub-container-3-text'>
@@ -90,13 +95,13 @@ function HomePage() {
                     </div>
                 </div>
                     <div className='sub-container-4-img'>
-                        <img src={null} alt='container-4-img' />
+                    <img className='container-4-img' src={multi_device_bg} alt='container-4-img' />
                     </div>
            </div>
 
             <div className='home-sub-container-5'>
                 <div className='sub-container-5-img'>
-                    <img src={null} alt='container-5-img' />
+                    <img className='container-5-img' src={home_kids} alt='container-5-img' />
                 </div>
                 <div className='container-5-text'>
                     <div className='sub-container-5-text'>
