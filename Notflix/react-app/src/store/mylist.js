@@ -21,6 +21,7 @@ export const listMyList= (profileId) => async (dispatch) => {
     }
 }
 
+// add or remove from list
 export const addToMyList= (profileId, movieId) => async (dispatch) => {
     const response = await fetch(`/api/profiles/${profileId}/edit-my-list`, {
         method: 'POST',

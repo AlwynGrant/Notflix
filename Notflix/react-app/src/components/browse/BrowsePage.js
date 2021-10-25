@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { listAllMovies } from '../../store/movie'
+import { addToMyList } from '../../store/mylist'
 import './browse-styles/browse.css'
 
 function BrowsePage() {
+    const { profile_id } = useParams();
     const history = useHistory();
     const dispatch = useDispatch();
 
@@ -19,11 +21,14 @@ function BrowsePage() {
     const thrillerMovies = movies?.filter(movie => movie.genres[0] === 'Thrillers')
     const featuredMovies = movies?.filter(movie => movie.genres[1] === 'Featured')
 
-    console.log(horrorMovies)
-
     useEffect(() => {
         dispatch(listAllMovies())
     }, [dispatch])
+
+    const handleMyListBtn = (e, movieId) => {
+        e.preventDefault()
+        dispatch(addToMyList(profile_id, movieId))
+    }
 
     return (
         <div className='browse-top-container'>
@@ -44,7 +49,17 @@ function BrowsePage() {
                     {
                         featuredMovies?.map((movie) => {
                             return (
-                                <img className='browse-img' src={movie.movie_thumbnail} alt='movie'/>
+                                <div className='list-inner-container'>
+                                    <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
+                                    <div className='list-description'>
+                                        <button>Play</button>
+                                        <button
+                                            className='list-add'
+                                            onClick={(e) => handleMyListBtn(e, movie.id)}
+                                        >Add To My List</button>
+                                        <button>Like</button>
+                                    </div>
+                                </div>
                             )
                         })
                     }
@@ -56,7 +71,17 @@ function BrowsePage() {
                     {
                         actionMovies?.map((movie) => {
                             return (
-                                <img className='browse-img' src={movie.movie_thumbnail} alt='movie' />
+                                <div className='list-inner-container'>
+                                    <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
+                                    <div className='list-description'>
+                                        <button>Play</button>
+                                        <button
+                                            className='list-add'
+                                            onClick={(e) => handleMyListBtn(e, movie.id)}
+                                        >Add To My List</button>
+                                        <button>Like</button>
+                                    </div>
+                                </div>
                             )
                         })
                     }
@@ -68,7 +93,17 @@ function BrowsePage() {
                     {
                         animeMovies?.map((movie) => {
                             return (
-                                <img className='browse-img' src={movie.movie_thumbnail} alt='movie' />
+                                <div className='list-inner-container'>
+                                    <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
+                                    <div className='list-description'>
+                                        <button>Play</button>
+                                        <button
+                                            className='list-add'
+                                            onClick={(e) => handleMyListBtn(e, movie.id)}
+                                        >Add To My List</button>
+                                        <button>Like</button>
+                                    </div>
+                                </div>
                             )
                         })
                     }
@@ -80,7 +115,17 @@ function BrowsePage() {
                     {
                         comedyMovies?.map((movie) => {
                             return (
-                                <img className='browse-img' src={movie.movie_thumbnail} alt='movie' />
+                                <div className='list-inner-container'>
+                                    <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
+                                    <div className='list-description'>
+                                        <button>Play</button>
+                                        <button
+                                            className='list-add'
+                                            onClick={(e) => handleMyListBtn(e, movie.id)}
+                                        >Add To My List</button>
+                                        <button>Like</button>
+                                    </div>
+                                </div>
                             )
                         })
                     }
@@ -92,7 +137,17 @@ function BrowsePage() {
                     {
                         docuMovies?.map((movie) => {
                             return (
-                                <img className='browse-img' src={movie.movie_thumbnail} alt='movie' />
+                                <div className='list-inner-container'>
+                                    <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
+                                    <div className='list-description'>
+                                        <button>Play</button>
+                                        <button
+                                            className='list-add'
+                                            onClick={(e) => handleMyListBtn(e, movie.id)}
+                                        >Add To My List</button>
+                                        <button>Like</button>
+                                    </div>
+                                </div>
                             )
                         })
                     }
@@ -104,7 +159,17 @@ function BrowsePage() {
                     {
                         horrorMovies?.map((movie) => {
                             return (
-                                <img className='browse-img' src={movie.movie_thumbnail} alt='movie' />
+                                <div className='list-inner-container'>
+                                    <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
+                                    <div className='list-description'>
+                                        <button>Play</button>
+                                        <button
+                                            className='list-add'
+                                            onClick={(e) => handleMyListBtn(e, movie.id)}
+                                        >Add To My List</button>
+                                        <button>Like</button>
+                                    </div>
+                                </div>
                             )
                         })
                     }
@@ -116,7 +181,17 @@ function BrowsePage() {
                     {
                         romanceMovies?.map((movie) => {
                             return (
-                                <img className='browse-img' src={movie.movie_thumbnail} alt='movie' />
+                                <div className='list-inner-container'>
+                                    <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
+                                    <div className='list-description'>
+                                        <button>Play</button>
+                                        <button
+                                            className='list-add'
+                                            onClick={(e) => handleMyListBtn(e, movie.id)}
+                                        >Add To My List</button>
+                                        <button>Like</button>
+                                    </div>
+                                </div>
                             )
                         })
                     }
@@ -128,7 +203,17 @@ function BrowsePage() {
                     {
                         thrillerMovies?.map((movie) => {
                             return (
-                                <img className='browse-img' src={movie.movie_thumbnail} alt='movie' />
+                                <div className='list-inner-container'>
+                                    <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
+                                    <div className='list-description'>
+                                        <button>Play</button>
+                                        <button
+                                            className='list-add'
+                                            onClick={(e) => handleMyListBtn(e, movie.id)}
+                                        >Add To My List</button>
+                                        <button>Like</button>
+                                    </div>
+                                </div>
                             )
                         })
                     }
