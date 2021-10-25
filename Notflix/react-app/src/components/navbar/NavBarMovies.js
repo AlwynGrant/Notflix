@@ -15,6 +15,7 @@ const NavBarMovies = () => {
                 <a className='movies-logo' href={`/profiles/${profile_id}/movies`}>
                     <img className='movies-logo' src={notflix_text_1000} />
                 </a>
+                GENRE_GENRE_GENRE_GENRE_GENRE
                 <a href={`/profiles/${profile_id}/my-list`}>My list</a>
                 <LogoutButton />
             </div>
