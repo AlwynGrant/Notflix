@@ -102,9 +102,8 @@ def edit_mylist(profile_id):
     profile_watchlist = Profile.query.get(profile_id)
     selected_movie = Movie.query.get(movieId)
 
-    i = profile_watchlist.my_list.index(selected_movie)
-
-    if i:
+    if selected_movie in profile_watchlist.my_list:
+        i = profile_watchlist.my_list.index(selected_movie)
         profile_watchlist.my_list.pop(i)
         db.session.commit()
     else:
