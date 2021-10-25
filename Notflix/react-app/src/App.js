@@ -85,11 +85,13 @@ function App() {
           <ProfileEditPage />
         </ProtectedRoute>
 
-        <ProtectedRoute path='/profiles/:profile_id/my_list' exact={true}>
+        <ProtectedRoute path='/profiles/:profile_id/my-list' exact={true}>
+          <NavBarMovies />
           <MyListPage />
         </ProtectedRoute>
 
         <ProtectedRoute path='/profiles/:profile_id/my_kids_list' exact={true}>
+          <NavBarMovies />
           <MyListKidsPage />
         </ProtectedRoute>
 

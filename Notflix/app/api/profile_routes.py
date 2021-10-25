@@ -69,6 +69,7 @@ def edit_profile(profile_id):
 
         return updated_profile.to_dict()
 
+
 # delete profile
 @profile_routes.route('/<int:profile_id>/delete', methods=['DELETE'])
 @login_required
@@ -83,3 +84,32 @@ def delete_profile(profile_id):
         db.session.commit()
 
     return profile.to_dict()
+
+
+# get profile_users saved movie list
+
+@profile_routes.route('/<int:profile_id>/my-list')
+@login_required
+def get_mylist(profile_id):
+    profile_watchlist = Profile.query.get(profile_id).my_list
+    return {'my_list': [movie.to_dict() for movie in profile_watchlist]}
+
+# add or remove from movie list
+@profile_routes.route('/<int:profile_id>/edit-my-list', methods=['POST'])
+@login_required
+def edit_mylist(profile_id):
+    movieId = request.json['movieId']
+    profile_watchlist = Profile.query.get(profile_id)
+    selected_movie = Movie.query.get(movieId)
+
+    if selected_movie in profile_watchlist.my_list:
+        i = profile_watchlist.my_list.index(selected_movie)
+        profile_watchlist.my_list.pop(i)
+        db.session.commit()
+    else:
+        profile_watchlist.my_list.append(selected_movie)
+        db.session.commit()
+
+
+    # updated_watchlist = Profile.query.get(profile_id).my_list
+    return {'my_list': [movie.to_dict() for movie in profile_watchlist.my_list]}
