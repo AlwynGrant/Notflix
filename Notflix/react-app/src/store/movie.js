@@ -2,11 +2,13 @@
 
 const GET_MOVIE = 'users/GET_MOVIE';
 const GET_MOVIES = 'users/GET_MOVIES';
+const LIKE_MOVIE = 'users/LIKE_MOVIE'
 
 // --------------------------- Defined Action Creator(s) --------------------------
 
 const getMovie = (movie) => ({ type: GET_MOVIE, movie });
 const getMovies = (movies) => ({ type: GET_MOVIES, movies });
+const likeMovie = (movie) => ({ type: LIKE_MOVIE, movie });
 
 // ---------------------------  Defined Thunk(s) --------------------------------
 
@@ -27,6 +29,23 @@ export const listOneMovie = (movieId) => async (dispatch) => {
 export const listAllMovies = () => async (dispatch) => {
     const response = await fetch(`/api/movies`, {
         method: 'GET'
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(getMovies(data.movies));
+        return response;
+    }
+}
+
+// get all movies
+export const likeUnlikeMovie = (profileId, movie) => async (dispatch) => {
+    const response = await fetch(`/api/profiles/${profileId}/like`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            movie
+        })
     });
 
     if (response.ok) {

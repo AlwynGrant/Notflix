@@ -32,6 +32,12 @@ class Movie(db.Model):
         secondary=likes
     )
 
+    movie_dislikes = db.relationship(
+        "Profile",
+        back_populates="user_dislikes",
+        secondary=likes
+    )
+
     profiles_that_added_this_movie = db.relationship(
         "Profile",
         back_populates="my_list",
@@ -53,6 +59,7 @@ class Movie(db.Model):
             'run_time': self.run_time,
             'rating': self.rating,
             'kids': self.kids,
+            'movie_dislikes': [(profile.id) for profile in self.movie_dislikes],
             'movie_likes': [(profile.id) for profile in self.movie_likes],
             'genres': [(genre.genre) for genre in self.genres]
         }

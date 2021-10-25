@@ -17,6 +17,12 @@ class Profile(db.Model):
         secondary=likes
     )
 
+    user_dislikes = db.relationship(
+        "Movie",
+        back_populates="movie_dislikes",
+        secondary=likes
+    )
+
     my_list = db.relationship(
         "Movie",
         back_populates="profiles_that_added_this_movie",
