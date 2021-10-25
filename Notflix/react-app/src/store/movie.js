@@ -38,19 +38,19 @@ export const listAllMovies = () => async (dispatch) => {
     }
 }
 
-// get all movies
-export const likeUnlikeMovie = (profileId, movie) => async (dispatch) => {
+// like or unlike movie
+export const likeUnlikeMovie = (profileId, movieId) => async (dispatch) => {
     const response = await fetch(`/api/profiles/${profileId}/like`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            movie
+            movieId
         })
     });
 
     if (response.ok) {
         const data = await response.json();
-        dispatch(getMovies(data.movies));
+        dispatch(likeMovie(data));
         return response;
     }
 }
@@ -71,6 +71,8 @@ const movieReducer = (state = initialState, action) => {
             return [ action.movie ]
         case GET_MOVIES:
             return [ ...action.movies ]
+        case LIKE_MOVIE:
+            return [ ...newState, action.movie ]
         default:
             return state;
     }

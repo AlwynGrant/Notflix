@@ -87,12 +87,12 @@ def delete_profile(profile_id):
 
 
 # get profile_users saved movie list
-
 @profile_routes.route('/<int:profile_id>/my-list')
 @login_required
 def get_mylist(profile_id):
     profile_watchlist = Profile.query.get(profile_id).my_list
     return {'my_list': [movie.to_dict() for movie in profile_watchlist]}
+
 
 # add or remove from movie list
 @profile_routes.route('/<int:profile_id>/edit-my-list', methods=['POST'])
@@ -113,3 +113,41 @@ def edit_mylist(profile_id):
 
     # updated_watchlist = Profile.query.get(profile_id).my_list
     return {'my_list': [movie.to_dict() for movie in profile_watchlist.my_list]}
+
+
+# add or remove from movie list
+@profile_routes.route('/<int:profile_id>/like', methods=['POST'])
+@login_required
+def like_dislikes_movie(profile_id):
+    movieId = request.json['movieId']
+    print(movieId, 'MOVIE ID@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+    selected_movie = Movie.query.get(movieId)
+    print(selected_movie, 'MOVIEEEEEEEEEEEEE@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+    profile = Profile.query.get(profile_id)
+    print(selected_movie, 'MOVIEEEEEEEEEEEEE@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+    likes = selected_movie.movie_likes
+    print(likes, 'LIKES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+    dislikes = selected_movie.movie_dislikes
+    print(dislikes, 'DISLIKES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+
+    if profile in likes:
+        # unlike movie path
+        likes.remove(profile)
+        dislikes.append(profile)
+        # update the movie rating
+        total = len(likes) + len(dislikes)
+        selected_movie.rating = (len(likes) / total) * 100
+
+        db.session.commit()
+    else:
+        # like movie path
+        if profile in dislikes:
+            dislikes.remove(profile)
+        likes.append(profile)
+        # update the movie rating
+        total = len(likes) + len(dislikes)
+        selected_movie.rating = (len(likes) / total) * 100
+
+        db.session.commit()
+
+    return selected_movie.to_dict()

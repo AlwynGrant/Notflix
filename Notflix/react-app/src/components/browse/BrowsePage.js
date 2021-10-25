@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { listAllMovies } from '../../store/movie'
+import { listAllMovies, likeUnlikeMovie } from '../../store/movie'
 import { addToMyList } from '../../store/mylist'
 
 import './browse-styles/browse.css'
@@ -33,6 +33,11 @@ function BrowsePage() {
         dispatch(addToMyList(profile_id, movieId))
     }
 
+    const handleLikeBtn = (e, movieId) => {
+        e.preventDefault()
+        dispatch(likeUnlikeMovie(profile_id, movieId))
+    }
+
     return (
         <div className='browse-top-container'>
             <div className='browse-preview-container'>
@@ -60,7 +65,7 @@ function BrowsePage() {
                                             className='list-add'
                                             onClick={(e) => handleMyListBtn(e, movie.id)}
                                         >Add To My List</button>
-                                        <button>Like</button>
+                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
                                     </div>
                                 </div>
                             )
@@ -82,7 +87,7 @@ function BrowsePage() {
                                             className='list-add'
                                             onClick={(e) => handleMyListBtn(e, movie.id)}
                                         >Add To My List</button>
-                                        <button>Like</button>
+                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
                                     </div>
                                 </div>
                             )
@@ -104,7 +109,7 @@ function BrowsePage() {
                                             className='list-add'
                                             onClick={(e) => handleMyListBtn(e, movie.id)}
                                         >Add To My List</button>
-                                        <button>Like</button>
+                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
                                     </div>
                                 </div>
                             )
@@ -126,7 +131,7 @@ function BrowsePage() {
                                             className='list-add'
                                             onClick={(e) => handleMyListBtn(e, movie.id)}
                                         >Add To My List</button>
-                                        <button>Like</button>
+                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
                                     </div>
                                 </div>
                             )
@@ -148,7 +153,7 @@ function BrowsePage() {
                                             className='list-add'
                                             onClick={(e) => handleMyListBtn(e, movie.id)}
                                         >Add To My List</button>
-                                        <button>Like</button>
+                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
                                     </div>
                                 </div>
                             )
@@ -170,7 +175,7 @@ function BrowsePage() {
                                             className='list-add'
                                             onClick={(e) => handleMyListBtn(e, movie.id)}
                                         >Add To My List</button>
-                                        <button>Like</button>
+                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
                                     </div>
                                 </div>
                             )
@@ -192,7 +197,7 @@ function BrowsePage() {
                                             className='list-add'
                                             onClick={(e) => handleMyListBtn(e, movie.id)}
                                         >Add To My List</button>
-                                        <button>Like</button>
+                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
                                     </div>
                                 </div>
                             )
@@ -214,7 +219,7 @@ function BrowsePage() {
                                             className='list-add'
                                             onClick={(e) => handleMyListBtn(e, movie.id)}
                                         >Add To My List</button>
-                                        <button>Like</button>
+                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
                                     </div>
                                 </div>
                             )
