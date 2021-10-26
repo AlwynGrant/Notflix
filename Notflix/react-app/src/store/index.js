@@ -4,12 +4,14 @@ import session from './session'
 import profile from './profile'
 import movies from './movie'
 import mylist from './mylist'
+import mylike from './mylike'
 
 const rootReducer = combineReducers({
   session,
   profile,
   movies,
-  mylist
+  mylist,
+  mylike
 });
 
 

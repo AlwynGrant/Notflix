@@ -6,7 +6,6 @@ const GET_PROFILES = 'users/GET_PROFILES';
 const EDIT_PROFILE = 'users/EDIT_PROFILE';
 const DELETE_PROFILE = 'users/DELETE_PROFILE';
 
-
 // --------------------------- Defined Action Creator(s) --------------------------
 
 const addProfile = (profile) => ({ type: ADD_PROFILE, profile });
@@ -64,7 +63,6 @@ export const listAllProfiles = () => async (dispatch) => {
     }
 }
 
-
 // edit profile
 export const changeProfile = (profile, profileId) => async (dispatch) => {
     const { username, profile_img, kids } = profile;
@@ -97,13 +95,10 @@ export const removeProfile = (profileId) => async (dispatch) => {
     }
 }
 
-
 // ---------------------------  State & Reducer --------------------------------
-
 
 // Image state
 const initialState = [];
-
 
 // profile reducer
 const profileReducer = (state = initialState, action) => {

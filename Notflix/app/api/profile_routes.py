@@ -87,12 +87,12 @@ def delete_profile(profile_id):
 
 
 # get profile_users saved movie list
-
 @profile_routes.route('/<int:profile_id>/my-list')
 @login_required
 def get_mylist(profile_id):
     profile_watchlist = Profile.query.get(profile_id).my_list
     return {'my_list': [movie.to_dict() for movie in profile_watchlist]}
+
 
 # add or remove from movie list
 @profile_routes.route('/<int:profile_id>/edit-my-list', methods=['POST'])
@@ -113,3 +113,45 @@ def edit_mylist(profile_id):
 
     # updated_watchlist = Profile.query.get(profile_id).my_list
     return {'my_list': [movie.to_dict() for movie in profile_watchlist.my_list]}
+
+# get profile_users likes
+@profile_routes.route('/<int:profile_id>/my-likes')
+@login_required
+def get_mylikes(profile_id):
+    profile= Profile.query.get(profile_id)
+    return {'my_likes': [movie.to_dict() for movie in profile.user_likes]}
+
+
+# like or unlike from movie list
+@profile_routes.route('/<int:profile_id>/like', methods=['POST'])
+@login_required
+def like_dislikes_movie(profile_id):
+    movieId = request.json['movieId']
+
+    selected_movie = Movie.query.get(movieId)
+    profile = Profile.query.get(profile_id)
+
+    likes = selected_movie.movie_likes
+    dislikes = selected_movie.movie_dislikes
+
+    if profile in likes:
+        # unlike movie path
+        likes.remove(profile)
+        dislikes.append(profile)
+        # update the movie rating
+        total = len(likes) + len(dislikes)
+        selected_movie.rating = (len(likes) / total) * 100
+
+        db.session.commit()
+    else:
+        # like movie path
+        if profile in dislikes:
+            dislikes.remove(profile)
+        likes.append(profile)
+        # update the movie rating
+        total = len(likes) + len(dislikes)
+        selected_movie.rating = (len(likes) / total) * 100
+
+        db.session.commit()
+
+    return {'my_likes': [movie.to_dict() for movie in profile.user_likes]}

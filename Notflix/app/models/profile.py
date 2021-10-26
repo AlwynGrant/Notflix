@@ -17,6 +17,12 @@ class Profile(db.Model):
         secondary=likes
     )
 
+    user_dislikes = db.relationship(
+        "Movie",
+        back_populates="movie_dislikes",
+        secondary=likes
+    )
+
     my_list = db.relationship(
         "Movie",
         back_populates="profiles_that_added_this_movie",
@@ -31,5 +37,5 @@ class Profile(db.Model):
             'profile_img': self.profile_img,
             'kids': self.kids,
             'my_list': [movie.to_dict() for movie in self.my_list],
-            'movie_likes': [(movie.id) for movie in self.user_likes]
+            'profile_likes': [movie.to_dict() for movie in self.user_likes]
         }

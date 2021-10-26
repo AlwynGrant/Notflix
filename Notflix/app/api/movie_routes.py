@@ -1,6 +1,6 @@
-from flask import Blueprint
-from flask_login import login_required, current_user
-from app.models import db, Profile, Movie
+from flask import Blueprint, request
+from flask_login import login_required
+from app.models import db, Movie, Profile
 
 movie_routes = Blueprint('movies', __name__)
 
