@@ -147,4 +147,4 @@ def like_dislikes_movie(profile_id):
 
         db.session.commit()
 
-    return selected_movie.to_dict()
+    return profile.to_dict()

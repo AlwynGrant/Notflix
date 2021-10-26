@@ -3,7 +3,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
-import { likeUnlikeMovie } from '../../store/movie'
+import { likeUnlikeMovie } from '../../store/profile'
 import { listMyList, addToMyList } from '../../store/mylist'
 import './browse-styles/mylist.css'
 
