@@ -145,6 +145,28 @@
     margin: 5px;
 }
 
+.list-row-1-btn-play {
+    background-color: #141414;
+}
+
 .list-row-1-btns {
     background-color: #141414;
+}
+
+.list-row-2-rating {
+    width: 50px;
+    color: #46d369;
+    margin-left: 10px;
+    font-weight: bolder;
+}
+
+.list-row-2-maturity-rating {
+    width: 70px;
+    border: 1px solid grey;
+    text-align: center;
+}
+
+.list-row-3-genre-div {
+    margin: 0px 0px 0px 10px;
+    font-size: 15px;
 }

@@ -74,7 +74,7 @@ function BrowsePage() {
                                     <div className='list-description'>
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
-                                                <button className='list-row-1-btns'>
+                                                <button className='list-row-1-btn-play'>
                                                     <span class="material-icons">
                                                         play_circle_outline
                                                     </span>
@@ -113,8 +113,8 @@ function BrowsePage() {
                                             </button>
                                         </div>
                                         <div className='list-row-2'>
-                                            <div>{movie.rating}%</div>
-                                            <div>{movie.maturity_rating}</div>
+                                            <div className='list-row-2-rating'>{movie.rating}%</div>
+                                            <div className='list-row-2-maturity-rating'>{movie.maturity_rating}</div>
                                         </div>
                                         <div className='list-row-3'>
                                             {
@@ -182,8 +182,8 @@ function BrowsePage() {
                                             </button>
                                         </div>
                                         <div className='list-row-2'>
-                                            <div>{movie.rating}%</div>
-                                            <div>{movie.maturity_rating}</div>
+                                            <div className='list-row-2-rating'>{movie.rating}%</div>
+                                            <div className='list-row-2-maturity-rating'>{movie.maturity_rating}</div>
                                         </div>
                                         <div className='list-row-3'>
                                             {
@@ -251,8 +251,8 @@ function BrowsePage() {
                                             </button>
                                         </div>
                                         <div className='list-row-2'>
-                                            <div>{movie.rating}%</div>
-                                            <div>{movie.maturity_rating}</div>
+                                            <div className='list-row-2-rating'>{movie.rating}%</div>
+                                            <div className='list-row-2-maturity-rating'>{movie.maturity_rating}</div>
                                         </div>
                                         <div className='list-row-3'>
                                             {
@@ -320,8 +320,8 @@ function BrowsePage() {
                                             </button>
                                         </div>
                                         <div className='list-row-2'>
-                                            <div>{movie.rating}%</div>
-                                            <div>{movie.maturity_rating}</div>
+                                            <div className='list-row-2-rating'>{movie.rating}%</div>
+                                            <div className='list-row-2-maturity-rating'>{movie.maturity_rating}</div>
                                         </div>
                                         <div className='list-row-3'>
                                             {
@@ -389,8 +389,8 @@ function BrowsePage() {
                                             </button>
                                         </div>
                                         <div className='list-row-2'>
-                                            <div>{movie.rating}%</div>
-                                            <div>{movie.maturity_rating}</div>
+                                            <div className='list-row-2-rating'>{movie.rating}%</div>
+                                            <div className='list-row-2-maturity-rating'>{movie.maturity_rating}</div>
                                         </div>
                                         <div className='list-row-3'>
                                             {
@@ -458,8 +458,8 @@ function BrowsePage() {
                                             </button>
                                         </div>
                                         <div className='list-row-2'>
-                                            <div>{movie.rating}%</div>
-                                            <div>{movie.maturity_rating}</div>
+                                            <div className='list-row-2-rating'>{movie.rating}%</div>
+                                            <div className='list-row-2-maturity-rating'>{movie.maturity_rating}</div>
                                         </div>
                                         <div className='list-row-3'>
                                             {
@@ -527,8 +527,8 @@ function BrowsePage() {
                                             </button>
                                         </div>
                                         <div className='list-row-2'>
-                                            <div>{movie.rating}%</div>
-                                            <div>{movie.maturity_rating}</div>
+                                            <div className='list-row-2-rating'>{movie.rating}%</div>
+                                            <div className='list-row-2-maturity-rating'>{movie.maturity_rating}</div>
                                         </div>
                                         <div className='list-row-3'>
                                             {
@@ -596,8 +596,8 @@ function BrowsePage() {
                                             </button>
                                         </div>
                                         <div className='list-row-2'>
-                                            <div>{movie.rating}%</div>
-                                            <div>{movie.maturity_rating}</div>
+                                            <div className='list-row-2-rating'>{movie.rating}%</div>
+                                            <div className='list-row-2-maturity-rating'>{movie.maturity_rating}</div>
                                         </div>
                                         <div className='list-row-3'>
                                             {
