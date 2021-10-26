@@ -6,7 +6,6 @@ import { getOneProfile, listOneProfile } from '../../store/profile'
 import { addToMyList, listMyList } from '../../store/mylist'
 import { listMyLikes, likeUnlikeMovie } from '../../store/mylike'
 
-
 import './browse-styles/browse.css'
 
 
@@ -19,7 +18,6 @@ function BrowsePage() {
     const profile = useSelector(state => state.profile[0])
     const myList = useSelector(state => state.mylist)
     const myLike = useSelector(state => state.mylike)
-    console.log(myLike)
 
     const actionMovies = movies?.filter(movie => movie.genres[0] === 'Action/Adventure')
     const animeMovies = movies?.filter(movie => movie.genres[0] === 'Anime')
@@ -76,19 +74,15 @@ function BrowsePage() {
                                     <div className='list-description'>
                                         <button>Play</button>
                                         {
-                                            myList?.some((e) => e.id === movie.id)
-                                                ?
-                                                <button
-                                                    className='list-add'
-                                                    onClick={(e) => handleMyListBtn(e, movie.id)}
-                                                >REMOVE</button>
-                                                :
-                                                <button
-                                                    className='list-add'
-                                                    onClick={(e) => handleMyListBtn(e, movie.id)}
-                                                >ADD</button>
+                                            myList?.some((savedMovie) => savedMovie.id === movie.id)
+                                                ? <button className='list-add' onClick={(e) => handleMyListBtn(e, movie.id)}>REMOVE</button>
+                                                : <button className='list-add' onClick={(e) => handleMyListBtn(e, movie.id)}>ADD</button>
                                         }
-                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
+                                        {
+                                            myLike?.some((likedMovie) => likedMovie.id === movie.id)
+                                                ? <button onClick={(e) => handleLikeBtn(e, movie.id)}>Unlike</button>
+                                                : <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
+                                        }
                                     </div>
                                 </div>
                             )
@@ -106,11 +100,16 @@ function BrowsePage() {
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <button>Play</button>
-                                        <button
-                                            className='list-add'
-                                            onClick={(e) => handleMyListBtn(e, movie.id)}
-                                        >Add To My List</button>
-                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
+                                        {
+                                            myList?.some((savedMovie) => savedMovie.id === movie.id)
+                                                ? <button className='list-add' onClick={(e) => handleMyListBtn(e, movie.id)}>REMOVE</button>
+                                                : <button className='list-add' onClick={(e) => handleMyListBtn(e, movie.id)}>ADD</button>
+                                        }
+                                        {
+                                            myLike?.some((likedMovie) => likedMovie.id === movie.id)
+                                                ? <button onClick={(e) => handleLikeBtn(e, movie.id)}>Unlike</button>
+                                                : <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
+                                        }
                                     </div>
                                 </div>
                             )
@@ -128,11 +127,16 @@ function BrowsePage() {
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <button>Play</button>
-                                        <button
-                                            className='list-add'
-                                            onClick={(e) => handleMyListBtn(e, movie.id)}
-                                        >Add To My List</button>
-                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
+                                        {
+                                            myList?.some((savedMovie) => savedMovie.id === movie.id)
+                                                ? <button className='list-add' onClick={(e) => handleMyListBtn(e, movie.id)}>REMOVE</button>
+                                                : <button className='list-add' onClick={(e) => handleMyListBtn(e, movie.id)}>ADD</button>
+                                        }
+                                        {
+                                            myLike?.some((likedMovie) => likedMovie.id === movie.id)
+                                                ? <button onClick={(e) => handleLikeBtn(e, movie.id)}>Unlike</button>
+                                                : <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
+                                        }
                                     </div>
                                 </div>
                             )
@@ -150,11 +154,16 @@ function BrowsePage() {
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <button>Play</button>
-                                        <button
-                                            className='list-add'
-                                            onClick={(e) => handleMyListBtn(e, movie.id)}
-                                        >Add To My List</button>
-                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
+                                        {
+                                            myList?.some((savedMovie) => savedMovie.id === movie.id)
+                                                ? <button className='list-add' onClick={(e) => handleMyListBtn(e, movie.id)}>REMOVE</button>
+                                                : <button className='list-add' onClick={(e) => handleMyListBtn(e, movie.id)}>ADD</button>
+                                        }
+                                        {
+                                            myLike?.some((likedMovie) => likedMovie.id === movie.id)
+                                                ? <button onClick={(e) => handleLikeBtn(e, movie.id)}>Unlike</button>
+                                                : <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
+                                        }
                                     </div>
                                 </div>
                             )
@@ -172,11 +181,16 @@ function BrowsePage() {
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <button>Play</button>
-                                        <button
-                                            className='list-add'
-                                            onClick={(e) => handleMyListBtn(e, movie.id)}
-                                        >Add To My List</button>
-                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
+                                        {
+                                            myList?.some((savedMovie) => savedMovie.id === movie.id)
+                                                ? <button className='list-add' onClick={(e) => handleMyListBtn(e, movie.id)}>REMOVE</button>
+                                                : <button className='list-add' onClick={(e) => handleMyListBtn(e, movie.id)}>ADD</button>
+                                        }
+                                        {
+                                            myLike?.some((likedMovie) => likedMovie.id === movie.id)
+                                                ? <button onClick={(e) => handleLikeBtn(e, movie.id)}>Unlike</button>
+                                                : <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
+                                        }
                                     </div>
                                 </div>
                             )
@@ -194,11 +208,16 @@ function BrowsePage() {
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <button>Play</button>
-                                        <button
-                                            className='list-add'
-                                            onClick={(e) => handleMyListBtn(e, movie.id)}
-                                        >Add To My List</button>
-                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
+                                        {
+                                            myList?.some((savedMovie) => savedMovie.id === movie.id)
+                                                ? <button className='list-add' onClick={(e) => handleMyListBtn(e, movie.id)}>REMOVE</button>
+                                                : <button className='list-add' onClick={(e) => handleMyListBtn(e, movie.id)}>ADD</button>
+                                        }
+                                        {
+                                            myLike?.some((likedMovie) => likedMovie.id === movie.id)
+                                                ? <button onClick={(e) => handleLikeBtn(e, movie.id)}>Unlike</button>
+                                                : <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
+                                        }
                                     </div>
                                 </div>
                             )
@@ -216,11 +235,16 @@ function BrowsePage() {
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <button>Play</button>
-                                        <button
-                                            className='list-add'
-                                            onClick={(e) => handleMyListBtn(e, movie.id)}
-                                        >Add To My List</button>
-                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
+                                        {
+                                            myList?.some((savedMovie) => savedMovie.id === movie.id)
+                                                ? <button className='list-add' onClick={(e) => handleMyListBtn(e, movie.id)}>REMOVE</button>
+                                                : <button className='list-add' onClick={(e) => handleMyListBtn(e, movie.id)}>ADD</button>
+                                        }
+                                        {
+                                            myLike?.some((likedMovie) => likedMovie.id === movie.id)
+                                                ? <button onClick={(e) => handleLikeBtn(e, movie.id)}>Unlike</button>
+                                                : <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
+                                        }
                                     </div>
                                 </div>
                             )
@@ -238,11 +262,16 @@ function BrowsePage() {
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <button>Play</button>
-                                        <button
-                                            className='list-add'
-                                            onClick={(e) => handleMyListBtn(e, movie.id)}
-                                        >Add To My List</button>
-                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
+                                        {
+                                            myList?.some((savedMovie) => savedMovie.id === movie.id)
+                                                ? <button className='list-add' onClick={(e) => handleMyListBtn(e, movie.id)}>REMOVE</button>
+                                                : <button className='list-add' onClick={(e) => handleMyListBtn(e, movie.id)}>ADD</button>
+                                        }
+                                        {
+                                            myLike?.some((likedMovie) => likedMovie.id === movie.id)
+                                                ? <button onClick={(e) => handleLikeBtn(e, movie.id)}>Unlike</button>
+                                                : <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
+                                        }
                                     </div>
                                 </div>
                             )

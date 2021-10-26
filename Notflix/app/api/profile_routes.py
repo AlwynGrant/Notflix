@@ -118,8 +118,8 @@ def edit_mylist(profile_id):
 @profile_routes.route('/<int:profile_id>/my-likes')
 @login_required
 def get_mylikes(profile_id):
-    profile_likes_list = Profile.query.get(profile_id)
-    return {'my_likes': [movie.to_dict() for movie in profile_likes_list.user_likes]}
+    profile= Profile.query.get(profile_id)
+    return {'my_likes': [movie.to_dict() for movie in profile.user_likes]}
 
 
 # like or unlike from movie list
@@ -131,7 +131,7 @@ def like_dislikes_movie(profile_id):
     selected_movie = Movie.query.get(movieId)
     profile = Profile.query.get(profile_id)
 
-    likes = selected_movie.user_likes
+    likes = selected_movie.movie_likes
     dislikes = selected_movie.movie_dislikes
 
     if profile in likes:
@@ -154,4 +154,4 @@ def like_dislikes_movie(profile_id):
 
         db.session.commit()
 
-    return profile.user_likes
+    return {'my_likes': [movie.to_dict() for movie in profile.user_likes]}

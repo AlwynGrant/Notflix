@@ -34,7 +34,7 @@ export const likeUnlikeMovie = (profileId, movieId) => async (dispatch) => {
 
     if (response.ok) {
         const data = await response.json();
-        dispatch(likeMovie(data));
+        dispatch(likeMovie(data.my_likes));
         return response;
     }
 }
