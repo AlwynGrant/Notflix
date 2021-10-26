@@ -5,7 +5,7 @@ const GET_PROFILE = 'users/GET_PROFILE';
 const GET_PROFILES = 'users/GET_PROFILES';
 const EDIT_PROFILE = 'users/EDIT_PROFILE';
 const DELETE_PROFILE = 'users/DELETE_PROFILE';
-const LIKE_MOVIE = 'users/LIKE_MOVIE';
+
 
 // --------------------------- Defined Action Creator(s) --------------------------
 
@@ -14,7 +14,7 @@ const getProfile = (profile) => ({ type: GET_PROFILE, profile });
 const getProfiles = (profiles) => ({ type: GET_PROFILES, profiles });
 const editProfile = (profile) => ({ type: EDIT_PROFILE, profile });
 const deleteProfile = (profile) => ({ type: DELETE_PROFILE, profile });
-const likeMovie = (profile) => ({ type: LIKE_MOVIE, profile });
+
 
 // ---------------------------  Defined Thunk(s) --------------------------------
 
@@ -98,23 +98,6 @@ export const removeProfile = (profileId) => async (dispatch) => {
     }
 }
 
-// like or unlike movie
-export const likeUnlikeMovie = (profileId, movieId) => async (dispatch) => {
-    const response = await fetch(`/api/profiles/${profileId}/like`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            movieId
-        })
-    });
-
-    if (response.ok) {
-        const data = await response.json();
-        dispatch(likeMovie(data));
-        return response;
-    }
-}
-
 
 // ---------------------------  State & Reducer --------------------------------
 
@@ -138,8 +121,6 @@ const profileReducer = (state = initialState, action) => {
             return newState
         case DELETE_PROFILE:
             return newState.filter((el) => action.profile.id !== el.id)
-        case LIKE_MOVIE:
-            return [ action.profile ]
         default:
             return state;
     }
