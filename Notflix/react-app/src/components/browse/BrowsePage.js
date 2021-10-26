@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { listAllMovies, likeUnlikeMovie } from '../../store/movie'
+import { getOneProfile, listOneProfile } from '../../store/profile'
 import { addToMyList } from '../../store/mylist'
 
 import './browse-styles/browse.css'
-
 
 
 function BrowsePage() {
@@ -14,6 +14,7 @@ function BrowsePage() {
     const dispatch = useDispatch();
 
     const movies = useSelector(state => state.movies)
+    const profile = useSelector(state => state.profile[0])
 
     const actionMovies = movies?.filter(movie => movie.genres[0] === 'Action/Adventure')
     const animeMovies = movies?.filter(movie => movie.genres[0] === 'Anime')
@@ -26,7 +27,8 @@ function BrowsePage() {
 
     useEffect(() => {
         dispatch(listAllMovies())
-    }, [dispatch])
+        dispatch(listOneProfile(profile_id))
+    }, [dispatch, profile?.movie_likes.length])
 
     const handleMyListBtn = (e, movieId) => {
         e.preventDefault()
@@ -61,10 +63,18 @@ function BrowsePage() {
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <button>Play</button>
-                                        <button
-                                            className='list-add'
-                                            onClick={(e) => handleMyListBtn(e, movie.id)}
-                                        >Add To My List</button>
+                                        { profile?.movie_likes.some((e) => e === movie.id)
+                                            ?
+                                            <button
+                                                className='list-add'
+                                                onClick={(e) => handleMyListBtn(e, movie.id)}
+                                            >Add To My List</button>
+                                            :
+                                            <button
+                                                className='list-add'
+                                                onClick={(e) => handleMyListBtn(e, movie.id)}
+                                            >remove from my List</button>
+                                        }
                                         <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
                                     </div>
                                 </div>

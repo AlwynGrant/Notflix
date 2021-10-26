@@ -3,6 +3,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
+import { likeUnlikeMovie } from '../../store/movie'
 import { listMyList, addToMyList } from '../../store/mylist'
 import './browse-styles/mylist.css'
 
@@ -20,6 +21,11 @@ function MyListPage() {
         dispatch(addToMyList(profile_id, movieId))
     }
 
+    const handleLikeBtn = (e, movieId) => {
+        e.preventDefault()
+        dispatch(likeUnlikeMovie(profile_id, movieId))
+    }
+
     return (
         <div className='list-top-container'>
             <div className="list-content">
@@ -35,6 +41,7 @@ function MyListPage() {
                                             className='list-add'
                                             onClick={(e) => handleMyListBtn(e, movie.id)}
                                         >Add To My List</button>
+                                        <button onClick={(e) => handleLikeBtn(e, movie.id)}>Like</button>
                                     </div>
                                 </div>
                             )

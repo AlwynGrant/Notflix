@@ -115,20 +115,17 @@ def edit_mylist(profile_id):
     return {'my_list': [movie.to_dict() for movie in profile_watchlist.my_list]}
 
 
-# add or remove from movie list
+# like or unlike from movie list
 @profile_routes.route('/<int:profile_id>/like', methods=['POST'])
 @login_required
 def like_dislikes_movie(profile_id):
     movieId = request.json['movieId']
-    print(movieId, 'MOVIE ID@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+
     selected_movie = Movie.query.get(movieId)
-    print(selected_movie, 'MOVIEEEEEEEEEEEEE@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
     profile = Profile.query.get(profile_id)
-    print(selected_movie, 'MOVIEEEEEEEEEEEEE@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+
     likes = selected_movie.movie_likes
-    print(likes, 'LIKES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
     dislikes = selected_movie.movie_dislikes
-    print(dislikes, 'DISLIKES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
 
     if profile in likes:
         # unlike movie path

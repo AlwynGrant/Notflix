@@ -65,10 +65,8 @@
 
 .browse-car-featured {
     background-image: linear-gradient(rgba(14, 14, 14, 0.01),rgba(14, 14, 14), rgba(14,14,14), rgba(14,14,14));
-    /* background-color: #141414; */
     width: 100%;
     height: 220px;
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -120,7 +118,7 @@
 }
 
 .browse-img:hover {
-  transition-delay: 0.5s;
+    transition-delay: 0.5s;
   /* transform not behaving as I would like it to - important to keep it in check, remove after carousel fully complete possibly */
    transform: scale(1.5) !important;
 }
