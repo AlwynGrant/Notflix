@@ -34,6 +34,8 @@
 
     display: flex;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 1000;
 }
 
 .list-inner-container {
@@ -54,7 +56,7 @@
 }
 
 .list-description {
-    background-color: black;
+    background-color: #141414;
     color: white;
     width: 250px;
     height: 100px;

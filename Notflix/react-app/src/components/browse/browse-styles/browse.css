@@ -122,3 +122,29 @@
   /* transform not behaving as I would like it to - important to keep it in check, remove after carousel fully complete possibly */
    transform: scale(1.5) !important;
 }
+
+/* ========================================DESCRIPTION BUTTONS */
+
+.material-icons {
+    background-color: #141414;
+    color: white;
+    font-size: 30px;
+}
+
+.list-row-1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+.list-row-2 {
+    display: flex;
+    margin: 5px;
+}
+.list-row-3 {
+    display: flex;
+    margin: 5px;
+}
+
+.list-row-1-btns {
+    background-color: #141414;
+}
