@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 
 import { likeUnlikeMovie, listMyLikes } from '../../store/mylike'
 import { listMyList, addToMyList } from '../../store/mylist'
+import ReactPlayer from 'react-player'
 
 import './browse-styles/mylist.css'
 
@@ -38,6 +39,15 @@ function MyListPage() {
                         myList?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
+                                    <ReactPlayer
+                                        url={movie.movie_url}
+                                        className="react-player"
+                                        playing={true}
+                                        muted={true}
+                                        loop={true}
+
+                                        width="400px"
+                                    />
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
