@@ -17,8 +17,8 @@ const NavBarMovies = () => {
                         <img className='movies-logo' src={notflix_text_1000} />
                     </a>
 
-                    <a href={'https://github.com/AlwynGrant/Notflix'}>Github</a>
-                    <a href={'https://www.linkedin.com/in/alwyn-grant-928b091a3/'}>LinkdIn</a>
+                    <a target="_blank" rel="noreferrer" href={'https://github.com/AlwynGrant/Notflix'}>Github</a>
+                    <a target="_blank" rel="noreferrer" href={'https://www.linkedin.com/in/alwyn-grant-928b091a3/'}>LinkdIn</a>
                     <a href={`/profiles/${profile_id}/my-list`}>My list</a>
                 </div>
                 <div>

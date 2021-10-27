@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { listAllMovies } from '../../store/movie'
-import { getOneProfile, listOneProfile } from '../../store/profile'
+import { listOneProfile } from '../../store/profile'
 import { addToMyList, listMyList } from '../../store/mylist'
 import { listMyLikes, likeUnlikeMovie } from '../../store/mylike'
 import ReactPlayer from 'react-player'
@@ -61,6 +61,11 @@ function BrowsePage() {
         dispatch(likeUnlikeMovie(profile_id, movieId))
     }
 
+    const handleMovieBtn = (e, movieId) => {
+        e.preventDefault()
+        history.push(`/movies/${movieId}`)
+    }
+
     return (
         <div className='browse-top-container'>
             <div className='browse-preview-container'>
@@ -103,7 +108,7 @@ function BrowsePage() {
                                     <div className='list-description'>
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
-                                                <button className='list-row-1-btn-play'>
+                                                <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btn-play'>
                                                     <span class="material-icons">
                                                         play_circle_outline
                                                     </span>
@@ -180,7 +185,7 @@ function BrowsePage() {
                                     <div className='list-description'>
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
-                                                <button className='list-row-1-btns'>
+                                                <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btns'>
                                                     <span class="material-icons">
                                                         play_circle_outline
                                                     </span>
@@ -257,7 +262,7 @@ function BrowsePage() {
                                     <div className='list-description'>
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
-                                                <button className='list-row-1-btns'>
+                                                <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btns'>
                                                     <span class="material-icons">
                                                         play_circle_outline
                                                     </span>
@@ -334,7 +339,7 @@ function BrowsePage() {
                                     <div className='list-description'>
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
-                                                <button className='list-row-1-btns'>
+                                                <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btns'>
                                                     <span class="material-icons">
                                                         play_circle_outline
                                                     </span>
@@ -411,7 +416,7 @@ function BrowsePage() {
                                     <div className='list-description'>
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
-                                                <button className='list-row-1-btns'>
+                                                <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btns'>
                                                     <span class="material-icons">
                                                         play_circle_outline
                                                     </span>
@@ -488,7 +493,7 @@ function BrowsePage() {
                                     <div className='list-description'>
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
-                                                <button className='list-row-1-btns'>
+                                                <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btns'>
                                                     <span class="material-icons">
                                                         play_circle_outline
                                                     </span>
@@ -565,7 +570,7 @@ function BrowsePage() {
                                     <div className='list-description'>
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
-                                                <button className='list-row-1-btns'>
+                                                <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btns'>
                                                     <span class="material-icons">
                                                         play_circle_outline
                                                     </span>
@@ -642,7 +647,7 @@ function BrowsePage() {
                                     <div className='list-description'>
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
-                                                <button className='list-row-1-btns'>
+                                                <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btns'>
                                                     <span class="material-icons">
                                                         play_circle_outline
                                                     </span>
