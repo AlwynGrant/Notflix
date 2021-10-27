@@ -73,7 +73,7 @@
 }
 
 .list-inner-container:hover > div {
-    transition-delay: .6s;
+    
     transform: scale(1.3);
     opacity: 1;
 }
