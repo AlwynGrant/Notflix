@@ -41,6 +41,7 @@ Notflix is a direct clone of Netflix, a media streaming platform that houses mov
  - postgreSQL
  - Docker
  - Heroku
+ - Logo & Favicon generously provided by [Andrew Derocher](https://github.com/aDerocher)
 
 ## Future Features to implement
 
