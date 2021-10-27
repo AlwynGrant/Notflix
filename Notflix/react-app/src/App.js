@@ -14,8 +14,7 @@ import BrowseKidsPage from './components/browse-kids/BrowseKidsPage';
 import BrowsePage from './components/browse/BrowsePage';
 import MyListKidsPage from './components/browse-kids/MyListKidsPage';
 import MyListPage from './components/browse/MyListPage';
-import SignUpConfForm from './components/auth/SignUpConfForm';
-import SignUpValForm from './components/auth/SignUpValForm';
+import SignUpForm from './components/auth/SignUpForm';
 import LoginForm from './components/auth/LoginForm';
 import HomePage from './components/home/HomePage';
 import NavBarProfile from './components/navbar/NavBarProfile';
@@ -55,14 +54,9 @@ function App() {
           <LoginForm />
         </Route>
 
-        <Route path='/sign-up-info' exact={true}>
+        <Route path='/signup' exact={true}>
           <NavBarAuth />
-          <SignUpConfForm />
-        </Route>
-
-        <Route path='/sign-up-validate' exact={true}>
-          <NavBarAuth />
-          <SignUpValForm />
+          <SignUpForm />
         </Route>
 
         <ProtectedRoute path='/profiles' exact={true}>

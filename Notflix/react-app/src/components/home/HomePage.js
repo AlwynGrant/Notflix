@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux';
-import SignUpConfForm from '../auth/SignUpConfForm';
 import './homepage.css'
 
 import home_kids from './images/home_kids.png'

@@ -86,7 +86,11 @@ function BrowsePage() {
                         <button className='browse-preview-more-info-btn'>More Info</button>
                     </div>
                 </div>
-                <h1>FIRST_FEATURED_PREVIEW_CONTAINER</h1>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
             <div className="browse-car-featured">
                 <div className='slide-title'>Featured</div>
