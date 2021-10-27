@@ -5,8 +5,13 @@ import { listAllMovies } from '../../store/movie'
 import { getOneProfile, listOneProfile } from '../../store/profile'
 import { addToMyList, listMyList } from '../../store/mylist'
 import { listMyLikes, likeUnlikeMovie } from '../../store/mylike'
+import ReactPlayer from 'react-player'
 
-import './browse-styles/browse.css'
+
+import './browse-styles/mylist.css';
+import './browse-styles/browse.css';
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 
 
 function BrowsePage() {
@@ -28,8 +33,6 @@ function BrowsePage() {
     const thrillerMovies = movies?.filter(movie => movie.genres[0] === 'Thrillers')
     const featuredMovies = movies?.filter(movie => movie.genres[1] === 'Featured')
 
-
-
     useEffect(() => {
         dispatch(listAllMovies())
     }, [dispatch])
@@ -39,6 +42,14 @@ function BrowsePage() {
         dispatch(listMyList(profile_id))
         dispatch(listMyLikes(profile_id))
     }, [dispatch])
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    };
 
     const handleMyListBtn = (e, movieId) => {
         e.preventDefault()
@@ -53,23 +64,41 @@ function BrowsePage() {
     return (
         <div className='browse-top-container'>
             <div className='browse-preview-container'>
+                <ReactPlayer
+                    className='featured-video'
+                    playing={true}
+                    muted={true}
+                    loop={true}
+                    url={horrorMovies[8]?.movie_url}
+                    width='120%'
+                    height='120%'
+                />
                 <div className='browse-preview-feature-info'>
-                    <div className='browse-preview-feature-title'>FEATURED_TITLE_DIV</div>
-                    <div className='browse-preview-feature-summary'>FEATURED_SUMMARY_DIV</div>
+                    <div className='browse-preview-feature-title'>{horrorMovies[8]?.name}</div>
+                    <div className='browse-preview-feature-summary'>{horrorMovies[8]?.description}</div>
                     <div className='browse-preview-feature-btn-container'>
-                        <button className='browse-preview-play-btn'>PLAY_BUTTON</button>
-                        <button className='browse-preview-more-info-btn'>MORE_INFO_BUTTON</button>
+                        <button className='browse-preview-play-btn'>Play</button>
+                        <button className='browse-preview-more-info-btn'>More Info</button>
                     </div>
                 </div>
                 <h1>FIRST_FEATURED_PREVIEW_CONTAINER</h1>
             </div>
             <div className="browse-car-featured">
                 <div className='slide-title'>Featured</div>
-                <div className="browse-car-list">
+                    <div className="browse-car-list">
                     {
                         featuredMovies?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
+                                    <ReactPlayer
+                                        url={movie.movie_url}
+                                        className="react-player"
+                                        playing={true}
+                                        muted={true}
+                                        loop={true}
+
+                                        width="400px"
+                                        />
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
@@ -130,7 +159,7 @@ function BrowsePage() {
                             )
                         })
                     }
-                </div>
+                    </div>
             </div>
             <div className="browse-car-action">
                 <div className='slide-title'>Action & Adventure</div>
@@ -139,6 +168,14 @@ function BrowsePage() {
                         actionMovies?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
+                                    <ReactPlayer
+                                        url={movie.movie_url}
+                                        className="react-player"
+                                        playing={false}
+                                        muted={true}
+                                        loop={true}
+                                        width="400px"
+                                    />
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
@@ -208,6 +245,14 @@ function BrowsePage() {
                         animeMovies?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
+                                    <ReactPlayer
+                                        url={movie.movie_url}
+                                        className="react-player"
+                                        playing={false}
+                                        muted={true}
+                                        loop={true}
+                                        width="400px"
+                                    />
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
@@ -277,6 +322,14 @@ function BrowsePage() {
                         comedyMovies?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
+                                    <ReactPlayer
+                                        url={movie.movie_url}
+                                        className="react-player"
+                                        playing={false}
+                                        muted={true}
+                                        loop={true}
+                                        width="400px"
+                                    />
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
@@ -346,6 +399,14 @@ function BrowsePage() {
                         docuMovies?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
+                                    <ReactPlayer
+                                        url={movie.movie_url}
+                                        className="react-player"
+                                        playing={false}
+                                        muted={true}
+                                        loop={true}
+                                        width="400px"
+                                    />
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
@@ -415,6 +476,14 @@ function BrowsePage() {
                         horrorMovies?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
+                                    <ReactPlayer
+                                        url={movie.movie_url}
+                                        className="react-player"
+                                        playing={false}
+                                        muted={true}
+                                        loop={true}
+                                        width="400px"
+                                    />
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
@@ -484,6 +553,14 @@ function BrowsePage() {
                         romanceMovies?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
+                                    <ReactPlayer
+                                        url={movie.movie_url}
+                                        className="react-player"
+                                        playing={false}
+                                        muted={true}
+                                        loop={true}
+                                        width="400px"
+                                    />
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
@@ -553,6 +630,14 @@ function BrowsePage() {
                         thrillerMovies?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
+                                    <ReactPlayer
+                                        url={movie.movie_url}
+                                        className="react-player"
+                                        playing={false}
+                                        muted={true}
+                                        loop={true}
+                                        width="400px"
+                                    />
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
