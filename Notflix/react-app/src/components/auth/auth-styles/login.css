@@ -63,7 +63,7 @@
 
 
 .login-btn-div {
-    margin-top: 30px;
+    margin-top: 10px;
 
     display: flex;
     flex-direction: column;
@@ -76,7 +76,7 @@
     width: 315px;
     height: 50px;
 
-    margin: 30px 0px;
+    margin: 10px 0px;
 
     font-size: 15px;
     font-family: system-ui;
@@ -86,5 +86,12 @@
 
 .login-to-signup {
     color: white;
-    
+    margin: 10px;
+}
+
+.login-errors-container {
+    text-align: center;
+    color: red;
+    margin: 10px;
+    font-size: 15px;
 }

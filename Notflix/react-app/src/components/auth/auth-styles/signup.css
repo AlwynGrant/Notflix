@@ -115,7 +115,9 @@
 }
 
 
-.signup-errors {
-    color: white;
+.signup-errors-container {
+    text-align: center;
+    color: red;
+    margin: 10px;
     font-size: 15px;
 }

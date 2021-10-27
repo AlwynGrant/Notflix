@@ -67,6 +67,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    position: relative;
 }
 
 .profile-edit-name-input {
@@ -194,4 +195,11 @@
     width: 125px;
     height: 125px;
     text-overflow: clip;
+}
+
+.profile-edit-errors {
+    color: rgb(195, 0, 0);
+    position: absolute;
+    bottom: 55%;
+    left: 14px;
 }
