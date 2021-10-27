@@ -82,7 +82,7 @@ function BrowsePage() {
                     <div className='browse-preview-feature-title'>{horrorMovies[8]?.name}</div>
                     <div className='browse-preview-feature-summary'>{horrorMovies[8]?.description}</div>
                     <div className='browse-preview-feature-btn-container'>
-                        <button className='browse-preview-play-btn'>Play</button>
+                        <button onClick={(e) => handleMovieBtn(e, horrorMovies[8]?.id)} className='browse-preview-play-btn'>Play</button>
                         <button className='browse-preview-more-info-btn'>More Info</button>
                     </div>
                 </div>

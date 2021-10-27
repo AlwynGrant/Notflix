@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
@@ -12,6 +12,7 @@ import './browse-styles/mylist.css'
 function MyListPage() {
     const { profile_id } = useParams();
     const dispatch = useDispatch();
+    const history = useHistory();
     const myList = useSelector(state => state.mylist)
     const myLike = useSelector(state => state.mylike)
 
@@ -28,6 +29,11 @@ function MyListPage() {
     const handleLikeBtn = (e, movieId) => {
         e.preventDefault()
         dispatch(likeUnlikeMovie(profile_id, movieId))
+    }
+
+    const handleMovieBtn = (e, movieId) => {
+        e.preventDefault()
+        history.push(`/movies/${movieId}`)
     }
 
     return (
@@ -52,7 +58,7 @@ function MyListPage() {
                                     <div className='list-description'>
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
-                                                <button className='list-row-1-btn-play'>
+                                                <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btn-play'>
                                                     <span class="material-icons">
                                                         play_circle_outline
                                                     </span>
