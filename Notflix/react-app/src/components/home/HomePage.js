@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux';
+import SignUpForm from '../auth/SignUpForm';
 import './homepage.css'
 
 import home_kids from './images/home_kids.png'
@@ -20,6 +21,10 @@ function HomePage() {
         }
     })
 
+    const handleGetStarted = () => {
+        history.push('/signup')
+    }
+
     return (
        <div className='home-container'>
            <div className='home-sub-container-1'>
@@ -37,14 +42,7 @@ function HomePage() {
                             Ready to watch? Enter your email to create or restart your membership.
                         </div>
                         <div className='under-landing-bottom-text'>
-                            <input
-                                className='landing-signup-input'
-                                placeholder='Email address'
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            >
-                            </input>
-                            <button  className='landing-signup-button'>Get Started</button>
+                            <button onClick={() => handleGetStarted()} className='landing-signup-button'>Get Started</button>
                         </div>
                    </div>
                </div>
@@ -132,7 +130,6 @@ function HomePage() {
                             Ready to watch? Enter your email to create or restart your membership.
                         </div>
                         <div className='under-landing-bottom-text'>
-                            <input className='landing-signup-input' placeholder='Email address'></input>
                             <button className='landing-signup-button'>Get Started</button>
                         </div>
                     </div>
