@@ -7,15 +7,15 @@ Notflix is a direct clone of Netflix, a media streaming platform that houses mov
 ## App Preview
 
 #### Home Page
-
+Picture coming soon!
 ![]()
 
 #### Browse Feed
-
+Picture coming soon!
 ![]()
 
 #### Movie Modal
-
+Picture coming soon!
 ![]()
 
 
