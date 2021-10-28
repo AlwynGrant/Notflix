@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { listAllMovies } from '../../store/movie'
-import { listOneProfile } from '../../store/profile'
+import { listAllProfiles } from '../../store/profile'
 import { addToMyList, listMyList } from '../../store/mylist'
 import { listMyLikes, likeUnlikeMovie } from '../../store/mylike'
 import ReactPlayer from 'react-player'
@@ -38,7 +38,7 @@ function BrowsePage() {
     }, [dispatch])
 
     useEffect(() => {
-        dispatch(listOneProfile(profile_id))
+        dispatch(listAllProfiles(profile_id))
         dispatch(listMyList(profile_id))
         dispatch(listMyLikes(profile_id))
     }, [dispatch])
