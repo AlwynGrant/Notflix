@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
@@ -33,7 +33,7 @@ function MyListPage() {
 
     const handleMovieBtn = (e, movieId) => {
         e.preventDefault()
-        history.push(`/movies/${movieId}`)
+        history.push(`/profiles/${profile_id}/movies/${movieId}`)
     }
 
     return (

@@ -5,14 +5,12 @@ import { listAllMovies } from '../../store/movie'
 import { listAllProfiles } from '../../store/profile'
 import { addToMyList, listMyList } from '../../store/mylist'
 import { listMyLikes, likeUnlikeMovie } from '../../store/mylike'
+import MoreInfoModal from '../modals/MovieInfoModal'
 import ReactPlayer from 'react-player'
 
 
 import './browse-styles/mylist.css';
 import './browse-styles/browse.css';
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-
 
 function BrowsePage() {
     const { profile_id } = useParams();
@@ -32,6 +30,8 @@ function BrowsePage() {
     const romanceMovies = movies?.filter(movie => movie.genres[0] === 'Romance')
     const thrillerMovies = movies?.filter(movie => movie.genres[0] === 'Thrillers')
     const featuredMovies = movies?.filter(movie => movie.genres[1] === 'Featured')
+
+    const [showMovieModal, setShowMovieModal] = useState(false);
 
     useEffect(() => {
         dispatch(listAllMovies())
@@ -66,6 +66,11 @@ function BrowsePage() {
         history.push(`/profiles/${profile_id}/movies/${movieId}`)
     }
 
+    const handleMovieModalClose = (e) => {
+        e.preventDefault()
+        setShowMovieModal(true)
+    }
+
     return (
         <div className='browse-top-container'>
             <div className='browse-preview-container'>
@@ -81,7 +86,7 @@ function BrowsePage() {
                     <div className='browse-preview-feature-summary'>{horrorMovies[2]?.description}</div>
                     <div className='browse-preview-feature-btn-container'>
                         <button onClick={(e) => handleMovieBtn(e, horrorMovies[2]?.id)} className='browse-preview-play-btn'>Play</button>
-                        <button className='browse-preview-more-info-btn'>More Info</button>
+                        <button onClick={(e) => handleMovieModalClose(e)} className='browse-preview-more-info-btn'>More Info</button>
                     </div>
                 </div>
                 <div></div>
@@ -140,11 +145,11 @@ function BrowsePage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns more-info'>
+                                            {/* <button onClick={(e) => handleMovieModalClose(e)} className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
-                                            </button>
+                                            </button> */}
                                         </div>
                                         <div className='list-row-2'>
                                             <div className='list-row-2-rating'>{movie.rating}%</div>
@@ -160,6 +165,14 @@ function BrowsePage() {
                                             }
                                         </div>
                                     </div>
+                                    {/* {
+                                        showMovieModal && (
+                                            <MoreInfoModal
+                                                show={showMovieModal}
+                                                onClose={() => setShowMovieModal(false)}
+                                            />
+                                        )
+                                    } */}
                                 </div>
                             )
                         })
@@ -217,11 +230,11 @@ function BrowsePage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns more-info'>
+                                            {/* <button className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
-                                            </button>
+                                            </button> */}
                                         </div>
                                         <div className='list-row-2'>
                                             <div className='list-row-2-rating'>{movie.rating}%</div>
@@ -294,11 +307,11 @@ function BrowsePage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns more-info'>
+                                            {/* <button className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
-                                            </button>
+                                            </button> */}
                                         </div>
                                         <div className='list-row-2'>
                                             <div className='list-row-2-rating'>{movie.rating}%</div>
@@ -371,11 +384,11 @@ function BrowsePage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns more-info'>
+                                            {/* <button className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
-                                            </button>
+                                            </button> */}
                                         </div>
                                         <div className='list-row-2'>
                                             <div className='list-row-2-rating'>{movie.rating}%</div>
@@ -448,11 +461,11 @@ function BrowsePage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns more-info'>
+                                            {/* <button className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
-                                            </button>
+                                            </button> */}
                                         </div>
                                         <div className='list-row-2'>
                                             <div className='list-row-2-rating'>{movie.rating}%</div>
@@ -525,11 +538,11 @@ function BrowsePage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns more-info'>
+                                            {/* <button className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
-                                            </button>
+                                            </button> */}
                                         </div>
                                         <div className='list-row-2'>
                                             <div className='list-row-2-rating'>{movie.rating}%</div>
@@ -602,11 +615,11 @@ function BrowsePage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns more-info'>
+                                            {/* <button className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
-                                            </button>
+                                            </button> */}
                                         </div>
                                         <div className='list-row-2'>
                                             <div className='list-row-2-rating'>{movie.rating}%</div>
@@ -679,11 +692,11 @@ function BrowsePage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns more-info'>
+                                            {/* <button className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
-                                            </button>
+                                            </button> */}
                                         </div>
                                         <div className='list-row-2'>
                                             <div className='list-row-2-rating'>{movie.rating}%</div>
@@ -705,6 +718,15 @@ function BrowsePage() {
                     }
                 </div>
             </div>
+            {
+                showMovieModal && (
+                    <MoreInfoModal
+                        movie={horrorMovies[2]}
+                        show={showMovieModal}
+                        onClose={() => setShowMovieModal(false)}
+                    />
+                )
+            }
         </div>
     );
 }
