@@ -9,7 +9,7 @@ import mobile_0819 from './images/mobile_0819.jpg'
 import tv_pg from './images/tv_bg.png'
 import multi_device_bg from './images/multi_device_bg.png'
 import down_arrow from './images/down_arrow.png'
-import up_arrow from './images/up_arrow.png'
+
 
 function HomePage() {
     const history = useHistory()
@@ -180,7 +180,7 @@ function HomePage() {
                             Ready to watch? Enter your email to create or restart your membership.
                         </div>
                         <div className='under-landing-bottom-text'>
-                            <button className='landing-signup-button'>Get Started</button>
+                            <button onClick={() => handleGetStarted()} className='landing-signup-button'>Get Started</button>
                         </div>
                     </div>
                 </div>
