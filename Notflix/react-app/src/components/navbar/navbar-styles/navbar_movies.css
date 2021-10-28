@@ -79,7 +79,7 @@ a {
 .profile-dropdown-container {
     background-color: rgba(0, 0, 0, 0.7);
     width: 200px;
-    height: 250px;
+    height: 100%;
     border-radius: 4px;
 
     position: absolute;
@@ -130,4 +130,6 @@ a {
     color: rgb(255, 255, 255);
     font-weight: bold;
     cursor: pointer;
+
+    margin: 20px 0px;
 }
