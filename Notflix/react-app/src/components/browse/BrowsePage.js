@@ -74,15 +74,13 @@ function BrowsePage() {
                     playing={true}
                     muted={true}
                     loop={true}
-                    url={horrorMovies[8]?.movie_url}
-                    width='120%'
-                    height='120%'
+                    url={horrorMovies[2]?.movie_url}
                 />
                 <div className='browse-preview-feature-info'>
-                    <div className='browse-preview-feature-title'>{horrorMovies[8]?.name}</div>
-                    <div className='browse-preview-feature-summary'>{horrorMovies[8]?.description}</div>
+                    <div className='browse-preview-feature-title'>{horrorMovies[2]?.name}</div>
+                    <div className='browse-preview-feature-summary'>{horrorMovies[2]?.description}</div>
                     <div className='browse-preview-feature-btn-container'>
-                        <button onClick={(e) => handleMovieBtn(e, horrorMovies[8]?.id)} className='browse-preview-play-btn'>Play</button>
+                        <button onClick={(e) => handleMovieBtn(e, horrorMovies[2]?.id)} className='browse-preview-play-btn'>Play</button>
                         <button className='browse-preview-more-info-btn'>More Info</button>
                     </div>
                 </div>
@@ -105,8 +103,6 @@ function BrowsePage() {
                                         playing={true}
                                         muted={true}
                                         loop={true}
-
-                                        width="400px"
                                         />
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
