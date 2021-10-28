@@ -16,6 +16,11 @@ def email_is_email(form, field):
     if '@' not in email:
         raise ValidationError('Please enter a valid email address.')
 
+def email_too_long(form, field):
+    email = field.data
+    if len(email) > 255:
+        raise ValidationError('Email cannot be longer than 255 characters.')
+
 def password_str(form, field):
     password = field.data
     if len(password) <= 5:
@@ -23,5 +28,5 @@ def password_str(form, field):
 
 
 class SignUpForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired(), user_exists, email_is_email])
+    email = StringField('Email', validators=[DataRequired(), user_exists, email_is_email, email_too_long])
     password = StringField('Password', validators=[DataRequired(), password_str])

@@ -41,7 +41,7 @@ function ProfileEditPage() {
             profile_img: icon,
             kids: isForKids
         };
-        if (username.length > 2) {
+        if (username.length > 2 && username.length <= 50) {
             dispatch(changeProfile(editThisProfile, profile_id)).then(() => {
                 setUsername("");
                 setIsForKids(false);
@@ -49,7 +49,7 @@ function ProfileEditPage() {
             dispatch(listAllProfiles())
             history.push('/profiles/manage');
         } else {
-            setErrors(['Username must be 3 or more characters'])
+            setErrors(['Username must be between 3 & 50 characters.'])
         }
     };
 

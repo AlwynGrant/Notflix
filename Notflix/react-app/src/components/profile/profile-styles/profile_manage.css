@@ -126,3 +126,27 @@
 .profile-link-mng-new {
     text-decoration: none;
 }
+
+.mng-overlay {
+    text-decoration: none;
+}
+
+.mng-over-text {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    font-weight: bold;
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0.85;
+    transition: 200ms ease-in-out;
+}
+
+.mng-over-text:hover {
+    opacity: 1;
+}
