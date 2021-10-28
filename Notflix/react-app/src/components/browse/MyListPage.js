@@ -90,7 +90,7 @@ function MyListPage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns'>
+                                            <button className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
