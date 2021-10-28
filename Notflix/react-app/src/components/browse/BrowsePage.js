@@ -2,25 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { listAllMovies } from '../../store/movie'
-import { listOneProfile } from '../../store/profile'
+import { listAllProfiles } from '../../store/profile'
 import { addToMyList, listMyList } from '../../store/mylist'
 import { listMyLikes, likeUnlikeMovie } from '../../store/mylike'
+import MoreInfoModal from '../modals/MovieInfoModal'
 import ReactPlayer from 'react-player'
 
 
 import './browse-styles/mylist.css';
 import './browse-styles/browse.css';
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-
 
 function BrowsePage() {
     const { profile_id } = useParams();
     const history = useHistory();
     const dispatch = useDispatch();
 
+    // const profile = useSelector(state => state.profile[0])
     const movies = useSelector(state => state.movies)
-    const profile = useSelector(state => state.profile[0])
     const myList = useSelector(state => state.mylist)
     const myLike = useSelector(state => state.mylike)
 
@@ -33,12 +31,14 @@ function BrowsePage() {
     const thrillerMovies = movies?.filter(movie => movie.genres[0] === 'Thrillers')
     const featuredMovies = movies?.filter(movie => movie.genres[1] === 'Featured')
 
+    const [showMovieModal, setShowMovieModal] = useState(false);
+
     useEffect(() => {
         dispatch(listAllMovies())
     }, [dispatch])
 
     useEffect(() => {
-        dispatch(listOneProfile(profile_id))
+        dispatch(listAllProfiles(profile_id))
         dispatch(listMyList(profile_id))
         dispatch(listMyLikes(profile_id))
     }, [dispatch])
@@ -63,7 +63,12 @@ function BrowsePage() {
 
     const handleMovieBtn = (e, movieId) => {
         e.preventDefault()
-        history.push(`/movies/${movieId}`)
+        history.push(`/profiles/${profile_id}/movies/${movieId}`)
+    }
+
+    const handleMovieModalClose = (e) => {
+        e.preventDefault()
+        setShowMovieModal(true)
     }
 
     return (
@@ -71,7 +76,7 @@ function BrowsePage() {
             <div className='browse-preview-container'>
                 <ReactPlayer
                     className='featured-video'
-                    playing={true}
+                    playing={false}
                     muted={true}
                     loop={true}
                     url={horrorMovies[2]?.movie_url}
@@ -81,7 +86,7 @@ function BrowsePage() {
                     <div className='browse-preview-feature-summary'>{horrorMovies[2]?.description}</div>
                     <div className='browse-preview-feature-btn-container'>
                         <button onClick={(e) => handleMovieBtn(e, horrorMovies[2]?.id)} className='browse-preview-play-btn'>Play</button>
-                        <button className='browse-preview-more-info-btn'>More Info</button>
+                        <button onClick={(e) => handleMovieModalClose(e)} className='browse-preview-more-info-btn'>More Info</button>
                     </div>
                 </div>
                 <div></div>
@@ -97,13 +102,13 @@ function BrowsePage() {
                         featuredMovies?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
-                                    <ReactPlayer
+                                    {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
-                                        playing={true}
+                                        playing={false}
                                         muted={true}
                                         loop={true}
-                                        />
+                                        /> */}
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
@@ -140,11 +145,11 @@ function BrowsePage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns'>
+                                            {/* <button onClick={(e) => handleMovieModalClose(e)} className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
-                                            </button>
+                                            </button> */}
                                         </div>
                                         <div className='list-row-2'>
                                             <div className='list-row-2-rating'>{movie.rating}%</div>
@@ -160,6 +165,14 @@ function BrowsePage() {
                                             }
                                         </div>
                                     </div>
+                                    {/* {
+                                        showMovieModal && (
+                                            <MoreInfoModal
+                                                show={showMovieModal}
+                                                onClose={() => setShowMovieModal(false)}
+                                            />
+                                        )
+                                    } */}
                                 </div>
                             )
                         })
@@ -173,14 +186,14 @@ function BrowsePage() {
                         actionMovies?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
-                                    <ReactPlayer
+                                    {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
                                         playing={false}
                                         muted={true}
                                         loop={true}
                                         width="400px"
-                                    />
+                                    /> */}
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
@@ -217,11 +230,11 @@ function BrowsePage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns'>
+                                            {/* <button className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
-                                            </button>
+                                            </button> */}
                                         </div>
                                         <div className='list-row-2'>
                                             <div className='list-row-2-rating'>{movie.rating}%</div>
@@ -250,14 +263,14 @@ function BrowsePage() {
                         animeMovies?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
-                                    <ReactPlayer
+                                    {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
                                         playing={false}
                                         muted={true}
                                         loop={true}
                                         width="400px"
-                                    />
+                                    /> */}
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
@@ -294,11 +307,11 @@ function BrowsePage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns'>
+                                            {/* <button className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
-                                            </button>
+                                            </button> */}
                                         </div>
                                         <div className='list-row-2'>
                                             <div className='list-row-2-rating'>{movie.rating}%</div>
@@ -327,14 +340,14 @@ function BrowsePage() {
                         comedyMovies?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
-                                    <ReactPlayer
+                                    {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
                                         playing={false}
                                         muted={true}
                                         loop={true}
                                         width="400px"
-                                    />
+                                    /> */}
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
@@ -371,11 +384,11 @@ function BrowsePage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns'>
+                                            {/* <button className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
-                                            </button>
+                                            </button> */}
                                         </div>
                                         <div className='list-row-2'>
                                             <div className='list-row-2-rating'>{movie.rating}%</div>
@@ -404,14 +417,14 @@ function BrowsePage() {
                         docuMovies?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
-                                    <ReactPlayer
+                                    {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
                                         playing={false}
                                         muted={true}
                                         loop={true}
                                         width="400px"
-                                    />
+                                    /> */}
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
@@ -448,11 +461,11 @@ function BrowsePage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns'>
+                                            {/* <button className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
-                                            </button>
+                                            </button> */}
                                         </div>
                                         <div className='list-row-2'>
                                             <div className='list-row-2-rating'>{movie.rating}%</div>
@@ -481,14 +494,14 @@ function BrowsePage() {
                         horrorMovies?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
-                                    <ReactPlayer
+                                    {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
                                         playing={false}
                                         muted={true}
                                         loop={true}
                                         width="400px"
-                                    />
+                                    /> */}
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
@@ -525,11 +538,11 @@ function BrowsePage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns'>
+                                            {/* <button className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
-                                            </button>
+                                            </button> */}
                                         </div>
                                         <div className='list-row-2'>
                                             <div className='list-row-2-rating'>{movie.rating}%</div>
@@ -558,14 +571,14 @@ function BrowsePage() {
                         romanceMovies?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
-                                    <ReactPlayer
+                                    {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
                                         playing={false}
                                         muted={true}
                                         loop={true}
                                         width="400px"
-                                    />
+                                    /> */}
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
@@ -602,11 +615,11 @@ function BrowsePage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns'>
+                                            {/* <button className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
-                                            </button>
+                                            </button> */}
                                         </div>
                                         <div className='list-row-2'>
                                             <div className='list-row-2-rating'>{movie.rating}%</div>
@@ -635,14 +648,14 @@ function BrowsePage() {
                         thrillerMovies?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
-                                    <ReactPlayer
+                                    {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
                                         playing={false}
                                         muted={true}
                                         loop={true}
                                         width="400px"
-                                    />
+                                    /> */}
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
@@ -679,11 +692,11 @@ function BrowsePage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns'>
+                                            {/* <button className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>
-                                            </button>
+                                            </button> */}
                                         </div>
                                         <div className='list-row-2'>
                                             <div className='list-row-2-rating'>{movie.rating}%</div>
@@ -705,6 +718,15 @@ function BrowsePage() {
                     }
                 </div>
             </div>
+            {
+                showMovieModal && (
+                    <MoreInfoModal
+                        movie={horrorMovies[2]}
+                        show={showMovieModal}
+                        onClose={() => setShowMovieModal(false)}
+                    />
+                )
+            }
         </div>
     );
 }

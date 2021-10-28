@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
@@ -33,7 +33,7 @@ function MyListPage() {
 
     const handleMovieBtn = (e, movieId) => {
         e.preventDefault()
-        history.push(`/movies/${movieId}`)
+        history.push(`/profiles/${profile_id}/movies/${movieId}`)
     }
 
     return (
@@ -45,15 +45,15 @@ function MyListPage() {
                         myList?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
-                                    <ReactPlayer
+                                    {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
-                                        playing={true}
+                                        playing={false}
                                         muted={true}
-                                        loop={true}
+                                        loop={false}
 
                                         width="400px"
-                                    />
+                                    /> */}
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
@@ -90,7 +90,7 @@ function MyListPage() {
                                                         </button>
                                                 }
                                             </div>
-                                            <button className='list-row-1-btns'>
+                                            <button className='list-row-1-btns more-info'>
                                                 <span class="material-icons">
                                                     arrow_circle_down
                                                 </span>

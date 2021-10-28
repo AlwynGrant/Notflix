@@ -17,7 +17,6 @@ function ProfilePage() {
 
     return (
         <div className='profile-page-container'>
-            {/* <LogoutButton /> */}
             <div className='profile-form'>
                 <div className='profile-question'>
                     Who's watching?

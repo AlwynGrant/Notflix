@@ -4,15 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { authenticate } from './store/session';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 
-import KidsVideoPlayerPage from './components/video-player/KidsVideoPlayerPage';
+// import KidsVideoPlayerPage from './components/video-player/KidsVideoPlayerPage';
+// import BrowseKidsPage from './components/browse-kids/BrowseKidsPage';
 import VideoPlayerPage from './components/video-player/VideoPlayerPage';
 import ProfileManagePage from './components/profile/ProfileManagePage.js';
 import ProfileEditPage from './components/profile/ProfileEditPage';
 import ProfileNewPage from './components/profile/ProfileNewPage';
 import ProfilePage from './components/profile/ProfilePage';
-import BrowseKidsPage from './components/browse-kids/BrowseKidsPage';
 import BrowsePage from './components/browse/BrowsePage';
-import MyListKidsPage from './components/browse-kids/MyListKidsPage';
+// import MyListKidsPage from './components/browse-kids/MyListKidsPage';
 import MyListPage from './components/browse/MyListPage';
 import SignUpForm from './components/auth/SignUpForm';
 import LoginForm from './components/auth/LoginForm';
@@ -84,27 +84,27 @@ function App() {
           <MyListPage />
         </ProtectedRoute>
 
-        <ProtectedRoute path='/profiles/:profile_id/my_kids_list' exact={true}>
+        {/* <ProtectedRoute path='/profiles/:profile_id/my_kids_list' exact={true}>
           <NavBarMovies />
           <MyListKidsPage />
-        </ProtectedRoute>
+        </ProtectedRoute> */}
 
         <ProtectedRoute path='/profiles/:profile_id/movies' exact={true}>
           <NavBarMovies />
           <BrowsePage />
         </ProtectedRoute>
 
-        <ProtectedRoute path='/movies/:movieId' exact={true}>
+        <ProtectedRoute path='/profiles/:profile_id/movies/:movieId' exact={true}>
           <VideoPlayerPage />
         </ProtectedRoute>
 
-        <ProtectedRoute path='/movies-kids' exact={true}>
+        {/* <ProtectedRoute path='/movies-kids' exact={true}>
           <BrowseKidsPage />
         </ProtectedRoute>
 
         <ProtectedRoute path='/movies-kids/:movieId' exact={true}>
           <KidsVideoPlayerPage />
-        </ProtectedRoute>
+        </ProtectedRoute> */}
 
       </Switch>
     </BrowserRouter>
