@@ -9,7 +9,7 @@ import './video.css'
 function VideoPlayerPage() {
     const history = useHistory();
     const dispatch = useDispatch();
-    const { movieId } = useParams();
+    const { profile_id, movieId } = useParams();
     const movie = useSelector(state => state.movies[0])
 
     useEffect(() => {
@@ -18,11 +18,11 @@ function VideoPlayerPage() {
 
     const handleBackBtn = (e) => {
         e.preventDefault();
-        history.push(`/profiles/${null}`) // needs to be addressed
+        history.push(`/profiles/${profile_id}/movies`)
     }
     return (
         <div className='movie-player-container'>
-            <button className='movie-player-back-btn'>
+            <button onClick={(e) => handleBackBtn(e)} className='movie-player-back-btn'>
                 <span class="material-icons">
                 arrow_back
                 </span>
@@ -33,7 +33,7 @@ function VideoPlayerPage() {
                 muted={false}
                 controls={true}
                 url={movie?.movie_url}
-                volume='.5'
+                volume='.3'
                 width='100%'
                 height='100%'
             />

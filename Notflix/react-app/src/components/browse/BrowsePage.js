@@ -19,8 +19,8 @@ function BrowsePage() {
     const history = useHistory();
     const dispatch = useDispatch();
 
+    // const profile = useSelector(state => state.profile[0])
     const movies = useSelector(state => state.movies)
-    const profile = useSelector(state => state.profile[0])
     const myList = useSelector(state => state.mylist)
     const myLike = useSelector(state => state.mylike)
 
@@ -63,7 +63,7 @@ function BrowsePage() {
 
     const handleMovieBtn = (e, movieId) => {
         e.preventDefault()
-        history.push(`/movies/${movieId}`)
+        history.push(`/profiles/${profile_id}/movies/${movieId}`)
     }
 
     return (
