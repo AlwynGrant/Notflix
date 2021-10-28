@@ -13,7 +13,6 @@ function ProfileNewPage() {
     const [username, setUsername] = useState('')
     const [isForKids, setIsForKids] = useState(false)
     const [errors, setErrors] = useState([])
-    console.log(username.length)
 
     const accountHolder = useSelector(state => state.session.user);
 
