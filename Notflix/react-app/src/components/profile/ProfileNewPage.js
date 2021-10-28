@@ -39,14 +39,14 @@ function ProfileNewPage() {
             kids: isForKids
         };
 
-        if (username.length > 2) {
+        if (username.length > 2 && username.length <= 50) {
             dispatch(createProfile(newProfile)).then(() => {
                 setUsername("");
                 setIsForKids(false);
             });
             history.push('/profiles');
         } else {
-            setErrors(['Username must be 3 or more characters'])
+            setErrors(['Username must be between 3 & 50 characters.'])
         }
     };
 
