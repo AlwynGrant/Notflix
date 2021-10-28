@@ -1,4 +1,4 @@
-.login-container {
+.signup-container {
     background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.3)), url('../../home/images/homeMovieList.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -14,10 +14,10 @@
     align-items: center;
 }
 
-.login-form {
+.signup-form {
     background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8));
     width: 450px;
-    height: 500px;
+    height: 600px;
 
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@
     border-radius: 4px;
 }
 
-.login-text {
+.signup-text {
     width: 315px;
     height: 35px;
 
@@ -37,18 +37,7 @@
     color: white;
 }
 
-.login-email-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-email-input {
-    width: 315px;
-    height: 50px;
-}
-
-.login-password-div {
+.signup-email-div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,14 +45,51 @@
     margin-top: 15px;
 }
 
-.login-password-input {
+.signup-email-input {
+    width: 315px;
+    height: 50px;
+}
+
+.signup-username-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-username-input {
+    width: 315px;
+    height: 50px;
+}
+
+.signup-password-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 15px;
+}
+
+.signup-password-input {
+    width: 315px;
+    height: 50px;
+}
+
+.signup-repeat-password-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 15px;
+}
+
+.signup-repeat-password-input {
     width: 315px;
     height: 50px;
 }
 
 
-.login-btn-div {
-    margin-top: 10px;
+.signup-btn-div {
+    margin-top: 30px;
 
     display: flex;
     flex-direction: column;
@@ -71,12 +97,12 @@
     align-items: center;
 }
 
-.login-btn {
+.signup-btn {
     background-color: rgb(187, 16, 16);
     width: 315px;
     height: 50px;
 
-    margin: 10px 0px;
+    margin: 30px 0px;
 
     font-size: 15px;
     font-family: system-ui;
@@ -84,12 +110,12 @@
     color: white;
 }
 
-.login-to-signup {
+.signup-to-login {
     color: white;
-    margin: 10px;
 }
 
-.login-errors-container {
+
+.signup-errors-container {
     text-align: center;
     color: red;
     margin: 10px;

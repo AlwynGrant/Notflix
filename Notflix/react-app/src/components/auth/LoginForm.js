@@ -10,6 +10,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  console.log(errors)
 
   const onLogin = async (e) => {
     e.preventDefault();
@@ -40,15 +41,15 @@ const LoginForm = () => {
     <div className='login-container'>
       <form className='login-form' onSubmit={onLogin}>
         <div className='login-text'>Log in</div>
-        <div>
+        <div className='login-errors-container'>
           {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
+            <div className='login-errors' key={ind}>{error}</div>
           ))}
         </div>
         <div className='login-email-div'>
           <input
             className='login-email-input'
-            name='email'
+            name='Email'
             type='text'
             placeholder='Email'
             value={email}
@@ -58,7 +59,7 @@ const LoginForm = () => {
         <div className='login-password-div'>
           <input
             className='login-password-input'
-            name='password'
+            name='Password'
             type='password'
             placeholder='Password'
             value={password}
@@ -66,9 +67,9 @@ const LoginForm = () => {
           />
         </div>
         <div className='login-btn-div'>
-          <button className='login-btn' onClick={(e) => handleSubmitDEMO(e)}>Demo</button>
           <button className='login-btn' type='submit'>Login</button>
-          <div className='login-to-signup'>New to Notflix? <a href='/'>Sign up</a></div>
+          <button className='login-btn' onClick={(e) => handleSubmitDEMO(e)}>Demo</button>
+          <div className='login-to-signup'>New to Notflix? <a href='/signup'>Sign up</a></div>
         </div>
       </form>
     </div>

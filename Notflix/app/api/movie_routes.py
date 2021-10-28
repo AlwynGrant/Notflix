@@ -15,4 +15,5 @@ def movies():
 @movie_routes.route('/<int:movie_id>')
 @login_required
 def watch_movie(movie_id):
-    pass
+    movie = Movie.query.get(movie_id)
+    return movie.to_dict()

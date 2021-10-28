@@ -13,6 +13,7 @@ function ProfileEditPage() {
     const [icon, setIcon] = useState(undefined)
     const [username, setUsername] = useState('')
     const [isForKids, setIsForKids] = useState(false)
+    const [errors, setErrors] = useState([])
 
     const accountHolder = useSelector(state => state.session.user);
     const profile = useSelector(state => state.profile[0]);
@@ -38,13 +39,16 @@ function ProfileEditPage() {
             profile_img: icon,
             kids: isForKids
         };
-
-        dispatch(changeProfile(editThisProfile, profile_id)).then(() => {
-            setUsername("");
-            setIsForKids(false);
-        });
-        dispatch(listAllProfiles())
-        history.push('/profiles/manage');
+        if (username.length > 2) {
+            dispatch(changeProfile(editThisProfile, profile_id)).then(() => {
+                setUsername("");
+                setIsForKids(false);
+            });
+            dispatch(listAllProfiles())
+            history.push('/profiles/manage');
+        } else {
+            setErrors(['Username must be 3 or more characters'])
+        }
     };
 
     const handleSubmitDelete = (e) => {
@@ -93,6 +97,9 @@ function ProfileEditPage() {
                             </select>
                     </div>
                         <div className='profile-edit-input-container'>
+                        {errors.map((error, ind) => (
+                            <div className='profile-edit-errors' key={ind}>{error}</div>
+                        ))}
                             <input
                                 className='profile-edit-name-input'
                                 placeholder='Name'

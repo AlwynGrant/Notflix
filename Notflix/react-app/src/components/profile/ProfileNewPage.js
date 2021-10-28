@@ -12,7 +12,9 @@ function ProfileNewPage() {
     const [icon, setIcon] = useState(undefined)
     const [username, setUsername] = useState('')
     const [isForKids, setIsForKids] = useState(false)
-    console.log(icon, username, isForKids)
+    const [errors, setErrors] = useState([])
+    console.log(username.length)
+
     const accountHolder = useSelector(state => state.session.user);
 
     const iconArr = [
@@ -37,12 +39,15 @@ function ProfileNewPage() {
             kids: isForKids
         };
 
-        dispatch(createProfile(newProfile)).then(() => {
-            setUsername("");
-            setIsForKids(false);
-        });
-
-        history.push('/profiles');
+        if (username.length > 2) {
+            dispatch(createProfile(newProfile)).then(() => {
+                setUsername("");
+                setIsForKids(false);
+            });
+            history.push('/profiles');
+        } else {
+            setErrors(['Username must be 3 or more characters'])
+        }
     };
 
     const handleCancel = (e) => {
@@ -79,6 +84,9 @@ function ProfileNewPage() {
                             }
                         </select>
                         <div className='profile-new-input-container'>
+                            {errors.map((error, ind) => (
+                                <div className='profile-new-errors' key={ind}>{error}</div>
+                            ))}
                             <input
                                 className='profile-new-name-input'
                                 placeholder='Name'

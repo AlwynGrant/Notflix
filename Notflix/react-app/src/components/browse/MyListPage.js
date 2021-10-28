@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
 import { likeUnlikeMovie, listMyLikes } from '../../store/mylike'
 import { listMyList, addToMyList } from '../../store/mylist'
+import ReactPlayer from 'react-player'
 
 import './browse-styles/mylist.css'
 
 function MyListPage() {
     const { profile_id } = useParams();
     const dispatch = useDispatch();
+    const history = useHistory();
     const myList = useSelector(state => state.mylist)
     const myLike = useSelector(state => state.mylike)
 
@@ -29,6 +31,11 @@ function MyListPage() {
         dispatch(likeUnlikeMovie(profile_id, movieId))
     }
 
+    const handleMovieBtn = (e, movieId) => {
+        e.preventDefault()
+        history.push(`/movies/${movieId}`)
+    }
+
     return (
         <div className='list-top-container'>
             <div className="list-content">
@@ -38,11 +45,20 @@ function MyListPage() {
                         myList?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
+                                    <ReactPlayer
+                                        url={movie.movie_url}
+                                        className="react-player"
+                                        playing={true}
+                                        muted={true}
+                                        loop={true}
+
+                                        width="400px"
+                                    />
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
-                                                <button className='list-row-1-btn-play'>
+                                                <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btn-play'>
                                                     <span class="material-icons">
                                                         play_circle_outline
                                                     </span>

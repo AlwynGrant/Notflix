@@ -75,6 +75,7 @@
 }
 
 .profile-new-input-container {
+    position: relative;
     width: 450px;
     height: 125px;
 
@@ -189,4 +190,11 @@
     width: 125px;
     height: 125px;
     text-overflow: clip;
+}
+
+.profile-new-errors {
+    color: rgb(195, 0, 0);
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
