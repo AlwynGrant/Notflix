@@ -99,11 +99,11 @@ function MoreInfoModal(props) {
                                 })
                             }
                         </div>
-                        <div className='smaller-deets'>Run time: {props.movie.run_time}</div>
-                        <div className='smaller-deets'>Released: {props.movie.year_released}</div>
-                        <div className='smaller-deets'>Starring: {props.movie.cast}</div>
-                        <div className='smaller-deets'>Director: {props.movie.director}</div>
-                        <div className='smaller-deets'>Production: {props.movie.production}</div>
+                        <div className='smaller-deets'> <div>Run time: </div> {props.movie.run_time}</div>
+                        <div className='smaller-deets'> <div>Released: </div> {props.movie.year_released}</div>
+                        <div className='smaller-deets'> <div>Starring: </div> {props.movie.cast}</div>
+                        <div className='smaller-deets'> <div>Director: </div> {props.movie.director}</div>
+                        <div className='smaller-deets'> <div>Production: </div> {props.movie.production}</div>
                     </div>
                 </div>
             </div>
