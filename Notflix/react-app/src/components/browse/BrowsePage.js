@@ -79,13 +79,13 @@ function BrowsePage() {
                     playing={true}
                     muted={true}
                     loop={true}
-                    url={horrorMovies[2]?.movie_url}
+                    url={horrorMovies[4]?.movie_url}
                 />
                 <div className='browse-preview-feature-info'>
-                    <div className='browse-preview-feature-title'>{horrorMovies[2]?.name}</div>
-                    <div className='browse-preview-feature-summary'>{horrorMovies[2]?.description}</div>
+                    <div className='browse-preview-feature-title'>{horrorMovies[4]?.name}</div>
+                    <div className='browse-preview-feature-summary'>{horrorMovies[4]?.description}</div>
                     <div className='browse-preview-feature-btn-container'>
-                        <button onClick={(e) => handleMovieBtn(e, horrorMovies[2]?.id)} className='browse-preview-play-btn'>Play</button>
+                        <button onClick={(e) => handleMovieBtn(e, horrorMovies[4]?.id)} className='browse-preview-play-btn'>Play</button>
                         <button onClick={(e) => handleMovieModalClose(e)} className='browse-preview-more-info-btn'>More Info</button>
                     </div>
                 </div>
@@ -721,7 +721,7 @@ function BrowsePage() {
             {
                 showMovieModal && (
                     <MoreInfoModal
-                        movie={horrorMovies[2]}
+                        movie={horrorMovies[4]}
                         show={showMovieModal}
                         onClose={() => setShowMovieModal(false)}
                     />
