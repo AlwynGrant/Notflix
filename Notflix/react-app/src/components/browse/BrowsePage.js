@@ -76,7 +76,7 @@ function BrowsePage() {
             <div className='browse-preview-container'>
                 <ReactPlayer
                     className='featured-video'
-                    playing={false}
+                    playing={true}
                     muted={true}
                     loop={true}
                     url={horrorMovies[2]?.movie_url}
