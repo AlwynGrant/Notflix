@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeProfile, removeProfile, listOneProfile, listAllProfiles } from '../../store/profile'
+import IconModal from '../modals/ProfileIconModal';
 
 import './profile-styles/profile_edit.css'
 
@@ -10,17 +11,9 @@ function ProfileEditPage() {
     const dispatch = useDispatch();
     const { profile_id } = useParams();
 
-    const [icon, setIcon] = useState(undefined)
-    const [username, setUsername] = useState('')
-    const [isForKids, setIsForKids] = useState(false)
-    const [errors, setErrors] = useState([])
-
-    const accountHolder = useSelector(state => state.session.user);
-    const profile = useSelector(state => state.profile[0]);
-
     const iconArr = [
-        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746460342.png',
         'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746455038.jpg',
+        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746460342.png',
         'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746449917.png',
         'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746445926.png',
         'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746441814.png',
@@ -30,6 +23,15 @@ function ProfileEditPage() {
         'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746421357.png',
         'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746854870.jpg'
     ]
+
+    const profile = useSelector(state => state.profile[0]);
+
+    const [icon, setIcon] = useState(undefined);
+    const [username, setUsername] = useState('');
+    const [isForKids, setIsForKids] = useState(false);
+    const [iconModal, setIconModal] = useState(false);
+    const [errors, setErrors] = useState([]);
+
 
     const handleSubmitEdit = (e) => {
         e.preventDefault();
@@ -64,6 +66,11 @@ function ProfileEditPage() {
         history.push('/profiles/manage')
     }
 
+    const handleIconModal = (e) => {
+        e.preventDefault()
+        setIconModal(true);
+    }
+
     useEffect(() => {
         dispatch(listOneProfile(profile_id))
         setIsForKids(profile?.kids)
@@ -79,22 +86,12 @@ function ProfileEditPage() {
                 </div>
                 <form className='profile-edit-form-inputs' onSubmit={(e) => handleSubmitEdit(e)}>
                     <div className='profile-edit-img-div'>
-                            <select
-                                className='profile-edit-select'
-                                style={{ backgroundImage: `url(${icon})` }}
-                                value={icon}
-                                onChange={(e) => setIcon(e.target.value)}
-                            >
-                                {
-                                    iconArr.map((p_icon, index) => {
-                                        return <option
-                                            className='profile-edit-option'
-                                            key={index}
-                                            style={{ backgroundImage: `url(${icon})` }}
-                                        >{p_icon}</option>
-                                    })
-                                }
-                            </select>
+                        <img
+                            className='profile-new-img'
+                            src={icon}
+                            onChange={(e) => setIcon(e.target.value)}
+                            onClick={(e) => handleIconModal(e)}
+                        />
                     </div>
                         <div className='profile-edit-input-container'>
                         {errors.map((error, ind) => (
@@ -136,6 +133,15 @@ function ProfileEditPage() {
                         </div>
                 </form>
             </div>
+            {
+                iconModal && (
+                    <IconModal
+                        show={iconModal}
+                        set={setIcon}
+                        onClose={() => setIconModal(false)}
+                    />
+                )
+            }
         </div>
     );
 }

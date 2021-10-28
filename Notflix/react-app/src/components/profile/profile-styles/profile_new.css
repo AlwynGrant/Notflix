@@ -64,14 +64,13 @@
 }
 
 .profile-new-img-div {
-    background-color: tomato;
     width: 125px;
     height: 125px;
     border-radius: 4px;
 
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .profile-new-input-container {
@@ -167,23 +166,15 @@
 }
 
 
-.profile-new-select {
+.profile-new-img {
     width: 125px;
     height: 125px;
     border-radius: 4px;
     border: none;
-
-    /* background-position: center; */
-    background-repeat: no-repeat;
-    background-size: contain;
+    
+    object-fit: cover;
     display: flex;
     align-items: center;
-
-    -webkit-appearance: none;
-    -moz-appearance: none;
-
-    /* THIS REMOVES THE SELECT VALUE - TEST FURTHER */
-    /* font-size: 0; */
 }
 
 .profile-new-option {

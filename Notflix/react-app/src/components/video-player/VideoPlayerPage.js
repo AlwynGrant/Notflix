@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { listOneMovie } from '../../store/movie';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
@@ -14,7 +14,7 @@ function VideoPlayerPage() {
 
     useEffect(() => {
         dispatch(listOneMovie(movieId))
-    }, [dispatch])
+    }, [dispatch, movie?.url])
 
     const handleBackBtn = (e) => {
         e.preventDefault();
@@ -29,7 +29,7 @@ function VideoPlayerPage() {
             </button>
             <ReactPlayer
                 className='movie-video'
-                playing={false}
+                playing={true}
                 muted={false}
                 controls={true}
                 url={movie?.movie_url}

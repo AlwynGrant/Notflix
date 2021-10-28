@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { createProfile } from '../../store/profile'
+import IconModal from '../modals/ProfileIconModal';
 
 import './profile-styles/profile_new.css'
 
@@ -9,16 +10,9 @@ function ProfileNewPage() {
     const history = useHistory();
     const dispatch = useDispatch();
 
-    const [icon, setIcon] = useState(undefined)
-    const [username, setUsername] = useState('')
-    const [isForKids, setIsForKids] = useState(false)
-    const [errors, setErrors] = useState([])
-
-    const accountHolder = useSelector(state => state.session.user);
-
     const iconArr = [
-        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746460342.png',
         'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746455038.jpg',
+        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746460342.png',
         'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746449917.png',
         'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746445926.png',
         'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746441814.png',
@@ -28,6 +22,13 @@ function ProfileNewPage() {
         'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746421357.png',
         'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746854870.jpg'
     ]
+
+    const [icon, setIcon] = useState(iconArr[0]);
+    const [username, setUsername] = useState('');
+    const [isForKids, setIsForKids] = useState(false);
+    const [iconModal, setIconModal] = useState(false);
+    const [errors, setErrors] = useState([]);
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -55,6 +56,11 @@ function ProfileNewPage() {
         history.push('/profiles')
     }
 
+    const handleIconModal = (e) => {
+        e.preventDefault()
+        setIconModal(true);
+    }
+
     return (
         <div className='profile-new-container'>
             <div className='profile-new-form'>
@@ -66,22 +72,12 @@ function ProfileNewPage() {
                 </div>
                 <form className='profile-new-form-inputs' onSubmit={(e) => handleSubmit(e)}>
                     <div className='profile-new-img-div'>
-                        <select
-                            className='profile-new-select'
-                            style={{ backgroundImage: `url(${icon})` }}
-                            value={icon}
+                        <img
+                            className='profile-new-img'
+                            src={icon}
                             onChange={(e) => setIcon(e.target.value)}
-                        >
-                            {
-                                iconArr.map((p_icon, index) => {
-                                    return <option
-                                                className='profile-new-option'
-                                                key={index}
-                                                style={{ backgroundImage: `url(${icon})` }}
-                                            >{p_icon}</option>
-                                })
-                            }
-                        </select>
+                            onClick={(e) => handleIconModal(e)}
+                        />
                         <div className='profile-new-input-container'>
                             {errors.map((error, ind) => (
                                 <div className='profile-new-errors' key={ind}>{error}</div>
@@ -115,6 +111,15 @@ function ProfileNewPage() {
                     </div>
                 </form>
             </div>
+            {
+                iconModal && (
+                    <IconModal
+                        show={iconModal}
+                        set={setIcon}
+                        onClose={() => setIconModal(false)}
+                    />
+                )
+            }
         </div>
     );
 }
