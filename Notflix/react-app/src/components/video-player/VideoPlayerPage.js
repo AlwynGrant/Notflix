@@ -29,7 +29,7 @@ function VideoPlayerPage() {
             </button>
             <ReactPlayer
                 className='movie-video'
-                playing={true}
+                playing={false}
                 muted={false}
                 controls={true}
                 url={movie?.movie_url}
