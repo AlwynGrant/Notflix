@@ -3,8 +3,8 @@
     width: 100%;
 
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: -1px;
+    bottom: -400px;
 
     padding: 0px 80px;
 }
