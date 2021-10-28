@@ -8,12 +8,12 @@ import home_kids from './images/home_kids.png'
 import mobile_0819 from './images/mobile_0819.jpg'
 import tv_pg from './images/tv_bg.png'
 import multi_device_bg from './images/multi_device_bg.png'
+import down_arrow from './images/down_arrow.png'
+import up_arrow from './images/up_arrow.png'
 
 function HomePage() {
     const history = useHistory()
     const accountHolder = useSelector(state => state.session.user);
-
-    const [email, setEmail] = useState('')
 
     useEffect(() => {
         if (accountHolder) {
@@ -42,7 +42,7 @@ function HomePage() {
                             Ready to watch? Enter your email to create or restart your membership.
                         </div>
                         <div className='under-landing-bottom-text'>
-                            <button onClick={() => handleGetStarted()} className='landing-signup-button'>Get Started</button>
+                            <button id='get-started' onClick={() => handleGetStarted()} className='landing-signup-button'>Get Started</button>
                         </div>
                    </div>
                </div>
@@ -61,6 +61,7 @@ function HomePage() {
                 </div>
                 <div className='sub-container-2-img'>
                     <img className='container-2-img' src={tv_pg} alt='container-2-img'/>
+                    <div className='container-2-inner-gif'></div>
                 </div>
            </div>
 
@@ -93,6 +94,7 @@ function HomePage() {
                 </div>
                     <div className='sub-container-4-img'>
                     <img className='container-4-img' src={multi_device_bg} alt='container-4-img' />
+                    <div className='container-4-inner-gif'></div>
                     </div>
            </div>
 
@@ -118,12 +120,60 @@ function HomePage() {
                         Frequently Asked Questions
                     </div>
                     <div className='sub-container-6-questions'>
-                        <div className='q-1'><div>What is Notflix?</div></div>
-                        <div className='q-2'><div>Where can I watch?</div></div>
-                        <div className='q-3'><div>What can I watch on Notflix?</div></div>
-                        <div className='q-4'><div>Is Notflix good for kids?</div></div>
-                        <div className='q-5'><div>Who developed Notflix?</div></div>
-                        <div className='q-6'><div>How can I contact the developer?</div></div>
+                        <div className='q-1'>
+                            <div className='q-1-q'>What is Notflix?</div>
+                            <div className='a-1'>
+                                <div>Well, it's definitely NOT Netflix! Notflix is however a direct clone of Netflix, showcasing trailers from some of the most popular movies.</div>
+                            </div>
+                            <button className='q-1-btn'>
+                                <img className='q-1-img' src={down_arrow} />
+                            </button>
+                        </div>
+                        <div className='q-2'>
+                            <div className='q-2-q'>Where can I watch?</div>
+                            <div className='a-2'>
+                                <div>You can navigate to the <a href='#get-started'>Get Started</a> button on this page to create an account, or log in to choose a profile. After you have either created and/or chosen a profile, you will be redirected the browse feed, where you can choose from a selection of trailers.</div>
+                            </div>
+                            <button className='q-1-btn'>
+                                <img className='q-1-img' src={down_arrow} />
+                            </button>
+                        </div>
+                        <div className='q-3'>
+                            <div className='q-3-q'>What can I watch on Notflix?</div>
+                            <div className='a-3'>
+                                <div>You can't watch full length movies. But you can watch trailers from popular movies from genres ranging from Action & adventure, Anime, Comedy, Documentaries, Horror, Romance, and Thriller.</div>
+                            </div>
+                            <button className='q-1-btn'>
+                                <img className='q-1-img' src={down_arrow} />
+                            </button>
+                        </div>
+                        <div className='q-4'>
+                            <div className='q-4-q'>Is Notflix good for kids?</div>
+                            <div className='a-4'>
+                                <div>Notflix has a small selection of kids movie trailers to watch. For the future, Notflix will incorperate a kids only browse feed!</div>
+                            </div>
+                            <button className='q-1-btn'>
+                                <img className='q-1-img' src={down_arrow} />
+                            </button>
+                        </div>
+                        <div className='q-5'>
+                            <div className='q-5-q'>Who developed Notflix?</div>
+                            <div className='a-5'>
+                                <div>Notflix was developed by me, Alwyn Grant! If you're interested in learning more, please checkout my <a target="_blank" rel="noreferrer" href={'https://github.com/AlwynGrant'}>Github</a> & <a target="_blank" rel="noreferrer" href={'https://www.linkedin.com/in/alwyn-grant-928b091a3/'}>LinkdIn</a> profiles! </div>
+                            </div>
+                            <button className='q-1-btn'>
+                                <img className='q-1-img' src={down_arrow} />
+                            </button>
+                        </div>
+                        <div className='q-6'>
+                            <div className='q-6-q'>How can I contact the developer?</div>
+                            <div className='a-6'>
+                                <div>If you'd like to reach out, you can email me at marzgrant@gmail.com.</div>
+                            </div>
+                            <button className='q-1-btn'>
+                                <img className='q-1-img' src={down_arrow} />
+                            </button>
+                        </div>
                     </div>
                     <div className='landing-text-container-bottom'>
                         <div className='under-landing-top-text'>

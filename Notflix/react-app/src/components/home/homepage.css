@@ -183,13 +183,29 @@
 
 
 .sub-container-2-img {
-    background-color: rgb(0, 0, 0);
     width: 500px;
     height: 325px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.container-2-img {
+    z-index: 2;
+}
+
+.container-2-inner-gif {
+    position: absolute;
+    width: 300px;
+    height: 170px;
+    background-image: url('https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/AngelicAgonizingEidolonhelvum-size_restricted.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 80px;
+    z-index: 0;
 }
 
 
@@ -321,13 +337,29 @@
 
 
 .sub-container-4-img {
-    background-color: rgb(0, 0, 0);
     width: 500px;
     height: 325px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.container-4-img {
+    z-index: 2;
+}
+
+.container-4-inner-gif {
+    position: absolute;
+    width: 240px;
+    height: 120px;
+    background-image: url('https://notflix-clone-bucket.s3.us-west-1.amazonaws.com/1_3J1v4OxYQP7_-hPcirfNHw.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 50px;
+    z-index: 0;
 }
 
 /* SUB CONTAINER 5 */
@@ -446,43 +478,280 @@
 }
 
 .q-1 {
-    background-color: rgb(51, 51, 51);
+    background-color: #303030;
     width: 815px;
     height: 75px;
     margin: 5px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
 }
 .q-2 {
-    background-color: rgb(51, 51, 51);
+    background-color: #303030;
     width: 815px;
     height: 75px;
     margin: 5px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 .q-3 {
-    background-color: rgb(51, 51, 51);
+    background-color: #303030;
     width: 815px;
     height: 75px;
     margin: 5px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 .q-4 {
-    background-color: rgb(51, 51, 51);
+    background-color: #303030;
     width: 815px;
     height: 75px;
     margin: 5px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 .q-5 {
-    background-color: rgb(51, 51, 51);
+    background-color: #303030;
     width: 815px;
     height: 75px;
     margin: 5px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 .q-6 {
-    background-color: rgb(51, 51, 51);
+    background-color: #303030;
     width: 815px;
     height: 75px;
     margin: 5px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 
+.q-1-q {
+    color: white;
+    font-size: 25px;
+    margin-left: 30px;
+}
+.q-2-q {
+    color: white;
+    font-size: 25px;
+    margin-left: 30px;
+}
+.q-3-q {
+    color: white;
+    font-size: 25px;
+    margin-left: 30px;
+}
+.q-4-q {
+    color: white;
+    font-size: 25px;
+    margin-left: 30px;
+}
+.q-5-q {
+    color: white;
+    font-size: 25px;
+    margin-left: 30px;
+}
+.q-6-q {
+    color: white;
+    font-size: 25px;
+    margin-left: 30px;
+}
 
+.q-1-btn {
+    background-color: #303030;
+    width: 90px;
+    height: 50px;
+    cursor: pointer;
+}
+.q-1-img {
+    width: 50px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.a-1 {
+    background-color: #303030;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 8px 0px;
+    border-radius: 0px 0px 8px 8px;
+    height: 0px;
+    width: 815px;
+
+    position: absolute;
+    top: 5px;
+    opacity: 0;
+    z-index: 2;
+
+    color: white;
+    font-size: 20px;
+
+    transition: ease 200ms;
+}
+.a-2 {
+    background-color: #303030;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 8px 0px;
+    border-radius: 0px 0px 8px 8px;
+    height: 0px;
+    width: 815px;
+
+    position: absolute;
+    top: 5px;
+    opacity: 0;
+    z-index: 2;
+
+    color: white;
+    font-size: 20px;
+
+    transition: ease 200ms;
+}
+.a-3 {
+    background-color: #303030;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 8px 0px;
+    border-radius: 0px 0px 8px 8px;
+    height: 0px;
+    width: 815px;
+
+    position: absolute;
+    top: 5px;
+    opacity: 0;
+    z-index: 2;
+
+    color: white;
+    font-size: 20px;
+
+    transition: ease 200ms;
+}
+.a-4 {
+    background-color: #303030;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 8px 0px;
+    border-radius: 0px 0px 8px 8px;
+    height: 0px;
+    width: 815px;
+
+    position: absolute;
+    top: 5px;
+    opacity: 0;
+    z-index: 2;
+
+    color: white;
+    font-size: 20px;
+
+    transition: ease 200ms;
+}
+.a-5 {
+    background-color: #303030;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 8px 0px;
+    border-radius: 0px 0px 8px 8px;
+    height: 0px;
+    width: 815px;
+
+    position: absolute;
+    top: 5px;
+    opacity: 0;
+    z-index: 2;
+
+    color: white;
+    font-size: 20px;
+
+    transition: ease 200ms;
+}
+.a-6 {
+    background-color: #303030;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 8px 0px;
+    border-radius: 0px 0px 8px 8px;
+    height: 0px;
+    width: 815px;
+
+    position: absolute;
+    top: 5px;
+    opacity: 0;
+    z-index: 2;
+
+    color: white;
+    font-size: 20px;
+
+    transition: ease 200ms;
+}
+
+.a-1 > div {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.a-2 > div {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.a-3 > div {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.a-4> div {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.a-5 > div {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.a-6 > div {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.q-1:hover > .a-1 {
+    transition-delay: 0.5s;
+    opacity: 1;
+    height: 140px;
+    top: 50px;
+}
+.q-2:hover > .a-2 {
+    transition-delay: 0.5s;
+    opacity: 1;
+    height: 140px;
+    top: 50px;
+}
+.q-3:hover > .a-3 {
+    transition-delay: 0.5s;
+    opacity: 1;
+    height: 140px;
+    top: 50px;
+}
+.q-4:hover > .a-4 {
+    transition-delay: 0.5s;
+    opacity: 1;
+    height: 140px;
+    top: 50px;
+}
+.q-5:hover > .a-5 {
+    transition-delay: 0.5s;
+    opacity: 1;
+    height: 140px;
+    top: 45px;
+}
+.q-6:hover > .a-6 {
+    transition-delay: 0.5s;
+    opacity: 1;
+    height: 140px;
+    top: 50px;
+}
 /* =================IMAGES=================== */
 
 .container-2-img,
@@ -491,4 +760,14 @@
 .container-5-img {
     width: 400px;
     height: 285px;
+}
+
+.a-2 > div > a {
+    color: red;
+    text-decoration: none;
+}
+
+.a-5 > div > a {
+    color: rgb(87, 87, 246);
+    text-decoration: none;
 }
