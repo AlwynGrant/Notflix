@@ -45,15 +45,15 @@ function MyListPage() {
                         myList?.map((movie) => {
                             return (
                                 <div className='list-inner-container'>
-                                    <ReactPlayer
+                                    {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
-                                        playing={true}
+                                        playing={false}
                                         muted={true}
-                                        loop={true}
+                                        loop={false}
 
                                         width="400px"
-                                    />
+                                    /> */}
                                     <img className='list-img' src={movie.movie_thumbnail} alt='movie' />
                                     <div className='list-description'>
                                         <div className='list-row-1'>

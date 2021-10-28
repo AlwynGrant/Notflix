@@ -81,10 +81,10 @@
 }
 
 .list-inner-container:hover > img {
-    animation: fade 1.2s;
+    /* animation: fade 1.2s; */
     transition-delay: 0s;
     transform: scale(1.3);
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 @keyframes fade {
@@ -100,8 +100,8 @@
 }
 
 
-.list-inner-container:hover > .react-player {
+/* .list-inner-container:hover > .react-player {
     transition-delay: .6s;
     transform: scale(1.3);
     opacity: 1;
-}
+} */
