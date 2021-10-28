@@ -72,11 +72,11 @@ function ProfileNewPage() {
                 </div>
                 <form className='profile-new-form-inputs' onSubmit={(e) => handleSubmit(e)}>
                     <div className='profile-new-img-div'>
+                        <div onClick={(e) => handleIconModal(e)} className='profile-edit-change'>Choose Icon</div>
                         <img
                             className='profile-new-img'
                             src={icon}
                             onChange={(e) => setIcon(e.target.value)}
-                            onClick={(e) => handleIconModal(e)}
                         />
                         <div className='profile-new-input-container'>
                             {errors.map((error, ind) => (

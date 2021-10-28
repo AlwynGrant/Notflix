@@ -203,3 +203,23 @@
     bottom: 55%;
     left: 14px;
 }
+
+.profile-edit-change {
+    width: 125px;
+    height: 125px;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    font-weight: bold;
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: 200ms ease-in-out;
+}
+
+.profile-edit-change:hover {
+    opacity: 1;
+}

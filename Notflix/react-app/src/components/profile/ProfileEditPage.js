@@ -86,11 +86,11 @@ function ProfileEditPage() {
                 </div>
                 <form className='profile-edit-form-inputs' onSubmit={(e) => handleSubmitEdit(e)}>
                     <div className='profile-edit-img-div'>
+                        <div onClick={(e) => handleIconModal(e)} className='profile-edit-change'>Change Icon</div>
                         <img
                             className='profile-new-img'
                             src={icon}
                             onChange={(e) => setIcon(e.target.value)}
-                            onClick={(e) => handleIconModal(e)}
                         />
                     </div>
                         <div className='profile-edit-input-container'>
