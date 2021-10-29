@@ -145,6 +145,7 @@
     color: white;
     font-weight: bold;
     position: absolute;
+    border-radius: 8px;
 
     display: flex;
     justify-content: center;
