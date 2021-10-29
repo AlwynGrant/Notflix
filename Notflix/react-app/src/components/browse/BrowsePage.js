@@ -95,7 +95,7 @@ function BrowsePage() {
                     {
                         featuredMovies?.map((movie) => {
                             return (
-                                <div className='list-inner-container'>
+                                <div key={`f-${movie.id}`} className='list-inner-container'>
                                     {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
@@ -108,19 +108,19 @@ function BrowsePage() {
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
                                                 <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btn-play'>
-                                                    <span class="material-icons">
+                                                    <span className="material-icons">
                                                         play_circle_outline
                                                     </span>
                                                 </button>
                                                 {
                                                     myList?.some((savedMovie) => savedMovie.id === movie.id)
                                                         ? <button className='list-row-1-btns' onClick={(e) => handleMyListBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 check_circle_outline
                                                             </span>
                                                         </button>
                                                         : <button className='list-row-1-btns' onClick={(e) => handleMyListBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 add_circle_outline
                                                             </span>
                                                         </button>
@@ -128,19 +128,19 @@ function BrowsePage() {
                                                 {
                                                     myLike?.some((likedMovie) => likedMovie.id === movie.id)
                                                         ? <button className='list-row-1-btns' onClick={(e) => handleLikeBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 thumb_down_off_alt
                                                             </span>
                                                         </button>
                                                         : <button className='list-row-1-btns' onClick={(e) => handleLikeBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 thumb_up_off_alt
                                                             </span>
                                                         </button>
                                                 }
                                             </div>
                                             {/* <button onClick={(e) => handleMovieModalClose(e)} className='list-row-1-btns more-info'>
-                                                <span class="material-icons">
+                                                <span className="material-icons">
                                                     arrow_circle_down
                                                 </span>
                                             </button> */}
@@ -151,9 +151,9 @@ function BrowsePage() {
                                         </div>
                                         <div className='list-row-3'>
                                             {
-                                                movie.genres.map((genre) => {
+                                                movie.genres.map((genre, i) => {
                                                     return (
-                                                        <div className='list-row-3-genre-div'>{genre}</div>
+                                                        <div key={`gf-${i}`} className='list-row-3-genre-div'>{genre}</div>
                                                     )
                                                 })
                                             }
@@ -179,7 +179,7 @@ function BrowsePage() {
                     {
                         actionMovies?.map((movie) => {
                             return (
-                                <div className='list-inner-container'>
+                                <div key={`a-${movie.id}`} className='list-inner-container'>
                                     {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
@@ -193,19 +193,19 @@ function BrowsePage() {
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
                                                 <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btns'>
-                                                    <span class="material-icons">
+                                                    <span className="material-icons">
                                                         play_circle_outline
                                                     </span>
                                                 </button>
                                                 {
                                                     myList?.some((savedMovie) => savedMovie.id === movie.id)
                                                         ? <button className='list-row-1-btns' onClick={(e) => handleMyListBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 check_circle_outline
                                                             </span>
                                                         </button>
                                                         : <button className='list-row-1-btns' onClick={(e) => handleMyListBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 add_circle_outline
                                                             </span>
                                                         </button>
@@ -213,19 +213,19 @@ function BrowsePage() {
                                                 {
                                                     myLike?.some((likedMovie) => likedMovie.id === movie.id)
                                                         ? <button className='list-row-1-btns' onClick={(e) => handleLikeBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 thumb_down_off_alt
                                                             </span>
                                                         </button>
                                                         : <button className='list-row-1-btns' onClick={(e) => handleLikeBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 thumb_up_off_alt
                                                             </span>
                                                         </button>
                                                 }
                                             </div>
                                             {/* <button className='list-row-1-btns more-info'>
-                                                <span class="material-icons">
+                                                <span className="material-icons">
                                                     arrow_circle_down
                                                 </span>
                                             </button> */}
@@ -236,9 +236,9 @@ function BrowsePage() {
                                         </div>
                                         <div className='list-row-3'>
                                             {
-                                                movie.genres.map((genre) => {
+                                                movie.genres.map((genre, i) => {
                                                     return (
-                                                        <div className='list-row-3-genre-div'>{genre}</div>
+                                                        <div key={`af-${i}`} className='list-row-3-genre-div'>{genre}</div>
                                                     )
                                                 })
                                             }
@@ -256,7 +256,7 @@ function BrowsePage() {
                     {
                         animeMovies?.map((movie) => {
                             return (
-                                <div className='list-inner-container'>
+                                <div key={`aa-${movie.id}`} className='list-inner-container'>
                                     {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
@@ -270,19 +270,19 @@ function BrowsePage() {
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
                                                 <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btns'>
-                                                    <span class="material-icons">
+                                                    <span className="material-icons">
                                                         play_circle_outline
                                                     </span>
                                                 </button>
                                                 {
                                                     myList?.some((savedMovie) => savedMovie.id === movie.id)
                                                         ? <button className='list-row-1-btns' onClick={(e) => handleMyListBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 check_circle_outline
                                                             </span>
                                                         </button>
                                                         : <button className='list-row-1-btns' onClick={(e) => handleMyListBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 add_circle_outline
                                                             </span>
                                                         </button>
@@ -290,19 +290,19 @@ function BrowsePage() {
                                                 {
                                                     myLike?.some((likedMovie) => likedMovie.id === movie.id)
                                                         ? <button className='list-row-1-btns' onClick={(e) => handleLikeBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 thumb_down_off_alt
                                                             </span>
                                                         </button>
                                                         : <button className='list-row-1-btns' onClick={(e) => handleLikeBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 thumb_up_off_alt
                                                             </span>
                                                         </button>
                                                 }
                                             </div>
                                             {/* <button className='list-row-1-btns more-info'>
-                                                <span class="material-icons">
+                                                <span className="material-icons">
                                                     arrow_circle_down
                                                 </span>
                                             </button> */}
@@ -313,9 +313,9 @@ function BrowsePage() {
                                         </div>
                                         <div className='list-row-3'>
                                             {
-                                                movie.genres.map((genre) => {
+                                                movie.genres.map((genre, i) => {
                                                     return (
-                                                        <div className='list-row-3-genre-div'>{genre}</div>
+                                                        <div key={`aaf-${i}`} className='list-row-3-genre-div'>{genre}</div>
                                                     )
                                                 })
                                             }
@@ -333,7 +333,7 @@ function BrowsePage() {
                     {
                         comedyMovies?.map((movie) => {
                             return (
-                                <div className='list-inner-container'>
+                                <div key={`c-${movie.id}`} className='list-inner-container'>
                                     {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
@@ -347,19 +347,19 @@ function BrowsePage() {
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
                                                 <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btns'>
-                                                    <span class="material-icons">
+                                                    <span className="material-icons">
                                                         play_circle_outline
                                                     </span>
                                                 </button>
                                                 {
                                                     myList?.some((savedMovie) => savedMovie.id === movie.id)
                                                         ? <button className='list-row-1-btns' onClick={(e) => handleMyListBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 check_circle_outline
                                                             </span>
                                                         </button>
                                                         : <button className='list-row-1-btns' onClick={(e) => handleMyListBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 add_circle_outline
                                                             </span>
                                                         </button>
@@ -367,19 +367,19 @@ function BrowsePage() {
                                                 {
                                                     myLike?.some((likedMovie) => likedMovie.id === movie.id)
                                                         ? <button className='list-row-1-btns' onClick={(e) => handleLikeBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 thumb_down_off_alt
                                                             </span>
                                                         </button>
                                                         : <button className='list-row-1-btns' onClick={(e) => handleLikeBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 thumb_up_off_alt
                                                             </span>
                                                         </button>
                                                 }
                                             </div>
                                             {/* <button className='list-row-1-btns more-info'>
-                                                <span class="material-icons">
+                                                <span className="material-icons">
                                                     arrow_circle_down
                                                 </span>
                                             </button> */}
@@ -390,9 +390,9 @@ function BrowsePage() {
                                         </div>
                                         <div className='list-row-3'>
                                             {
-                                                movie.genres.map((genre) => {
+                                                movie.genres.map((genre, i) => {
                                                     return (
-                                                        <div className='list-row-3-genre-div'>{genre}</div>
+                                                        <div key={`cf-${i}`} className='list-row-3-genre-div'>{genre}</div>
                                                     )
                                                 })
                                             }
@@ -410,7 +410,7 @@ function BrowsePage() {
                     {
                         docuMovies?.map((movie) => {
                             return (
-                                <div className='list-inner-container'>
+                                <div key={`d-${movie.id}`} className='list-inner-container'>
                                     {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
@@ -424,19 +424,19 @@ function BrowsePage() {
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
                                                 <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btns'>
-                                                    <span class="material-icons">
+                                                    <span className="material-icons">
                                                         play_circle_outline
                                                     </span>
                                                 </button>
                                                 {
                                                     myList?.some((savedMovie) => savedMovie.id === movie.id)
                                                         ? <button className='list-row-1-btns' onClick={(e) => handleMyListBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 check_circle_outline
                                                             </span>
                                                         </button>
                                                         : <button className='list-row-1-btns' onClick={(e) => handleMyListBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 add_circle_outline
                                                             </span>
                                                         </button>
@@ -444,19 +444,19 @@ function BrowsePage() {
                                                 {
                                                     myLike?.some((likedMovie) => likedMovie.id === movie.id)
                                                         ? <button className='list-row-1-btns' onClick={(e) => handleLikeBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 thumb_down_off_alt
                                                             </span>
                                                         </button>
                                                         : <button className='list-row-1-btns' onClick={(e) => handleLikeBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 thumb_up_off_alt
                                                             </span>
                                                         </button>
                                                 }
                                             </div>
                                             {/* <button className='list-row-1-btns more-info'>
-                                                <span class="material-icons">
+                                                <span className="material-icons">
                                                     arrow_circle_down
                                                 </span>
                                             </button> */}
@@ -467,9 +467,9 @@ function BrowsePage() {
                                         </div>
                                         <div className='list-row-3'>
                                             {
-                                                movie.genres.map((genre) => {
+                                                movie.genres.map((genre, i) => {
                                                     return (
-                                                        <div className='list-row-3-genre-div'>{genre}</div>
+                                                        <div key={`df-${i}`} className='list-row-3-genre-div'>{genre}</div>
                                                     )
                                                 })
                                             }
@@ -487,7 +487,7 @@ function BrowsePage() {
                     {
                         horrorMovies?.map((movie) => {
                             return (
-                                <div className='list-inner-container'>
+                                <div key={`h-${movie.id}`} className='list-inner-container'>
                                     {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
@@ -501,19 +501,19 @@ function BrowsePage() {
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
                                                 <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btns'>
-                                                    <span class="material-icons">
+                                                    <span className="material-icons">
                                                         play_circle_outline
                                                     </span>
                                                 </button>
                                                 {
                                                     myList?.some((savedMovie) => savedMovie.id === movie.id)
                                                         ? <button className='list-row-1-btns' onClick={(e) => handleMyListBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 check_circle_outline
                                                             </span>
                                                         </button>
                                                         : <button className='list-row-1-btns' onClick={(e) => handleMyListBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 add_circle_outline
                                                             </span>
                                                         </button>
@@ -521,19 +521,19 @@ function BrowsePage() {
                                                 {
                                                     myLike?.some((likedMovie) => likedMovie.id === movie.id)
                                                         ? <button className='list-row-1-btns' onClick={(e) => handleLikeBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 thumb_down_off_alt
                                                             </span>
                                                         </button>
                                                         : <button className='list-row-1-btns' onClick={(e) => handleLikeBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 thumb_up_off_alt
                                                             </span>
                                                         </button>
                                                 }
                                             </div>
                                             {/* <button className='list-row-1-btns more-info'>
-                                                <span class="material-icons">
+                                                <span className="material-icons">
                                                     arrow_circle_down
                                                 </span>
                                             </button> */}
@@ -544,9 +544,9 @@ function BrowsePage() {
                                         </div>
                                         <div className='list-row-3'>
                                             {
-                                                movie.genres.map((genre) => {
+                                                movie.genres.map((genre, i) => {
                                                     return (
-                                                        <div className='list-row-3-genre-div'>{genre}</div>
+                                                        <div key={`hf-${i}`} className='list-row-3-genre-div'>{genre}</div>
                                                     )
                                                 })
                                             }
@@ -564,7 +564,7 @@ function BrowsePage() {
                     {
                         romanceMovies?.map((movie) => {
                             return (
-                                <div className='list-inner-container'>
+                                <div key={`r-${movie.id}`} className='list-inner-container'>
                                     {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
@@ -578,19 +578,19 @@ function BrowsePage() {
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
                                                 <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btns'>
-                                                    <span class="material-icons">
+                                                    <span className="material-icons">
                                                         play_circle_outline
                                                     </span>
                                                 </button>
                                                 {
                                                     myList?.some((savedMovie) => savedMovie.id === movie.id)
                                                         ? <button className='list-row-1-btns' onClick={(e) => handleMyListBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 check_circle_outline
                                                             </span>
                                                         </button>
                                                         : <button className='list-row-1-btns' onClick={(e) => handleMyListBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 add_circle_outline
                                                             </span>
                                                         </button>
@@ -598,19 +598,19 @@ function BrowsePage() {
                                                 {
                                                     myLike?.some((likedMovie) => likedMovie.id === movie.id)
                                                         ? <button className='list-row-1-btns' onClick={(e) => handleLikeBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 thumb_down_off_alt
                                                             </span>
                                                         </button>
                                                         : <button className='list-row-1-btns' onClick={(e) => handleLikeBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 thumb_up_off_alt
                                                             </span>
                                                         </button>
                                                 }
                                             </div>
                                             {/* <button className='list-row-1-btns more-info'>
-                                                <span class="material-icons">
+                                                <span className="material-icons">
                                                     arrow_circle_down
                                                 </span>
                                             </button> */}
@@ -621,9 +621,9 @@ function BrowsePage() {
                                         </div>
                                         <div className='list-row-3'>
                                             {
-                                                movie.genres.map((genre) => {
+                                                movie.genres.map((genre, i) => {
                                                     return (
-                                                        <div className='list-row-3-genre-div'>{genre}</div>
+                                                        <div key={`rf-${i}`} className='list-row-3-genre-div'>{genre}</div>
                                                     )
                                                 })
                                             }
@@ -641,7 +641,7 @@ function BrowsePage() {
                     {
                         thrillerMovies?.map((movie) => {
                             return (
-                                <div className='list-inner-container'>
+                                <div key={`t-${movie.id}`} className='list-inner-container'>
                                     {/* <ReactPlayer
                                         url={movie.movie_url}
                                         className="react-player"
@@ -655,19 +655,19 @@ function BrowsePage() {
                                         <div className='list-row-1'>
                                             <div className='list-row-1-btn-container'>
                                                 <button onClick={(e) => handleMovieBtn(e, movie.id)} className='list-row-1-btns'>
-                                                    <span class="material-icons">
+                                                    <span className="material-icons">
                                                         play_circle_outline
                                                     </span>
                                                 </button>
                                                 {
                                                     myList?.some((savedMovie) => savedMovie.id === movie.id)
                                                         ? <button className='list-row-1-btns' onClick={(e) => handleMyListBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 check_circle_outline
                                                             </span>
                                                         </button>
                                                         : <button className='list-row-1-btns' onClick={(e) => handleMyListBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 add_circle_outline
                                                             </span>
                                                         </button>
@@ -675,19 +675,19 @@ function BrowsePage() {
                                                 {
                                                     myLike?.some((likedMovie) => likedMovie.id === movie.id)
                                                         ? <button className='list-row-1-btns' onClick={(e) => handleLikeBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 thumb_down_off_alt
                                                             </span>
                                                         </button>
                                                         : <button className='list-row-1-btns' onClick={(e) => handleLikeBtn(e, movie.id)}>
-                                                            <span class="material-icons">
+                                                            <span className="material-icons">
                                                                 thumb_up_off_alt
                                                             </span>
                                                         </button>
                                                 }
                                             </div>
                                             {/* <button className='list-row-1-btns more-info'>
-                                                <span class="material-icons">
+                                                <span className="material-icons">
                                                     arrow_circle_down
                                                 </span>
                                             </button> */}
@@ -698,9 +698,9 @@ function BrowsePage() {
                                         </div>
                                         <div className='list-row-3'>
                                             {
-                                                movie.genres.map((genre) => {
+                                                movie.genres.map((genre, i) => {
                                                     return (
-                                                        <div className='list-row-3-genre-div'>{genre}</div>
+                                                        <div key={`tf-${i}`} className='list-row-3-genre-div'>{genre}</div>
                                                     )
                                                 })
                                             }

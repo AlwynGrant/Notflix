@@ -31,6 +31,7 @@ const NavBarMovies = () => {
     useEffect(() => {
         dispatch(listAllProfiles(profile_id))
     }, dispatch)
+    
     return (
         <nav className='navbar-movies'>
             <div className='navbar-movies-container'>
@@ -56,7 +57,7 @@ const NavBarMovies = () => {
                                     {
                                         otherProfiles?.map((profile) => {
                                             return (
-                                                <div onClick={(e) => handleSwitchProfiles(e, profile.id)} className='profile-dropdown-sect'>
+                                                <div key={profile.id} onClick={(e) => handleSwitchProfiles(e, profile.id)} className='profile-dropdown-sect'>
                                                     <img className='profile-nav-img' src={profile.profile_img} alt='profile-alt-pic'/>
                                                     <div className='profile-nav-name'>{profile.username}</div>
                                                 </div>

@@ -25,7 +25,7 @@ function ProfileManagePage() {
                     {
                         profiles?.map((profile) => {
                             return (
-                                <a className='mng-overlay' href={`/profiles/${profile.id}/edit`}>
+                                <a key={profile.id} className='mng-overlay' href={`/profiles/${profile.id}/edit`}>
                                     <div className='mng-over-text'>Manage</div>
                                     <img
                                         className='profile-main-mng-img'

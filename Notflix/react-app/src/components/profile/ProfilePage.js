@@ -25,7 +25,7 @@ function ProfilePage() {
                     {
                         profiles?.map((profile) => {
                             return (
-                                <div onClick={(e) => {history.push(`/profiles/${profile.id}/movies`)}}>
+                                <div key={profile.id} onClick={(e) => {history.push(`/profiles/${profile.id}/movies`)}}>
                                     <img
                                         className='profile-main-img'
                                         src={profile.profile_img}
