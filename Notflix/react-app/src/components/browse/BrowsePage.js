@@ -17,10 +17,12 @@ function BrowsePage() {
     const history = useHistory();
     const dispatch = useDispatch();
 
-    // const profile = useSelector(state => state.profile[0])
+
     const movies = useSelector(state => state.movies)
     const myList = useSelector(state => state.mylist)
     const myLike = useSelector(state => state.mylike)
+    const profiles = useSelector(state => state.profile);
+    const currentProfile = profiles?.filter(profile => String(profile.id) === profile_id)[0];
 
     const actionMovies = movies?.filter(movie => movie.genres[0] === 'Action/Adventure')
     const animeMovies = movies?.filter(movie => movie.genres[0] === 'Anime')
@@ -38,10 +40,10 @@ function BrowsePage() {
     }, [dispatch])
 
     useEffect(() => {
-        dispatch(listAllProfiles(profile_id))
+        dispatch(listAllProfiles())
         dispatch(listMyList(profile_id))
         dispatch(listMyLikes(profile_id))
-    }, [dispatch])
+    }, [dispatch, currentProfile.id])
 
     const settings = {
         dots: true,
