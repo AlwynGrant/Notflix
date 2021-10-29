@@ -23,7 +23,7 @@ function VideoPlayerPage() {
     return (
         <div className='movie-player-container'>
             <button onClick={(e) => handleBackBtn(e)} className='movie-player-back-btn'>
-                <span class="material-icons">
+                <span className="material-icons">
                 arrow_back
                 </span>
             </button>
@@ -33,7 +33,7 @@ function VideoPlayerPage() {
                 muted={false}
                 controls={true}
                 url={movie?.movie_url}
-                volume='.3'
+                volume={0.3}
                 width='100%'
                 height='100%'
             />
