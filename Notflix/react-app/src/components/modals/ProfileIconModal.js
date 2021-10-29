@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './modal.css'
 
 function IconModal(props) {
@@ -40,6 +40,7 @@ function IconModal(props) {
                                 className='modal-icon-img'
                                 key={index}
                                 src={p_icon}
+                                alt='icon-preview'
                             />
                         })
                     }

@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
 import { likeUnlikeMovie, listMyLikes } from '../../store/mylike'
 import { listMyList, addToMyList } from '../../store/mylist'
-import ReactPlayer from 'react-player'
 
 import './browse-styles/mylist.css'
 

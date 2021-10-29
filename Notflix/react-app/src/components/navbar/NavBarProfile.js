@@ -9,7 +9,7 @@ const NavBarProfile = () => {
         <nav className='navbar-prof'>
             <div className='navbar-prof-container'>
                 <NavLink className='navbar-prof-logo' to='/'>
-                    <img className='navbar-prof-logo' src={notflix_text_1000}/>
+                    <img className='navbar-prof-logo' src={notflix_text_1000} alt='logo-here'/>
                 </NavLink>
             </div>
         </nav>

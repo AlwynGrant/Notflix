@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux';
-import SignUpForm from '../auth/SignUpForm';
 import './homepage.css'
 
 import home_kids from './images/home_kids.png'
@@ -126,7 +125,7 @@ function HomePage() {
                                 <div>Well, it's definitely NOT Netflix! Notflix is however a direct clone of Netflix, showcasing trailers from some of the most popular movies.</div>
                             </div>
                             <button className='q-1-btn'>
-                                <img className='q-1-img' src={down_arrow} />
+                                <img className='q-1-img' src={down_arrow} alt='q-1' />
                             </button>
                         </div>
                         <div className='q-2'>
@@ -135,7 +134,7 @@ function HomePage() {
                                 <div>You can navigate to the <a href='#get-started'>Get Started</a> button on this page to create an account, or log in to choose a profile. After you have either created and/or chosen a profile, you will be redirected the browse feed, where you can choose from a selection of trailers.</div>
                             </div>
                             <button className='q-1-btn'>
-                                <img className='q-1-img' src={down_arrow} />
+                                <img className='q-1-img' src={down_arrow} alt='q-1' />
                             </button>
                         </div>
                         <div className='q-3'>
@@ -144,7 +143,7 @@ function HomePage() {
                                 <div>You can't watch full length movies. But you can watch trailers from popular movies from genres ranging from Action & adventure, Anime, Comedy, Documentaries, Horror, Romance, and Thriller.</div>
                             </div>
                             <button className='q-1-btn'>
-                                <img className='q-1-img' src={down_arrow} />
+                                <img className='q-1-img' src={down_arrow} alt='q-1' />
                             </button>
                         </div>
                         <div className='q-4'>
@@ -153,7 +152,7 @@ function HomePage() {
                                 <div>Notflix has a small selection of kids movie trailers to watch. For the future, Notflix will incorperate a kids only browse feed!</div>
                             </div>
                             <button className='q-1-btn'>
-                                <img className='q-1-img' src={down_arrow} />
+                                <img className='q-1-img' src={down_arrow} alt='q-1' />
                             </button>
                         </div>
                         <div className='q-5'>
@@ -162,7 +161,7 @@ function HomePage() {
                                 <div>Notflix was developed by me, Alwyn Grant! If you're interested in learning more, please checkout my <a target="_blank" rel="noreferrer" href={'https://github.com/AlwynGrant'}>Github</a> & <a target="_blank" rel="noreferrer" href={'https://www.linkedin.com/in/alwyn-grant-928b091a3/'}>LinkdIn</a> profiles! </div>
                             </div>
                             <button className='q-1-btn'>
-                                <img className='q-1-img' src={down_arrow} />
+                                <img className='q-1-img' src={down_arrow} alt='q-1' />
                             </button>
                         </div>
                         <div className='q-6'>
@@ -171,7 +170,7 @@ function HomePage() {
                                 <div>If you'd like to reach out, you can email me at marzgrant@gmail.com.</div>
                             </div>
                             <button className='q-1-btn'>
-                                <img className='q-1-img' src={down_arrow} />
+                                <img className='q-1-img' src={down_arrow} alt='q-1'/>
                             </button>
                         </div>
                     </div>

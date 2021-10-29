@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { listAllProfiles } from '../../store/profile'
@@ -8,9 +8,7 @@ import white_cross from './profile-assets/white_cross.png'
 // import edit_icon from './profile-assets/edit_icon.jpg'
 
 function ProfileManagePage() {
-    const history = useHistory();
     const dispatch = useDispatch();
-    const accountHolder = useSelector(state => state.session.user);
     const profiles = useSelector(state => state.profile);
 
     useEffect(() => {

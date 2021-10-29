@@ -45,14 +45,6 @@ function BrowsePage() {
         dispatch(listMyLikes(profile_id))
     }, [dispatch, currentProfile?.id])
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    };
-
     const handleMyListBtn = (e, movieId) => {
         e.preventDefault()
         dispatch(addToMyList(profile_id, movieId))

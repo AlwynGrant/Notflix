@@ -11,18 +11,18 @@ function ProfileEditPage() {
     const dispatch = useDispatch();
     const { profile_id } = useParams();
 
-    const iconArr = [
-        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746455038.jpg',
-        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746460342.png',
-        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746449917.png',
-        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746445926.png',
-        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746441814.png',
-        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746437849.png',
-        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746431496.png',
-        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746427415.png',
-        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746421357.png',
-        'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746854870.jpg'
-    ]
+    // const iconArr = [
+    //     'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746455038.jpg',
+    //     'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746460342.png',
+    //     'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746449917.png',
+    //     'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746445926.png',
+    //     'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746441814.png',
+    //     'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746437849.png',
+    //     'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746431496.png',
+    //     'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746427415.png',
+    //     'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746421357.png',
+    //     'https://kickrbucket.s3.us-west-1.amazonaws.com/1634746854870.jpg'
+    // ]
 
     const profile = useSelector(state => state.profile[0]);
 
@@ -91,6 +91,7 @@ function ProfileEditPage() {
                             className='profile-new-img'
                             src={icon}
                             onChange={(e) => setIcon(e.target.value)}
+                            alt='profile-edit-img'
                         />
                     </div>
                         <div className='profile-edit-input-container'>
