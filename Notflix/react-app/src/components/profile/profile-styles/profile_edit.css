@@ -141,6 +141,12 @@
     font-family: system-ui;
     font-weight: 500;
     color: black;
+    transition: 200ms ease-in-out;
+    background-color: rgb(202, 202, 202);
+}
+
+.profile-edit-continue:hover {
+    background-color: white;
 }
 
 .profile-edit-cancel {
@@ -149,12 +155,18 @@
     margin: 20px;
 
     background: transparent;
-    border: 1px solid grey;
+    border: 1px solid rgb(144, 116, 116);
 
     font-size: 20px;
     font-family: system-ui;
     font-weight: 400;
     color: grey;
+    transition: 200ms ease-in-out;
+}
+
+.profile-edit-cancel:hover {
+    border: 1px solid white;
+    color: white;
 }
 
 .profile-edit-delete {
@@ -163,12 +175,18 @@
     margin: 20px;
 
     background: transparent;
-    border: 1px solid grey;
+    border: 1px solid rgb(144, 116, 116);
 
     font-size: 20px;
     font-family: system-ui;
     font-weight: 400;
     color: grey;
+    transition: 200ms ease-in-out;
+}
+
+.profile-edit-delete:hover {
+    border: 1px solid white;
+    color: white;
 }
 
 

@@ -27,7 +27,8 @@
 }
 
 .home-login-link {
-    background-color: rgb(172, 3, 3);
+    background-color: rgb(152, 3, 3);
+    transition: 200ms ease-in-out;
     color: white;
 
     width: 90px;
@@ -44,4 +45,8 @@
     align-items: center;
     justify-content: center;
 
+}
+
+.home-login-link:hover {
+    background-color: rgb(172, 3, 3);
 }

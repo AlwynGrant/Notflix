@@ -120,11 +120,15 @@
     width: 200px;
     height: 70px;
 
-    background-color: rgb(172, 3, 3);
+    background-color: rgb(152, 3, 3);
     color: white;
-    border-radius: 0px 3px 3px 0px;
+    border-radius: 4px;
+    transition: 200ms ease-in-out;
 }
 
+.landing-signup-button:hover {
+    background-color: rgb(172, 3, 3);
+}
 
 /* SUB CONTAINER 2 */
 .home-sub-container-2 {

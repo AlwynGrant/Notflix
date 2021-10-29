@@ -49,4 +49,9 @@
     object-fit: cover;
     display: flex;
     align-items: center;
+    transition: 200ms ease-in-out;
+}
+
+.modal-icon-img:hover {
+    filter: brightness(60%);
 }

@@ -24,11 +24,11 @@
 
 .browse-preview-feature-info {
     width: 550px;
-    height: 450px;
+    height: 350px;
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     transform: translateY(-90px);
     z-index: 2;
@@ -38,13 +38,17 @@
     width: 550px;
     height: 120px;
     color: white;
-    font-size: 65px;
+    font-size: 45px;
     font-family: system-ui;
+
+    display: flex;
+    align-items: flex-end;
+
 }
 
 .browse-preview-feature-summary {
     width: 550px;
-    height: 50px;
+    height: 90px;
     color: white;
 
     /* margin-top: 25px; */
@@ -55,8 +59,6 @@
 .browse-preview-feature-btn-container {
     width: 550px;
     height: 60px;
-
-    margin-top: 55px;
 }
 
 .browse-preview-play-btn {
@@ -67,6 +69,13 @@
     border-radius: 6px;
     font-family: system-ui;
     font-weight: bold;
+    background-color: rgb(202, 202, 202);
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.browse-preview-play-btn:hover {
+    background-color: white;
 }
 
 .browse-preview-more-info-btn {
@@ -78,6 +87,13 @@
     border-radius: 6px;
     color: white;
     font-weight: bold;
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.browse-preview-more-info-btn:hover {
+    background-color: rgb(47, 47, 47);
+    opacity: 1;
 }
 
 /* ================================================= */

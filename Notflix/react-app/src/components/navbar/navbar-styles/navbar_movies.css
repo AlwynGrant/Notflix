@@ -58,8 +58,14 @@
     border-radius: 5px;
 }
 
-a {
-    color: white;
+.navbar-movies-link-container > a {
+    color: rgb(141, 138, 138);
+    font-weight: bold;
+    transition: 200ms ease-in-out;
+}
+
+.navbar-movies-link-container > a:hover {
+    color: white
 }
 
 .profile-nav-img-container {
@@ -74,6 +80,12 @@ a {
     height: 40px;
     object-fit: cover;
     border-radius: 4px;
+    transition: 200ms ease-in-out;
+    filter: brightness(70%);
+}
+
+.profile-nav-img:hover {
+    filter: brightness(100%);
 }
 
 .profile-dropdown-container {
@@ -92,6 +104,7 @@ a {
     align-items: center;
 }
 
+
 .profile-pick-div {
     margin: 10px;
 }
@@ -104,6 +117,12 @@ a {
     width: 180px;
     margin-bottom: 10px;
     cursor: pointer;
+    transition: 200ms ease-in-out;
+    filter: brightness(60%);
+}
+
+.profile-dropdown-sect:hover {
+    filter: brightness(100%);
 }
 
 .profile-manage-link {
@@ -115,6 +134,12 @@ a {
     padding-top: 20px;
     border-bottom: 1px solid rgb(90, 88, 88);
     padding-bottom: 20px;
+    color: rgb(189, 189, 189);
+    transition: 200ms ease-in-out;
+}
+
+.profile-manage-link:hover {
+    color: white;
 }
 
 .profile-logout {
@@ -127,9 +152,14 @@ a {
 }
 
 .logout-btn {
-    color: rgb(255, 255, 255);
+    color: rgb(189, 189, 189);
     font-weight: bold;
     cursor: pointer;
 
     margin: 20px 0px;
+    transition: 200ms ease-in-out;
+}
+
+.logout-btn:hover {
+    color: white;
 }
