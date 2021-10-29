@@ -45,7 +45,7 @@ const initialState = [];
 
 // movie reducer
 const movieReducer = (state = initialState, action) => {
-    let newState = [ ...state ]
+    // let newState = [ ...state ]
 
     switch (action.type) {
         case GET_MOVIE:

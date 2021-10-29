@@ -48,7 +48,7 @@ const initialState = [];
 
 // movie reducer
 const myLikeReducer = (state = initialState, action) => {
-    let newState = [...state]
+    // let newState = [...state]
 
     switch (action.type) {
         case LIKE_MOVIE:
