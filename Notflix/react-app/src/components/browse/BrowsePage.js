@@ -43,7 +43,7 @@ function BrowsePage() {
         dispatch(listAllProfiles())
         dispatch(listMyList(profile_id))
         dispatch(listMyLikes(profile_id))
-    }, [dispatch, currentProfile.id])
+    }, [dispatch, currentProfile?.id])
 
     const settings = {
         dots: true,
