@@ -7,7 +7,6 @@ import './auth-styles/signup.css'
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
-  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
@@ -26,11 +25,6 @@ const SignUpForm = () => {
       setErrors(['Both password fields must match.'])
     }
   };
-
-  const updateUsername = (e) => {
-    setUsername(e.target.value);
-  };
-
   const updateEmail = (e) => {
     setEmail(e.target.value);
   };

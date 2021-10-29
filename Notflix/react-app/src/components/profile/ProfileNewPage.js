@@ -77,6 +77,7 @@ function ProfileNewPage() {
                             className='profile-new-img'
                             src={icon}
                             onChange={(e) => setIcon(e.target.value)}
+                            alt='profile-new-img'
                         />
                         <div className='profile-new-input-container'>
                             {errors.map((error, ind) => (

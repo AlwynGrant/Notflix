@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { listAllProfiles } from '../../store/profile'
 
@@ -8,9 +7,7 @@ import white_cross from './profile-assets/white_cross.png'
 // import edit_icon from './profile-assets/edit_icon.jpg'
 
 function ProfileManagePage() {
-    const history = useHistory();
     const dispatch = useDispatch();
-    const accountHolder = useSelector(state => state.session.user);
     const profiles = useSelector(state => state.profile);
 
     useEffect(() => {
@@ -28,7 +25,7 @@ function ProfileManagePage() {
                     {
                         profiles?.map((profile) => {
                             return (
-                                <a className='mng-overlay' href={`/profiles/${profile.id}/edit`}>
+                                <a key={profile.id} className='mng-overlay' href={`/profiles/${profile.id}/edit`}>
                                     <div className='mng-over-text'>Manage</div>
                                     <img
                                         className='profile-main-mng-img'

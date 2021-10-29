@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { likeUnlikeMovie, listMyLikes } from '../../store/mylike'
 import { listMyList, addToMyList } from '../../store/mylist'
@@ -41,7 +41,7 @@ function MoreInfoModal(props) {
             <div className='movie-modal' onClick={props.onClose}>
                 <div className='movie-modal-content' onClick={e => e.stopPropagation()}>
                     <div className='movie-modal-img-container'>
-                        <img className='movie-modal-img' src={props.movie.movie_thumbnail}/>
+                        <img className='movie-modal-img' src={props.movie.movie_thumbnail} alt='movie-preview'/>
                     </div>
 
                     <div className='movie-modal-header'>

@@ -31,12 +31,13 @@ const NavBarMovies = () => {
     useEffect(() => {
         dispatch(listAllProfiles(profile_id))
     }, dispatch)
+    
     return (
         <nav className='navbar-movies'>
             <div className='navbar-movies-container'>
                 <div className='navbar-movies-link-container'>
                     <a className='movies-logo' href={`/profiles/${profile_id}/movies`}>
-                        <img className='movies-logo' src={notflix_text_1000} />
+                        <img className='movies-logo' src={notflix_text_1000} alt='logo-here'/>
                     </a>
 
                     <a target="_blank" rel="noreferrer" href={'https://github.com/AlwynGrant/Notflix'}>Github</a>
@@ -45,7 +46,7 @@ const NavBarMovies = () => {
                 </div>
                 <div>
                     <div onClick={(e) => handleDropdown(e)} className='profile-nav-img-container'>
-                        <img className='profile-nav-img' src={currentProfile?.profile_img} />
+                        <img className='profile-nav-img' src={currentProfile?.profile_img} alt='profile-pic'/>
                     </div>
                 </div>
             </div>
@@ -56,8 +57,8 @@ const NavBarMovies = () => {
                                     {
                                         otherProfiles?.map((profile) => {
                                             return (
-                                                <div onClick={(e) => handleSwitchProfiles(e, profile.id)} className='profile-dropdown-sect'>
-                                                    <img className='profile-nav-img' src={profile.profile_img} />
+                                                <div key={profile.id} onClick={(e) => handleSwitchProfiles(e, profile.id)} className='profile-dropdown-sect'>
+                                                    <img className='profile-nav-img' src={profile.profile_img} alt='profile-alt-pic'/>
                                                     <div className='profile-nav-name'>{profile.username}</div>
                                                 </div>
                                             )

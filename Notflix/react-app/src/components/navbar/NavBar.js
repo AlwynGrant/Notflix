@@ -10,7 +10,7 @@ const NavBar = () => {
   return (
     <nav className='navbar-home'>
       <div className='navbar-home-container'>
-          <img className='home-logo' src={notflix_text_1000}/>
+          <img className='home-logo' src={notflix_text_1000} alt='logo-here'/>
           <NavLink className='home-login-link' to='/login' exact={true} activeClassName='active'>
             Log In
           </NavLink>

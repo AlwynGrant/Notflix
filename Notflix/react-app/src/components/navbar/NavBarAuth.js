@@ -10,7 +10,7 @@ const NavBarAuth = () => {
         <nav className='navbar-auth'>
             <div className='navbar-auth-container'>
                 <NavLink className='auth-logo' to='/'>
-                    <img className='auth-logo' src={notflix_text_1000}/>
+                    <img className='auth-logo' src={notflix_text_1000} alt='logo-here'/>
                 </NavLink>
             </div>
         </nav>

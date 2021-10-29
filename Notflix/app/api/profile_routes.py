@@ -79,7 +79,9 @@ def delete_profile(profile_id):
     user_id = current_user.get_id()
 
     if int(user_id) == int(profile.user_id):
-
+        profile.user_dislikes.clear()
+        profile.user_likes.clear()
+        profile.my_list.clear()
         db.session.delete(profile)
         db.session.commit()
 

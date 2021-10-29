@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { authenticate } from './store/session';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 
 // import KidsVideoPlayerPage from './components/video-player/KidsVideoPlayerPage';
+// import MyListKidsPage from './components/browse-kids/MyListKidsPage';
 // import BrowseKidsPage from './components/browse-kids/BrowseKidsPage';
 import VideoPlayerPage from './components/video-player/VideoPlayerPage';
 import ProfileManagePage from './components/profile/ProfileManagePage.js';
@@ -12,7 +13,6 @@ import ProfileEditPage from './components/profile/ProfileEditPage';
 import ProfileNewPage from './components/profile/ProfileNewPage';
 import ProfilePage from './components/profile/ProfilePage';
 import BrowsePage from './components/browse/BrowsePage';
-// import MyListKidsPage from './components/browse-kids/MyListKidsPage';
 import MyListPage from './components/browse/MyListPage';
 import SignUpForm from './components/auth/SignUpForm';
 import LoginForm from './components/auth/LoginForm';
@@ -27,8 +27,6 @@ import './index.css'
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
-
-  const accountHolder = useSelector(state => state.session.user);
 
   useEffect(() => {
     (async() => {
