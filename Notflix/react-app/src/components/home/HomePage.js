@@ -34,12 +34,12 @@ function HomePage() {
                             Unlimited movies, TV shows, and more.
                         </div>
                         <div className='landing-bottom-text'>
-                            Watch anywhere. Cancel anytime.
+                            Watch anywhere. Watch anytime.
                         </div>
                    </div>
                     <div className='landing-text-container-bottom'>
                         <div className='under-landing-top-text'>
-                            Ready to watch? Enter your email to create or restart your membership.
+                            Ready to watch? Click below to register or login to continue.
                         </div>
                         <div className='under-landing-bottom-text'>
                             <button id='get-started' onClick={() => handleGetStarted()} className='landing-signup-button'>Get Started</button>
@@ -72,7 +72,7 @@ function HomePage() {
                 <div className='container-3-text'>
                     <div className='sub-container-3-text'>
                         <div className='sub-container-3-top-text'>
-                            Download your shows to watch offline.
+                            Save favorited movies to your personalized list.
                         </div>
                         <div className='sub-container-3-bottom-text'>
                             Save your favorites easily and always have something to watch.
@@ -88,7 +88,7 @@ function HomePage() {
                             Watch everywhere.
                         </div>
                         <div className='sub-container-4-bottom-text'>
-                            Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.
+                            Stream unlimited movies on your phone, tablet, laptop, and TV without paying.
                         </div>
                     </div>
                 </div>
@@ -108,7 +108,7 @@ function HomePage() {
                             Create profiles for kids.
                         </div>
                         <div className='sub-container-5-bottom-text'>
-                            Send kids on adventures with their favorite characters in a space made just for them—free with your membership.
+                            Send kids on adventures with their favorite characters in a space made just for them—free!.
                         </div>
                     </div>
                 </div>

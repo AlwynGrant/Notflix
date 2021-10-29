@@ -72,7 +72,7 @@
 }
 
 .login-btn {
-    background-color: rgb(187, 16, 16);
+    background-color: rgb(152, 3, 3);
     width: 315px;
     height: 50px;
 
@@ -82,6 +82,11 @@
     font-family: system-ui;
     font-weight: bold;
     color: white;
+    transition: 200ms ease-in-out;
+}
+
+.login-btn:hover {
+    background-color: rgb(172, 3, 3);
 }
 
 .login-to-signup {
