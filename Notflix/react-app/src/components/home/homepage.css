@@ -1,3 +1,7 @@
+.root {
+    width: 100%;
+}
+
 .home-container {
     background-color: rgb(51, 51, 51);
     width: 100%;
@@ -448,8 +452,8 @@
 }
 
 .sub-inner-container-6 {
-
-    width: 1400px;
+    width: 100%;
+    /* width: 1400px; */
     height: 800px;
 
     display: flex;
@@ -459,7 +463,8 @@
 }
 
 .sub-container-6-FAQ {
-    width: 1400px;
+    /* width: 1400px; */
+    width: 100%;
     height: 55px;
     margin: 50px;
 
