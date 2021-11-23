@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { authenticate } from './store/session';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 
@@ -21,6 +21,7 @@ import NavBarProfile from './components/navbar/NavBarProfile';
 import NavBarMovies from './components/navbar/NavBarMovies';
 import NavBarAuth from './components/navbar/NavBarAuth';
 import NavBar from './components/navbar/NavBar';
+import AboutPage from './components/about/About';
 
 import './index.css'
 
@@ -55,6 +56,11 @@ function App() {
         <Route path='/signup' exact={true}>
           <NavBarAuth />
           <SignUpForm />
+        </Route>
+
+        <Route path='/about' exact={true}>
+          <NavBarAuth />
+          <AboutPage />
         </Route>
 
         <ProtectedRoute path='/profiles' exact={true}>
