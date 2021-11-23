@@ -31,7 +31,7 @@ const NavBarMovies = () => {
     useEffect(() => {
         dispatch(listAllProfiles(profile_id))
     }, dispatch)
-    
+
     return (
         <nav className='navbar-movies'>
             <div className='navbar-movies-container'>
@@ -40,9 +40,9 @@ const NavBarMovies = () => {
                         <img className='movies-logo' src={notflix_text_1000} alt='logo-here'/>
                     </a>
 
-                    <a target="_blank" rel="noreferrer" href={'https://github.com/AlwynGrant/Notflix'}>Github</a>
-                    <a target="_blank" rel="noreferrer" href={'https://www.linkedin.com/in/alwyn-grant-928b091a3/'}>LinkdIn</a>
-                    <a href={`/profiles/${profile_id}/my-list`}>My list</a>
+                    {/* <a target="_blank" rel="noreferrer" href={'https://github.com/AlwynGrant/Notflix'}>Github</a>
+                    <a target="_blank" rel="noreferrer" href={'https://www.linkedin.com/in/alwyn-grant-928b091a3/'}>LinkdIn</a> */}
+                    <a className='navbar-my-list' href={`/profiles/${profile_id}/my-list`}>My list</a>
                 </div>
                 <div>
                     <div onClick={(e) => handleDropdown(e)} className='profile-nav-img-container'>
@@ -66,6 +66,7 @@ const NavBarMovies = () => {
                                     }
                                 </div>
                                 <a className='profile-manage-link' href='/profiles/manage'>Manage profiles</a>
+                                <a className='profile-about-link' href='/about'>About Notflix</a>
                                 <div className='profile-logout'>
                                     <LogoutButton />
                                 </div>
