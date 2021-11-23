@@ -116,6 +116,7 @@ def edit_mylist(profile_id):
     # updated_watchlist = Profile.query.get(profile_id).my_list
     return {'my_list': [movie.to_dict() for movie in profile_watchlist.my_list]}
 
+
 # get profile_users likes
 @profile_routes.route('/<int:profile_id>/my-likes')
 @login_required
