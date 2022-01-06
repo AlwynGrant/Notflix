@@ -1,5 +1,5 @@
 
-## How to start it
+## How to start Notflix
 
 1. Clone this repository (only this branch)
 
